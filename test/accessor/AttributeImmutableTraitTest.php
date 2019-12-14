@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Concerto\test\accessor;
+namespace Movement\test\accessor;
 
-use Concerto\test\ConcertoTestCase;
-use Concerto\accessor\AttributeImmutableTrait;
-use Concerto\accessor\AttributeImmutableInterface;
-use Concerto\accessor\AttributeInterface;
-use Concerto\accessor\impl\AttributeImplTrait;
+use Movement\test\ConcertoTestCase;
+use Movement\accessor\AttributeImmutableTrait;
+use Movement\accessor\AttributeImmutableInterface;
+use Movement\accessor\AttributeInterface;
+use Movement\accessor\impl\AttributeImplTrait;
 
 class TestAttributeImmutableTrait1 implements
     AttributeInterface,
@@ -26,7 +26,7 @@ class TestAttributeImmutableTrait1 implements
     ];
 }
 
-class AttributeImmutableTraitTest extends ConcertoTestCase
+class AttributeImmutableTraitTest extends MovementTestCase
 {
     
     /**

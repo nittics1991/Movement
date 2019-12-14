@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Concerto\test\accessor;
+namespace Movement\test\accessor;
 
-use Concerto\test\ConcertoTestCase;
-use Concerto\accessor\Enum;
+use Movement\test\ConcertoTestCase;
+use Movement\accessor\Enum;
 
 class StubEnum extends Enum
 {
@@ -20,7 +20,7 @@ class StubEnum extends Enum
 
 //////////////////////////////////////////////////////////////////
 
-class EnumTest extends ConcertoTestCase
+class EnumTest extends MovementTestCase
 {
     public function constructExceptionProvider()
     {

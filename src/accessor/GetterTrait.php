@@ -7,7 +7,7 @@
 **/
 declare(strict_types=1);
 
-namespace Concerto\accessor;
+namespace Movement\accessor;
 
 use BadMethodCallException;
 

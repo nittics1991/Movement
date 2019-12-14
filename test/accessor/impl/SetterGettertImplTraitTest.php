@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Concerto\test\accessor;
+namespace Movement\test\accessor;
 
-use Concerto\test\ConcertoTestCase;
-use Concerto\accessor\impl\SetterGettertImplTrait;
-use Concerto\accessor\GetterInterface;
-use Concerto\accessor\SetterInterface;
+use Movement\test\ConcertoTestCase;
+use Movement\accessor\impl\SetterGettertImplTrait;
+use Movement\accessor\GetterInterface;
+use Movement\accessor\SetterInterface;
 
 class TestSetterGettertImplTrait1 implements
     SetterInterface,
@@ -30,7 +30,7 @@ class TestSetterGettertImplTrait1 implements
     ];
 }
 
-class SetterGettertImplTraitTest extends ConcertoTestCase
+class SetterGettertImplTraitTest extends MovementTestCase
 {
     /**
     *   @test

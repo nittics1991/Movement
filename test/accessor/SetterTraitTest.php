@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Concerto\test\accessor;
+namespace Movement\test\accessor;
 
-use Concerto\test\ConcertoTestCase;
-use Concerto\accessor\SetterInterface;
-use Concerto\accessor\SetterTrait;
-use Concerto\accessor\AttributeInterface;
-use Concerto\accessor\impl\AttributeImplTrait;
+use Movement\test\ConcertoTestCase;
+use Movement\accessor\SetterInterface;
+use Movement\accessor\SetterTrait;
+use Movement\accessor\AttributeInterface;
+use Movement\accessor\impl\AttributeImplTrait;
 
 //StdClass
 class TestSetterTrait1 implements SetterInterface
@@ -63,7 +63,7 @@ class TestSetterTrait3 extends TestSetterTrait2
     }
 }
 
-class SetterTraitTest extends ConcertoTestCase
+class SetterTraitTest extends MovementTestCase
 {
     /**
     *   @test

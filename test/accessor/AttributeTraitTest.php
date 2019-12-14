@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Concerto\test\accessor;
+namespace Movement\test\accessor;
 
-use Concerto\test\ConcertoTestCase;
-use Concerto\accessor\AttributeInterface;
-use Concerto\accessor\AttributeTrait;
+use Movement\test\ConcertoTestCase;
+use Movement\accessor\AttributeInterface;
+use Movement\accessor\AttributeTrait;
 
 class TestAttributeTrait1 implements
     AttributeInterface
@@ -20,7 +20,7 @@ class TestAttributeTrait1 implements
     ];
 }
 
-class AttributeTraitTest extends ConcertoTestCase
+class AttributeTraitTest extends MovementTestCase
 {
     /**
     *   @test

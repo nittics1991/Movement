@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Concerto\test\accessor;
+namespace Movement\test\accessor;
 
-use Concerto\test\ConcertoTestCase;
-use Concerto\accessor\TypeCastInterface;
-use Concerto\accessor\TypeCastTrait;
+use Movement\test\ConcertoTestCase;
+use Movement\accessor\TypeCastInterface;
+use Movement\accessor\TypeCastTrait;
 
 //StdClass
 class TestTypeCastTrait1 implements TypeCastInterface
@@ -64,7 +64,7 @@ class TestTypeCastTrait1 implements TypeCastInterface
     }
 }
 
-class TypeCastTraitTest extends ConcertoTestCase
+class TypeCastTraitTest extends MovementTestCase
 {
     /**
     *   @test
