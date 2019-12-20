@@ -7,9 +7,9 @@
 **/
 declare(strict_types=1);
 
-namespace Movement\accessor\impl;
+namespace Concerto\accessor\impl;
 
-use Movement\accessor\AttributeTrait;
+use Concerto\accessor\AttributeTrait;
 
 trait AttributeImplTrait
 {

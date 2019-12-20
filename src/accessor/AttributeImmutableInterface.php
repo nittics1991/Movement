@@ -7,9 +7,9 @@
 */
 declare(strict_types=1);
 
-namespace Movement\accessor;
+namespace Concerto\accessor;
 
-use Movement\accessor\Immutable;
+use Concerto\accessor\Immutable;
 
 interface AttributeImmutableInterface extends Immutable
 {

@@ -7,7 +7,7 @@
 */
 declare(strict_types=1);
 
-namespace Movement\accessor;
+namespace Concerto\accessor;
 
 interface Immutable
 {

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Movement\test\accessor;
+namespace Concerto\test\accessor;
 
-use Movement\test\ConcertoTestCase;
-use Movement\accessor\impl\TypeCastImmutableImplTrait;
-use Movement\accessor\TypeCastInterface;
+use Concerto\test\ConcertoTestCase;
+use Concerto\accessor\impl\TypeCastImmutableImplTrait;
+use Concerto\accessor\TypeCastInterface;
 
 class TestTypeCastImmutableImplTrait1 implements TypeCastInterface
 {
@@ -43,7 +43,7 @@ class TestTypeCastImmutableImplTrait1 implements TypeCastInterface
     }
 }
 
-class TypeCastImmutableImplTraitTest extends MovementTestCase
+class TypeCastImmutableImplTraitTest extends ConcertoTestCase
 {
     public function actuallyGetSuccessProvider()
     {

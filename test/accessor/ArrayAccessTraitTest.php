@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Movement\test\accessor;
+namespace Concerto\test\accessor;
 
-use Movement\test\ConcertoTestCase;
-use Movement\accessor\ArrayAccessTrait;
-use Movement\accessor\AttributeInterface;
-use Movement\accessor\impl\AttributeImplTrait;
+use Concerto\test\ConcertoTestCase;
+use Concerto\accessor\ArrayAccessTrait;
+use Concerto\accessor\AttributeInterface;
+use Concerto\accessor\impl\AttributeImplTrait;
 use \ArrayAccess;
 
 class TestArrayAccessTrait1 implements
@@ -24,7 +24,7 @@ class TestArrayAccessTrait1 implements
     ];
 }
 
-class ArrayAccessTraitTest extends MovementTestCase
+class ArrayAccessTraitTest extends ConcertoTestCase
 {
     /**
     *   @test

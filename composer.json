@@ -17,8 +17,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Movement\\": "src",
-            "Movement\\test\\": "test"
+            "Concerto\\": "src",
+            "Concerto\\test\\": "test"
         }
     }
 }

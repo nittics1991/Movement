@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 declare(strict_types=1);
 
-namespace Movement\test\accessor\impl;
+namespace Concerto\test\accessor\impl;
 
-use Movement\test\ConcertoTestCase;
-use Movement\accessor\impl\ArrayExchangerTrait;
-use Movement\accessor\ToArrayInterface;
+use Concerto\test\ConcertoTestCase;
+use Concerto\accessor\impl\ArrayExchangerTrait;
+use Concerto\accessor\ToArrayInterface;
 
 class TestArrayExchangerlTrait1 implements
     ToArrayInterface
@@ -20,7 +20,7 @@ class TestArrayExchangerlTrait1 implements
     ];
 }
 
-class ArrayExchangerlTraitTest extends MovementTestCase
+class ArrayExchangerlTraitTest extends ConcertoTestCase
 {
     /**
     *   @test

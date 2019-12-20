@@ -7,10 +7,10 @@
 **/
 declare(strict_types=1);
 
-namespace Movement\accessor\impl;
+namespace Concerto\accessor\impl;
 
-use Movement\accessor\impl\AttributeImmutableImplTrait;
-use Movement\accessor\TypeCastTrait;
+use Concerto\accessor\impl\AttributeImmutableImplTrait;
+use Concerto\accessor\TypeCastTrait;
 
 trait TypeCastImmutableImplTrait
 {

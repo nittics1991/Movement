@@ -7,12 +7,12 @@
 **/
 declare(strict_types=1);
 
-namespace Movement\accessor\impl;
+namespace Concerto\accessor\impl;
 
 use BadMethodCallException;
-use Movement\accessor\GetterTrait;
-use Movement\accessor\SetterTrait;
-use Movement\accessor\impl\AttributeImplTrait;
+use Concerto\accessor\GetterTrait;
+use Concerto\accessor\SetterTrait;
+use Concerto\accessor\impl\AttributeImplTrait;
 
 trait SetterGettertImplTrait
 {
