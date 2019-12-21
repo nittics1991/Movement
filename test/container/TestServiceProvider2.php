@@ -10,16 +10,16 @@ class TestServiceProvider2 extends AbstractServiceProvider
 {
     protected $provides = [
       'database.dns',
-      \PDO::class
+      \ArrayObject::class
     ];
 
     public function register()
     {
-        $this->share('database.dns', 'sqlite::memory:');
+        $this->share('array.data', range(1, 10));
         
-        $this->share(\PDO::class, function ($container) {
-            return new \PDO(
-                $container->get('database.dns')
+        $this->share(\ArrayObject::class, function ($container) {
+            return new \ArrayObject(
+                $container->get('array.data')
             );
         });
     }

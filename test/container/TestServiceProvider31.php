@@ -10,7 +10,7 @@ use Concerto\container\provider\BootableServiceProviderInterface;
 class TestServiceProvider31 extends AbstractServiceProvider implements BootableServiceProviderInterface
 {
     protected $provides = [
-      \PDO::class
+      \ArrayObject::class
     ];
     
     public function register()
@@ -19,7 +19,7 @@ class TestServiceProvider31 extends AbstractServiceProvider implements BootableS
     
     public function boot()
     {
-        $pdo = new \PDO($this->getContainer()->get('database.dns'));
-        $this->share(\PDO::class, $pdo);
+        $pdo = new \ArrayObject($this->getContainer()->get('array.data'));
+        $this->share(\ArrayObject::class, $pdo);
     }
 }

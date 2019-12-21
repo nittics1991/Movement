@@ -9,11 +9,11 @@ use Concerto\container\provider\AbstractServiceProvider;
 class TestServiceProvider32 extends AbstractServiceProvider
 {
     protected $provides = [
-      'database.dns',
+      'array.data',
     ];
 
     public function register()
     {
-        $this->share('database.dns', 'sqlite::memory:');
+        $this->share('array.data', range(1, 10));
     }
 }

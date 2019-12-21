@@ -27,13 +27,8 @@ class ServiceProviderTest extends ConcertoTestCase
         $container->delegate($serviceProvider);
         
         $container->addServiceProvider(TestServiceProvider2::class);
-        $this->assertEquals(true, ($pdo = $container->get(\PDO::class)) instanceof \PDO);
-        
-        $sql = "SELECT sqlite_version()";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $actual = $stmt->fetch();
-        $this->assertNotEquals(null, $actual[0]);
+        $this->assertEquals(true, ($ArrayObject = $container->get(\ArrayObject::class)) instanceof \ArrayObject);
+        $this->assertEquals(range(1, 10), iterator_to_array ($ArrayObject));
     }
     
     /**
@@ -50,13 +45,8 @@ class ServiceProviderTest extends ConcertoTestCase
         $container->addServiceProvider(TestServiceProvider31::class);
         $container->addServiceProvider(TestServiceProvider32::class);
         $container->bootServiceProviders();
-        $this->assertEquals(true, ($pdo = $container->get(\PDO::class)) instanceof \PDO);
-        
-        $sql = "SELECT sqlite_version()";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $actual = $stmt->fetch();
-        $this->assertNotEquals(null, $actual[0]);
+        $this->assertEquals(true, ($ArrayObject = $container->get(\ArrayObject::class)) instanceof \ArrayObject);
+        $this->assertEquals(range(1, 10), iterator_to_array ($ArrayObject));
     }
     
     /**
