@@ -25,11 +25,19 @@
     "scripts": {
         "all": [
             "@clear_log",
+            "@cpd",
             "@cs",
+            "@lint",
             "@test"
+        ],
+        "cpd": [
+            "phpcpd ./src > ./log/phpcpd.log 2>&1"
         ],
         "cs": [
             "phpcs > ./log/phpcs.log 2>&1"
+        ],
+        "lint": [
+            "./bin/phplint.sh > ./log/phplint.log 2>&1"
         ],
         "test": [
             "phpunit -c phpunit.xml > ./log/phpunit.log 2>&1"
