@@ -1,0 +1,664 @@
+
+##teamcity[testCount count='136' flowId='15597']
+
+##teamcity[testSuiteStarted name='main' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\ArrayAccessTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/ArrayAccessTraitTest.php::\Concerto\test\accessor\ArrayAccessTraitTest' flowId='15597']
+
+##teamcity[testStarted name='basicSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/ArrayAccessTraitTest.php::\Concerto\test\accessor\ArrayAccessTraitTest::basicSuccess' flowId='15597']
+
+##teamcity[testFinished name='basicSuccess' duration='7' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\ArrayAccessTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\AttributeImmutableTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeImmutableTraitTest.php::\Concerto\test\accessor\AttributeImmutableTraitTest' flowId='15597']
+
+##teamcity[testStarted name='accessorSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeImmutableTraitTest.php::\Concerto\test\accessor\AttributeImmutableTraitTest::accessorSuccess' flowId='15597']
+
+##teamcity[testFinished name='accessorSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='immutableSetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeImmutableTraitTest.php::\Concerto\test\accessor\AttributeImmutableTraitTest::immutableSetException' flowId='15597']
+
+##teamcity[testFinished name='immutableSetException' duration='2' flowId='15597']
+
+##teamcity[testStarted name='immutableUnsetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeImmutableTraitTest.php::\Concerto\test\accessor\AttributeImmutableTraitTest::immutableUnsetException' flowId='15597']
+
+##teamcity[testFinished name='immutableUnsetException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\AttributeImmutableTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\AttributeTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeTraitTest.php::\Concerto\test\accessor\AttributeTraitTest' flowId='15597']
+
+##teamcity[testStarted name='initialStateSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeTraitTest.php::\Concerto\test\accessor\AttributeTraitTest::initialStateSuccess' flowId='15597']
+
+##teamcity[testFinished name='initialStateSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='methodUnitTestSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeTraitTest.php::\Concerto\test\accessor\AttributeTraitTest::methodUnitTestSuccess' flowId='15597']
+
+##teamcity[testFinished name='methodUnitTestSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='checkPropertyNameException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/AttributeTraitTest.php::\Concerto\test\accessor\AttributeTraitTest::checkPropertyNameException' flowId='15597']
+
+##teamcity[testFinished name='checkPropertyNameException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\AttributeTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\EnumTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='constructException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructException' flowId='15597']
+
+##teamcity[testStarted name='constructException with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructException with data set #0' flowId='15597']
+
+##teamcity[testFinished name='constructException with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='constructException with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructException with data set #1' flowId='15597']
+
+##teamcity[testFinished name='constructException with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='constructException with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructException with data set #2' flowId='15597']
+
+##teamcity[testFinished name='constructException with data set #2' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='constructException' flowId='15597']
+
+##teamcity[testSuiteStarted name='constructCall' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructCall' flowId='15597']
+
+##teamcity[testStarted name='constructCall with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructCall with data set #0' flowId='15597']
+
+##teamcity[testFinished name='constructCall with data set #0' duration='1' flowId='15597']
+
+##teamcity[testStarted name='constructCall with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructCall with data set #1' flowId='15597']
+
+##teamcity[testFinished name='constructCall with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='constructCall with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructCall with data set #2' flowId='15597']
+
+##teamcity[testFinished name='constructCall with data set #2' duration='0' flowId='15597']
+
+##teamcity[testStarted name='constructCall with data set #3' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::constructCall with data set #3' flowId='15597']
+
+##teamcity[testFinished name='constructCall with data set #3' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='constructCall' flowId='15597']
+
+##teamcity[testStarted name='methodCall' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::methodCall' flowId='15597']
+
+##teamcity[testFinished name='methodCall' duration='0' flowId='15597']
+
+##teamcity[testSuiteStarted name='staticCallException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::staticCallException' flowId='15597']
+
+##teamcity[testStarted name='staticCallException with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::staticCallException with data set #0' flowId='15597']
+
+##teamcity[testFinished name='staticCallException with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='staticCallException with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::staticCallException with data set #1' flowId='15597']
+
+##teamcity[testFinished name='staticCallException with data set #1' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='staticCallException' flowId='15597']
+
+##teamcity[testSuiteStarted name='staticCall' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::staticCall' flowId='15597']
+
+##teamcity[testStarted name='staticCall with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::staticCall with data set #0' flowId='15597']
+
+##teamcity[testFinished name='staticCall with data set #0' duration='1' flowId='15597']
+
+##teamcity[testStarted name='staticCall with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/EnumTest.php::\Concerto\test\accessor\EnumTest::staticCall with data set #1' flowId='15597']
+
+##teamcity[testFinished name='staticCall with data set #1' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='staticCall' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\EnumTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\GetterTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest' flowId='15597']
+
+##teamcity[testStarted name='StdClassHasGetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::StdClassHasGetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='StdClassHasGetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='StdClassIsGetterMethodSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::StdClassIsGetterMethodSuccess' flowId='15597']
+
+##teamcity[testFinished name='StdClassIsGetterMethodSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='StdClassGetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::StdClassGetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='StdClassGetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='AttributeImpHasGetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::AttributeImpHasGetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='AttributeImpHasGetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='AttributeImpIsGetterMethodSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::AttributeImpIsGetterMethodSuccess' flowId='15597']
+
+##teamcity[testFinished name='AttributeImpIsGetterMethodSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='AttributeImplGetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::AttributeImplGetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='AttributeImplGetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='notDefinedProperyException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::notDefinedProperyException' flowId='15597']
+
+##teamcity[testFinished name='notDefinedProperyException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='SetterGetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::SetterGetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='SetterGetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='calledFromGetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::calledFromGetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='calledFromGetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='calledFromGetterException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/GetterTraitTest.php::\Concerto\test\accessor\GetterTraitTest::calledFromGetterException' flowId='15597']
+
+##teamcity[testFinished name='calledFromGetterException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\GetterTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\SetterTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest' flowId='15597']
+
+##teamcity[testStarted name='StdClassHasSetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::StdClassHasSetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='StdClassHasSetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='StdClassIsSetterMethodSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::StdClassIsSetterMethodSuccess' flowId='15597']
+
+##teamcity[testFinished name='StdClassIsSetterMethodSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='StdClassSetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::StdClassSetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='StdClassSetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='AttributeImpHasSetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::AttributeImpHasSetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='AttributeImpHasSetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='AttributeImpIsSetterMethodSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::AttributeImpIsSetterMethodSuccess' flowId='15597']
+
+##teamcity[testFinished name='AttributeImpIsSetterMethodSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='AttributeImplSetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::AttributeImplSetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='AttributeImplSetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='notDefinedProperyException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::notDefinedProperyException' flowId='15597']
+
+##teamcity[testFinished name='notDefinedProperyException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='calledFromSetterSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::calledFromSetterSuccess' flowId='15597']
+
+##teamcity[testFinished name='calledFromSetterSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='calledFromSetterException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/SetterTraitTest.php::\Concerto\test\accessor\SetterTraitTest::calledFromSetterException' flowId='15597']
+
+##teamcity[testFinished name='calledFromSetterException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\SetterTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\TypeCastTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest' flowId='15597']
+
+##teamcity[testStarted name='StdClassSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::StdClassSuccess' flowId='15597']
+
+##teamcity[testFinished name='StdClassSuccess' duration='0' flowId='15597']
+
+##teamcity[testSuiteStarted name='toCastDataTypeSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #0' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #1' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #2' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #2' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #3' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #3' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #3' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #4' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #4' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #4' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #5' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #5' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #5' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #6' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #6' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #6' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #7' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #7' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #7' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #8' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #8' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #8' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #9' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #9' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #9' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #10' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #10' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #10' duration='0' flowId='15597']
+
+##teamcity[testStarted name='toCastDataTypeSuccess with data set #11' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::toCastDataTypeSuccess with data set #11' flowId='15597']
+
+##teamcity[testFinished name='toCastDataTypeSuccess with data set #11' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='toCastDataTypeSuccess' flowId='15597']
+
+##teamcity[testStarted name='setCastTypeException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::setCastTypeException' flowId='15597']
+
+##teamcity[testFinished name='setCastTypeException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='getCastTypeException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::getCastTypeException' flowId='15597']
+
+##teamcity[testFinished name='getCastTypeException' duration='0' flowId='15597']
+
+##teamcity[testSuiteStarted name='actuallyGetSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGetSuccess' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGetSuccess with data set #0' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGetSuccess with data set #1' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGetSuccess with data set #2' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #2' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #3' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGetSuccess with data set #3' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #3' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #4' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGetSuccess with data set #4' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #4' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #5' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGetSuccess with data set #5' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #5' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='actuallyGetSuccess' flowId='15597']
+
+##teamcity[testSuiteStarted name='actuallyGSetSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGSetSuccess' flowId='15597']
+
+##teamcity[testStarted name='actuallyGSetSuccess with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGSetSuccess with data set #0' flowId='15597']
+
+##teamcity[testFinished name='actuallyGSetSuccess with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGSetSuccess with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGSetSuccess with data set #1' flowId='15597']
+
+##teamcity[testFinished name='actuallyGSetSuccess with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGSetSuccess with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGSetSuccess with data set #2' flowId='15597']
+
+##teamcity[testFinished name='actuallyGSetSuccess with data set #2' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGSetSuccess with data set #3' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGSetSuccess with data set #3' flowId='15597']
+
+##teamcity[testFinished name='actuallyGSetSuccess with data set #3' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGSetSuccess with data set #4' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGSetSuccess with data set #4' flowId='15597']
+
+##teamcity[testFinished name='actuallyGSetSuccess with data set #4' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGSetSuccess with data set #5' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/TypeCastTraitTest.php::\Concerto\test\accessor\TypeCastTraitTest::actuallyGSetSuccess with data set #5' flowId='15597']
+
+##teamcity[testFinished name='actuallyGSetSuccess with data set #5' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='actuallyGSetSuccess' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\TypeCastTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\impl\ArrayExchangerlTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/ArrayExchangerlTraitTest.php::\Concerto\test\accessor\impl\ArrayExchangerlTraitTest' flowId='15597']
+
+##teamcity[testStarted name='basicSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/ArrayExchangerlTraitTest.php::\Concerto\test\accessor\impl\ArrayExchangerlTraitTest::basicSuccess' flowId='15597']
+
+##teamcity[testFinished name='basicSuccess' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\impl\ArrayExchangerlTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\impl\AttributeImmutableTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest' flowId='15597']
+
+##teamcity[testStarted name='initialStateSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::initialStateSuccess' flowId='15597']
+
+##teamcity[testFinished name='initialStateSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='methodUnitTestSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::methodUnitTestSuccess' flowId='15597']
+
+##teamcity[testFinished name='methodUnitTestSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='checkPropertyNameException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::checkPropertyNameException' flowId='15597']
+
+##teamcity[testFinished name='checkPropertyNameException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='accessorSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::accessorSuccess' flowId='15597']
+
+##teamcity[testFinished name='accessorSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameGetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::dummyPropertyNameGetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameGetException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameSetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::dummyPropertyNameSetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameSetException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameIssetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::dummyPropertyNameIssetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameIssetException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameUnsetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php::\Concerto\test\accessor\impl\AttributeImmutableTraitTest::dummyPropertyNameUnsetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameUnsetException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\impl\AttributeImmutableTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\impl\AttributeTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest' flowId='15597']
+
+##teamcity[testStarted name='initialStateSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::initialStateSuccess' flowId='15597']
+
+##teamcity[testFinished name='initialStateSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='methodUnitTestSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::methodUnitTestSuccess' flowId='15597']
+
+##teamcity[testFinished name='methodUnitTestSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='checkPropertyNameException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::checkPropertyNameException' flowId='15597']
+
+##teamcity[testFinished name='checkPropertyNameException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='accessorSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::accessorSuccess' flowId='15597']
+
+##teamcity[testFinished name='accessorSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameGetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::dummyPropertyNameGetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameGetException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameSetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::dummyPropertyNameSetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameSetException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameIssetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::dummyPropertyNameIssetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameIssetException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameUnsetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/AttributeImplTraitTest.php::\Concerto\test\accessor\impl\AttributeTraitTest::dummyPropertyNameUnsetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameUnsetException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\impl\AttributeTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\RestrictToSetterGettertImplTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/RestrictToSetterGettertImplTraitTest.php::\Concerto\test\accessor\RestrictToSetterGettertImplTraitTest' flowId='15597']
+
+##teamcity[testStarted name='basicSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/RestrictToSetterGettertImplTraitTest.php::\Concerto\test\accessor\RestrictToSetterGettertImplTraitTest::basicSuccess' flowId='15597']
+
+##teamcity[testFinished name='basicSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='getterException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/RestrictToSetterGettertImplTraitTest.php::\Concerto\test\accessor\RestrictToSetterGettertImplTraitTest::getterException' flowId='15597']
+
+##teamcity[testFinished name='getterException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='setterException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/RestrictToSetterGettertImplTraitTest.php::\Concerto\test\accessor\RestrictToSetterGettertImplTraitTest::setterException' flowId='15597']
+
+##teamcity[testFinished name='setterException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='unsetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/RestrictToSetterGettertImplTraitTest.php::\Concerto\test\accessor\RestrictToSetterGettertImplTraitTest::unsetException' flowId='15597']
+
+##teamcity[testFinished name='unsetException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\RestrictToSetterGettertImplTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\SetterGettertImplTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/SetterGettertImplTraitTest.php::\Concerto\test\accessor\SetterGettertImplTraitTest' flowId='15597']
+
+##teamcity[testStarted name='basicSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/SetterGettertImplTraitTest.php::\Concerto\test\accessor\SetterGettertImplTraitTest::basicSuccess' flowId='15597']
+
+##teamcity[testFinished name='basicSuccess' duration='0' flowId='15597']
+
+##teamcity[testStarted name='getterException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/SetterGettertImplTraitTest.php::\Concerto\test\accessor\SetterGettertImplTraitTest::getterException' flowId='15597']
+
+##teamcity[testFinished name='getterException' duration='0' flowId='15597']
+
+##teamcity[testStarted name='setterException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/SetterGettertImplTraitTest.php::\Concerto\test\accessor\SetterGettertImplTraitTest::setterException' flowId='15597']
+
+##teamcity[testFinished name='setterException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\SetterGettertImplTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\TypeCastImmutableImplTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='actuallyGetSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::actuallyGetSuccess' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::actuallyGetSuccess with data set #0' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::actuallyGetSuccess with data set #1' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::actuallyGetSuccess with data set #2' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #2' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #3' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::actuallyGetSuccess with data set #3' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #3' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #4' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::actuallyGetSuccess with data set #4' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #4' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #5' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::actuallyGetSuccess with data set #5' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #5' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='actuallyGetSuccess' flowId='15597']
+
+##teamcity[testStarted name='dummyPropertyNameSetException' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php::\Concerto\test\accessor\TypeCastImmutableImplTraitTest::dummyPropertyNameSetException' flowId='15597']
+
+##teamcity[testFinished name='dummyPropertyNameSetException' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\TypeCastImmutableImplTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\accessor\TypeCastImplTraitTest' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='actuallyGetSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallyGetSuccess' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallyGetSuccess with data set #0' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallyGetSuccess with data set #1' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallyGetSuccess with data set #2' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #2' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #3' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallyGetSuccess with data set #3' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #3' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #4' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallyGetSuccess with data set #4' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #4' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallyGetSuccess with data set #5' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallyGetSuccess with data set #5' flowId='15597']
+
+##teamcity[testFinished name='actuallyGetSuccess with data set #5' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='actuallyGetSuccess' flowId='15597']
+
+##teamcity[testSuiteStarted name='actuallySetSuccess' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallySetSuccess' flowId='15597']
+
+##teamcity[testStarted name='actuallySetSuccess with data set #0' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallySetSuccess with data set #0' flowId='15597']
+
+##teamcity[testFinished name='actuallySetSuccess with data set #0' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallySetSuccess with data set #1' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallySetSuccess with data set #1' flowId='15597']
+
+##teamcity[testFinished name='actuallySetSuccess with data set #1' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallySetSuccess with data set #2' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallySetSuccess with data set #2' flowId='15597']
+
+##teamcity[testFinished name='actuallySetSuccess with data set #2' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallySetSuccess with data set #3' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallySetSuccess with data set #3' flowId='15597']
+
+##teamcity[testFinished name='actuallySetSuccess with data set #3' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallySetSuccess with data set #4' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallySetSuccess with data set #4' flowId='15597']
+
+##teamcity[testFinished name='actuallySetSuccess with data set #4' duration='0' flowId='15597']
+
+##teamcity[testStarted name='actuallySetSuccess with data set #5' locationHint='php_qn:///home/user/document/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php::\Concerto\test\accessor\TypeCastImplTraitTest::actuallySetSuccess with data set #5' flowId='15597']
+
+##teamcity[testFinished name='actuallySetSuccess with data set #5' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='actuallySetSuccess' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\accessor\TypeCastImplTraitTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\container\ReflectionContainerTest' locationHint='php_qn:///home/user/document/src/Movement/test/container/ReflectionContainerTest.php::\Concerto\test\container\ReflectionContainerTest' flowId='15597']
+
+##teamcity[testStarted name='reflectClassAndConstructorClassParameter' locationHint='php_qn:///home/user/document/src/Movement/test/container/ReflectionContainerTest.php::\Concerto\test\container\ReflectionContainerTest::reflectClassAndConstructorClassParameter' flowId='15597']
+
+##teamcity[testFinished name='reflectClassAndConstructorClassParameter' duration='3' flowId='15597']
+
+##teamcity[testStarted name='failureReflectClassNotDefaultValue' locationHint='php_qn:///home/user/document/src/Movement/test/container/ReflectionContainerTest.php::\Concerto\test\container\ReflectionContainerTest::failureReflectClassNotDefaultValue' flowId='15597']
+
+##teamcity[testFinished name='failureReflectClassNotDefaultValue' duration='1' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\container\ReflectionContainerTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\container\ServiceContainerOriginalTest' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest' flowId='15597']
+
+##teamcity[testStarted name='testSetsAndGetsSimplePrototypedClosureOrStrings' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testSetsAndGetsSimplePrototypedClosureOrStrings' flowId='15597']
+
+##teamcity[testFinished name='testSetsAndGetsSimplePrototypedClosureOrStrings' duration='1' flowId='15597']
+
+##teamcity[testStarted name='testSetsAndGetInstanceAsShared' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testSetsAndGetInstanceAsShared' flowId='15597']
+
+##teamcity[testFinished name='testSetsAndGetInstanceAsShared' duration='1' flowId='15597']
+
+##teamcity[testStarted name='testSetsAndGetStringAsShared' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testSetsAndGetStringAsShared' flowId='15597']
+
+##teamcity[testFinished name='testSetsAndGetStringAsShared' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testThrowsWhenGettingUnmanagedService' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testThrowsWhenGettingUnmanagedService' flowId='15597']
+
+##teamcity[testFinished name='testThrowsWhenGettingUnmanagedService' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testGetSharedItemReturnsTheSameItem' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testGetSharedItemReturnsTheSameItem' flowId='15597']
+
+##teamcity[testFinished name='testGetSharedItemReturnsTheSameItem' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testHasReturnsTrueForSharedDefinition' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testHasReturnsTrueForSharedDefinition' flowId='15597']
+
+##teamcity[testFinished name='testHasReturnsTrueForSharedDefinition' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testExtendThrowsWhenCannotFindDefinition' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testExtendThrowsWhenCannotFindDefinition' flowId='15597']
+
+##teamcity[testFinished name='testExtendThrowsWhenCannotFindDefinition' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testExtendsAddition' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testExtendsAddition' flowId='15597']
+
+##teamcity[testIgnored name='testExtendsAddition' message='' details=' /home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php:129|n ' duration='1' flowId='15597']
+
+##teamcity[testFinished name='testExtendsAddition' duration='1' flowId='15597']
+
+##teamcity[testStarted name='testProvidingNoConcreteResultsInAlias' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testProvidingNoConcreteResultsInAlias' flowId='15597']
+
+##teamcity[testFinished name='testProvidingNoConcreteResultsInAlias' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testProvidingArgumentsToBinding' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testProvidingArgumentsToBinding' flowId='15597']
+
+##teamcity[testFinished name='testProvidingArgumentsToBinding' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testProvidingClassArgumentsToBinding' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testProvidingClassArgumentsToBinding' flowId='15597']
+
+##teamcity[testFinished name='testProvidingClassArgumentsToBinding' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testRequestingNoneBoundClassResultsInReflectionCall' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testRequestingNoneBoundClassResultsInReflectionCall' flowId='15597']
+
+##teamcity[testFinished name='testRequestingNoneBoundClassResultsInReflectionCall' duration='0' flowId='15597']
+
+##teamcity[testStarted name='testReflectionDelegationResultsInInstanceBeingCreated' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testReflectionDelegationResultsInInstanceBeingCreated' flowId='15597']
+
+##teamcity[testFinished name='testReflectionDelegationResultsInInstanceBeingCreated' duration='1' flowId='15597']
+
+##teamcity[testStarted name='testServiceProviderDelegationResultsInInstanceBeingCreated' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testServiceProviderDelegationResultsInInstanceBeingCreated' flowId='15597']
+
+##teamcity[testFinished name='testServiceProviderDelegationResultsInInstanceBeingCreated' duration='2' flowId='15597']
+
+##teamcity[testStarted name='testContainerDelegationResultsInMethodCallsBeingPassedDown' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerOriginalTest.php::\Concerto\test\container\ServiceContainerOriginalTest::testContainerDelegationResultsInMethodCallsBeingPassedDown' flowId='15597']
+
+##teamcity[testFinished name='testContainerDelegationResultsInMethodCallsBeingPassedDown' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\container\ServiceContainerOriginalTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\container\ServiceContainerTest' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest' flowId='15597']
+
+##teamcity[testStarted name='setParameter' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::setParameter' flowId='15597']
+
+##teamcity[testFinished name='setParameter' duration='0' flowId='15597']
+
+##teamcity[testStarted name='setFunction' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::setFunction' flowId='15597']
+
+##teamcity[testFinished name='setFunction' duration='0' flowId='15597']
+
+##teamcity[testStarted name='setObject' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::setObject' flowId='15597']
+
+##teamcity[testFinished name='setObject' duration='2' flowId='15597']
+
+##teamcity[testStarted name='replaceService' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::replaceService' flowId='15597']
+
+##teamcity[testFinished name='replaceService' duration='0' flowId='15597']
+
+##teamcity[testStarted name='changeArgument' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::changeArgument' flowId='15597']
+
+##teamcity[testFinished name='changeArgument' duration='0' flowId='15597']
+
+##teamcity[testStarted name='parameter' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::parameter' flowId='15597']
+
+##teamcity[testFinished name='parameter' duration='0' flowId='15597']
+
+##teamcity[testStarted name='raw' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::raw' flowId='15597']
+
+##teamcity[testFinished name='raw' duration='0' flowId='15597']
+
+##teamcity[testStarted name='notAcceptClosure' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceContainerTest.php::\Concerto\test\container\ServiceContainerTest::notAcceptClosure' flowId='15597']
+
+##teamcity[testFinished name='notAcceptClosure' duration='0' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\container\ServiceContainerTest' flowId='15597']
+
+##teamcity[testSuiteStarted name='Concerto\test\container\ServiceProviderTest' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceProviderTest.php::\Concerto\test\container\ServiceProviderTest' flowId='15597']
+
+##teamcity[testStarted name='concatenateMultipleBindInServiceProvider' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceProviderTest.php::\Concerto\test\container\ServiceProviderTest::concatenateMultipleBindInServiceProvider' flowId='15597']
+
+##teamcity[testFinished name='concatenateMultipleBindInServiceProvider' duration='1' flowId='15597']
+
+##teamcity[testStarted name='bootOfServiceProvider' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceProviderTest.php::\Concerto\test\container\ServiceProviderTest::bootOfServiceProvider' flowId='15597']
+
+##teamcity[testFinished name='bootOfServiceProvider' duration='1' flowId='15597']
+
+##teamcity[testStarted name='mixReflectionAndProvider' locationHint='php_qn:///home/user/document/src/Movement/test/container/ServiceProviderTest.php::\Concerto\test\container\ServiceProviderTest::mixReflectionAndProvider' flowId='15597']
+
+##teamcity[testFinished name='mixReflectionAndProvider' duration='1' flowId='15597']
+
+##teamcity[testSuiteFinished name='Concerto\test\container\ServiceProviderTest' flowId='15597']
+
+##teamcity[testSuiteFinished name='main' flowId='15597']

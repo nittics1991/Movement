@@ -21,5 +21,10 @@
             "Concerto\\": "src",
             "Concerto\\test\\": "test"
         }
+    },
+    "scripts": {
+        "test": [
+            "./bin/punit.sh"
+        ]
     }
 }

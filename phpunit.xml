@@ -4,7 +4,11 @@
 >
     <testsuites>
         <testsuite name="main">
-            <directory>./tests</directory>
+            <directory>./test</directory>
         </testsuite>
     </testsuites>
+    
+    <logging>
+        <log type="testdox-text" target="./log/testdox.log"/>
+    </logging>
 </phpunit>
