@@ -23,8 +23,19 @@
         }
     },
     "scripts": {
+        "all": [
+            "@clear_log",
+            "@cs",
+            "@test"
+        ],
+        "cs": [
+            "phpcs > ./log/phpcs.log 2>&1"
+        ],
         "test": [
-            "./bin/punit.sh"
+            "phpunit -c phpunit.xml > ./log/phpunit.log 2>&1"
+        ],
+        "clear_log": [
+            "rm -rf log/*"
         ]
     }
 }

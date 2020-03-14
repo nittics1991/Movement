@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="standard">
+    <file>./src/</file>
+    <autoload>./vendor/autoload.php</autoload>
+    <rule ref="PSR12"></rule>
+    
+    <arg name="report-full" value="./log/phpcs_full.log" />
+    <arg name="report-info" value="./log/phpcs_info.log" />
+    
+</ruleset>
