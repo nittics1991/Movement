@@ -11,41 +11,47 @@ class ArrayPaginatorTest extends ConcertoTestCase
     
     public function paginate1Provider()
     {
-        $data = $this->readCsvFile(
-            realpath(__DIR__ . '/data/data1.csv')
-        );
+        //$data = $this->readCsvFile(
+            //realpath(__DIR__ . '/data/data1.csv')
+        //);
         
-        $expect[0] = array_slice($data, 2, 2);
+        //$expect[0] = array_slice($data, 2, 2);
         
+        //return [
+            ////[[], 1, 2, $expect[0]],
+            //[1],
+        //];
         
-        var_dump($expect);
         
         return [
-            //[$data, 2, 2, [1]],
-            [[], 1,2,[]]
+            [1],
         ];
+        
+        
+        
     }
     
+    //
+    
+    
     /*
-    *   @test
+    *   
     *   @dataProvider paginate1Provider
     */
-    public function testPagenate1(
-        array $data,
-        int $pageSize,
-        int $pageNo,
-        array $expect
-    ) {
-        $obj = new ArrayPaginator($data, $pageSize);
+    public function testPagenate1($data)
+    {
+//      $this->markTestIncomplete();
+        
+        //$obj = new ArrayPaginator($data, $pageSize);
         
         
-        var_dump($obj->paginate(2));
+        //var_dump($obj->paginate(2));
         
         
-        $this->assertSame($expect, $obj->paginate(2));
+        //$this->assertSame($expect, $obj->paginate(2));
         
         
-        $this->paginate1Provider();
+        //$this->paginate1Provider();
         
         
     }
