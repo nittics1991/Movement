@@ -41,8 +41,8 @@ class PDOStatementPaginator extends BasePaginator implements
     {
         $this->container['current_page'] = $pageNo;
         
-        $min = $this->container['per_page'] * ($pageNo - 1);
-        $max = $this->container['per_page'] + $min;
+        $min = $this->container['page_size'] * ($pageNo - 1);
+        $max = $this->container['page_size'] + $min;
         $cnt = 0;
         
         foreach ($this->iterate as $list) {
@@ -53,8 +53,8 @@ class PDOStatementPaginator extends BasePaginator implements
         }
         $this->container['total'] = $cnt;
         $this->container['last_page'] =
-            $cnt / $this->container['per_page']
-            + ($cnt % $this->container['per_page']) > 0? 1:0;
+            $cnt / $this->container['page_size']
+            + ($cnt % $this->container['page_size']) > 0? 1:0;
         
         return $this;
     }

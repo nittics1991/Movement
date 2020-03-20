@@ -40,15 +40,15 @@ class ArrayPaginator extends BasePaginator implements
         
         $this->container['data'] = array_slice(
             $this->iterate,
-            $this->container['per_page'] * ($pageNo - 1),
-            $this->container['per_page']
+            $this->container['page_size'] * ($pageNo - 1),
+            $this->container['page_size']
         );
         
         $this->container['total'] = count($this->iterate);
         $this->container['last_page'] =
-            $this->container['total'] / $this->container['per_page']
-            + ($this->container['total'] % $this->container['per_page']) > 0?
-             1:0;
+            $this->container['total'] / $this->container['page_size']
+            + (($this->container['total'] % $this->container['page_size']) > 0?
+             1:0);
         
         return $this;
     }

@@ -21,7 +21,7 @@ abstract class BasePaginator implements PaginatorInterface
     *   @var array
     */
     protected $schema = [
-        'total', 'per_page', 'current_page', 'last_page', 'data', 
+        'total', 'page_size', 'current_page', 'last_page', 'data', 
     ];
     
     /**
@@ -49,7 +49,7 @@ abstract class BasePaginator implements PaginatorInterface
         int $pageSize
     ) {
         $this->iterate = $iterate;
-        $this->container['per_page'] = $pageSize;
+        $this->container['page_size'] = $pageSize;
         $this->container['total'] = 0;
         $this->container['current_page'] = 0;
         $this->container['last_page'] = 0;

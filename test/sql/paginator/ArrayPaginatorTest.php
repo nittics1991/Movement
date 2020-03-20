@@ -8,52 +8,51 @@ use Concerto\sql\paginator\ArrayPaginator;
 
 class ArrayPaginatorTest extends ConcertoTestCase
 {
-    
-    public function paginate1Provider()
+    public function paginateProvider()
     {
-        //$data = $this->readCsvFile(
-            //realpath(__DIR__ . '/data/data1.csv')
-        //);
-        
-        //$expect[0] = array_slice($data, 2, 2);
-        
-        //return [
-            ////[[], 1, 2, $expect[0]],
-            //[1],
-        //];
-        
+        $data = $this->readCsvFile(
+            realpath(__DIR__ . '/data/data1.csv')
+        );
         
         return [
-            [1],
+            [
+                $data,
+                2,
+                2,
+                array_slice($data, 2, 2),
+                5,
+                2,
+                2,
+                3,
+            ],
         ];
-        
-        
-        
     }
     
-    //
-    
-    
-    /*
-    *   
-    *   @dataProvider paginate1Provider
+    /**
+    *  @test 
+    *  @dataProvider paginateProvider
     */
-    public function testPagenate1($data)
-    {
-//      $this->markTestIncomplete();
+    public function paginate(
+        array $data,
+        int $pageSize,
+        int $pageNo,
+        array $expectData,
+        int $expectTotal,
+        int $expectCurrentPage,
+        int $expectPageSize,
+        int $expectLastPage
+    ) {
         
-        //$obj = new ArrayPaginator($data, $pageSize);
+        $obj = new ArrayPaginator($data, $pageSize);
+        $extractClass = $obj->paginate($pageNo);
+        $this->assertSame($expectData, $extractClass->data());
+        $this->assertEquals($expectTotal, $extractClass->total());
+        $this->assertEquals($expectCurrentPage, $extractClass->currentPage());
+        $this->assertEquals($expectPageSize, $extractClass->pageSize());
+        $this->assertEquals($expectLastPage, $extractClass->lastPage());
         
-        
-        //var_dump($obj->paginate(2));
-        
-        
-        //$this->assertSame($expect, $obj->paginate(2));
-        
-        
-        //$this->paginate1Provider();
         
         
     }
-    
+
 }
