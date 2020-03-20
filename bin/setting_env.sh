@@ -6,3 +6,7 @@ source ../env.list
 
 #sudo apt install -y ${TOOLS[@]}
 sudo apt install ${TOOLS[@]}
+
+cd ..
+
+composer update

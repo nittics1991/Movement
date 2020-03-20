@@ -1,6 +1,4 @@
-Private Test Trait (Concerto\test\PrivateTestTrait)
- [x] Private of direct class
- [x] Protected of direct class
- [x] Private of inherit class
- [x] Protected of inherit class
+Csv Reader Trait (Concerto\test\CsvReaderTrait)
+ [x] Csv read with data set #0
+ [x] Tsv read with data set #0
 

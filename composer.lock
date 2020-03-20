@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04e546ae506857a8b98674d1fc939e25",
+    "content-hash": "3db58929b6cd1e3dfbd2f88a9377102e",
     "packages": [
         {
             "name": "psr/cache",
@@ -243,7 +243,111 @@
             "time": "2017-10-23T01:57:42+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "php-vfs/php-vfs",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michael-donat/php-vfs.git",
+                "reference": "1254b67ca6bdaccd9f305b0e1aea81f790b3fa67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michael-donat/php-vfs/zipball/1254b67ca6bdaccd9f305b0e1aea81f790b3fa67",
+                "reference": "1254b67ca6bdaccd9f305b0e1aea81f790b3fa67",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "~1.0.2",
+                "phpunit/phpunit": "^6.5",
+                "sami/sami": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "VirtualFileSystem": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Donat",
+                    "email": "michael.donat@me.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Virtual file system implementation for use with PHP unit testing.",
+            "homepage": "http://michael-donat.github.com/php-vfs",
+            "keywords": [
+                "filesystem",
+                "php",
+                "testing",
+                "unit",
+                "virtual"
+            ],
+            "time": "2017-12-20T16:11:12+00:00"
+        },
+        {
+            "name": "phpstan/phpstan",
+            "version": "0.12.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "b2c37bda79fdb11d801ce208ce391cffc0f572e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b2c37bda79fdb11d801ce208ce391cffc0f572e6",
+                "reference": "b2c37bda79fdb11d801ce208ce391cffc0f572e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpstan",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-03-17T15:39:11+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],

@@ -16,6 +16,10 @@
         "psr/log": "^1.1",
         "psr/simple-cache": "^1.0"
     },
+    "require-dev": {
+        "php-vfs/php-vfs": "^1.4",
+        "phpstan/phpstan": "^0.12.17"
+    },
     "autoload": {
         "psr-4": {
             "Concerto\\": "src",
