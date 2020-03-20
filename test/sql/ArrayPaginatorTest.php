@@ -1,7 +1,5 @@
 <?php
 
-//require('/usr/share/php/PHPUnit/Runner/PhptTestCase.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ArrayPaginatorTest extends TestCase
