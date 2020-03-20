@@ -1,4 +1,3 @@
-Csv Reader Trait (Concerto\test\CsvReaderTrait)
- [x] Csv read with data set #0
- [x] Tsv read with data set #0
+Array Paginator (Concerto\test\sql\paginator\ArrayPaginator)
+ [ ] Pagenate 1
 
