@@ -16,7 +16,7 @@ use Concerto\sql\paginator\{
     PaginatorInterface
 };
 
-class PDOStatementPaginator extends BasePaginator implements
+class PdoStatementPaginator extends BasePaginator implements
     PaginatorInterface
 {
     /**
@@ -53,8 +53,8 @@ class PDOStatementPaginator extends BasePaginator implements
         }
         $this->container['total'] = $cnt;
         $this->container['last_page'] =
-            $cnt / $this->container['page_size']
-            + ($cnt % $this->container['page_size']) > 0? 1:0;
+            floor($cnt / $this->container['page_size'])
+            + (($cnt % $this->container['page_size']) > 0? 1:0);
         
         return $this;
     }
