@@ -1,3 +1,3 @@
-Array Paginator (Concerto\test\sql\paginator\ArrayPaginator)
- [ ] Paginate with data set #0
+Pdo Test Trait (Concerto\test\PdoTestTrait)
+ [ ] Build pdo
 

@@ -45,8 +45,9 @@ class ArrayPaginator extends BasePaginator implements
         );
         
         $this->container['total'] = count($this->iterate);
-        $this->container['last_page'] =
-            $this->container['total'] / $this->container['page_size']
+        
+        $this->container['last_page'] = 
+            (int)floor  ($this->container['total'] / $this->container['page_size'])
             + (($this->container['total'] % $this->container['page_size']) > 0?
              1:0);
         

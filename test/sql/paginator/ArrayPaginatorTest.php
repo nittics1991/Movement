@@ -24,7 +24,17 @@ class ArrayPaginatorTest extends ConcertoTestCase
                 2,
                 2,
                 3,
-            ],
+            ],//
+            [
+                array_slice($data, 0, 4),
+                3,
+                1,
+                array_slice($data, 0, 3),
+                4,
+                1,
+                3,
+                2,
+            ],//
         ];
     }
     
@@ -50,9 +60,6 @@ class ArrayPaginatorTest extends ConcertoTestCase
         $this->assertEquals($expectCurrentPage, $extractClass->currentPage());
         $this->assertEquals($expectPageSize, $extractClass->pageSize());
         $this->assertEquals($expectLastPage, $extractClass->lastPage());
-        
-        
-        
     }
 
 }
