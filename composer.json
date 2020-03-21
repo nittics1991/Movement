@@ -1,0 +1,53 @@
+{
+    "name": "nittics1991/movement",
+    "type": "library",
+    "description": "Concerto Library",
+    "authors": [
+        {
+            "name": "nittics1991",
+            "email": "bunpabcom@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "psr/cache": "^1.0",
+        "psr/container": "^1.0",
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "^1.1",
+        "psr/simple-cache": "^1.0"
+    },
+    "require-dev": {
+        "php-vfs/php-vfs": "^1.4",
+        "phpstan/phpstan": "^0.12.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "Concerto\\": "src",
+            "Concerto\\test\\": "test"
+        }
+    },
+    "scripts": {
+        "all": [
+            "@clear_log",
+            "@cpd",
+            "@cs",
+            "@lint",
+            "@test"
+        ],
+        "cpd": [
+            "phpcpd ./src > ./log/phpcpd.log 2>&1"
+        ],
+        "cs": [
+            "phpcs > ./log/phpcs.log 2>&1"
+        ],
+        "lint": [
+            "./bin/phplint.sh > ./log/phplint.log 2>&1"
+        ],
+        "test": [
+            "phpunit -c phpunit.xml > ./log/phpunit.log 2>&1"
+        ],
+        "clear_log": [
+            "rm -rf log/*"
+        ]
+    }
+}

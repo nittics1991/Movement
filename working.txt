@@ -1,0 +1,26 @@
+composer
+    phpcs エラーが出る
+
+paginator
+    テスト開始しいたい
+    phpunitでcsvからデータを読みたい
+    
+
+phpunit dbunit
+    db test DBに実際にaccessするtestはModelDb機能のみ
+    他のdb保存の動作はmock/stabで対応?
+    
+
+
+
+csv/tsvインポートlib
+    excelのcsv/tsvフォーマットは?
+        CSV 改行があると""で囲われる
+    postgresとphpの違い
+    excel FDW使えるか?==>ない
+    あるいはRangeでarrayを取得した方が良いか?
+        改行がある場合に有効
+        postgres->copyFromArrayで実施?
+
+
+
