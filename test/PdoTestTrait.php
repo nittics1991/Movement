@@ -94,10 +94,6 @@ trait PdoTestTrait
         $sql_insert .= ''
             . mb_substr($sql_tmp_outer, 1);
         
-        
-        var_dump($sql_insert);
-        
-        
         $stmt = $pdo->prepare($sql_insert);
         
         $i = 1;
@@ -105,8 +101,8 @@ trait PdoTestTrait
         foreach ($dataset as $data) {
             foreach ($data as $val) {
                 $stmt->bindValue(":{$i}", $val, PDO::PARAM_STR);
+                $i++;
             }
-            $i++;
         }
         
         $stmt->execute();
