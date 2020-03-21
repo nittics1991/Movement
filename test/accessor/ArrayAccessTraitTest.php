@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 declare(strict_types=1);
 
 namespace Concerto\test\accessor;
@@ -10,7 +9,7 @@ use Concerto\test\ConcertoTestCase;
 use Concerto\accessor\ArrayAccessTrait;
 use Concerto\accessor\AttributeInterface;
 use Concerto\accessor\impl\AttributeImplTrait;
-use \ArrayAccess;
+use ArrayAccess;
 
 class TestArrayAccessTrait1 implements
     ArrayAccess,

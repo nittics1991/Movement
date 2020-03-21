@@ -1,10 +1,5 @@
 composer
-    phpcs エラーが出る
-
-paginator
-    テスト開始しいたい
-    phpunitでcsvからデータを読みたい
-    
+    script設定　取り敢えずOK
 
 phpunit dbunit
     db test DBに実際にaccessするtestはModelDb機能のみ

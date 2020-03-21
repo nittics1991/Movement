@@ -5,6 +5,7 @@
 *
 *   @ver 200307
 **/
+
 declare(strict_types=1);
 
 namespace Concerto\sql\paginator;
@@ -54,7 +55,7 @@ class PdoStatementPaginator extends BasePaginator implements
         $this->container['total'] = $cnt;
         $this->container['last_page'] =
             floor($cnt / $this->container['page_size'])
-            + (($cnt % $this->container['page_size']) > 0? 1:0);
+            + (($cnt % $this->container['page_size']) > 0 ? 1 : 0);
         
         return $this;
     }

@@ -5,6 +5,7 @@
 *
 *   @ver 191222
 **/
+
 declare(strict_types=1);
 
 namespace Concerto\http;

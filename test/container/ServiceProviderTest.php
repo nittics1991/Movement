@@ -28,7 +28,7 @@ class ServiceProviderTest extends ConcertoTestCase
         
         $container->addServiceProvider(TestServiceProvider2::class);
         $this->assertEquals(true, ($ArrayObject = $container->get(\ArrayObject::class)) instanceof \ArrayObject);
-        $this->assertEquals(range(1, 10), iterator_to_array ($ArrayObject));
+        $this->assertEquals(range(1, 10), iterator_to_array($ArrayObject));
     }
     
     /**
@@ -46,7 +46,7 @@ class ServiceProviderTest extends ConcertoTestCase
         $container->addServiceProvider(TestServiceProvider32::class);
         $container->bootServiceProviders();
         $this->assertEquals(true, ($ArrayObject = $container->get(\ArrayObject::class)) instanceof \ArrayObject);
-        $this->assertEquals(range(1, 10), iterator_to_array ($ArrayObject));
+        $this->assertEquals(range(1, 10), iterator_to_array($ArrayObject));
     }
     
     /**

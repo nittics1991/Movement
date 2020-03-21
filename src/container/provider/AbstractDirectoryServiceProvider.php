@@ -8,6 +8,7 @@
 *       $container->bind(prefixId.constructParametersId, [argv1, argv2, ...])
 *       $container->get(prefixId.constructParametersId)
 **/
+
 declare(strict_types=1);
 
 namespace Concerto\container\provider;

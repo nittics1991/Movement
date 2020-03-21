@@ -5,6 +5,7 @@
 *
 *   @version 191216
 */
+
 declare(strict_types=1);
 
 namespace Concerto\mbstring;

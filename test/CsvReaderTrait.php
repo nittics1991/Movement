@@ -61,7 +61,7 @@ trait CsvReaderTrait
             SplFileObject::SKIP_EMPTY
         );
         
-        foreach($splFileObject as $row) {
+        foreach ($splFileObject as $row) {
             if ($row === false) {
                 throw new RuntimeException(
                     "file read error:" . $splFileObject->getFilename()

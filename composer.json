@@ -29,22 +29,26 @@
     "scripts": {
         "all": [
             "@clear_log",
-            "@cpd",
-            "@cs",
-            "@lint",
+            "@plint",
+            "@pcbf",
+            "@pcs",
+            "@pcpd",
             "@test"
         ],
-        "cpd": [
+        "pcbf": [
+            "./bin/pcbf.sh > ./log/phpcbf.log 2>&1"
+        ],
+        "pcpd": [
             "phpcpd ./src > ./log/phpcpd.log 2>&1"
         ],
-        "cs": [
-            "phpcs > ./log/phpcs.log 2>&1"
+        "pcs": [
+            "./bin/pcs.sh > ./log/phpcs.log 2>&1"
         ],
-        "lint": [
-            "./bin/phplint.sh > ./log/phplint.log 2>&1"
+        "plint": [
+            "./bin/plint.sh > ./log/phplint.log 2>&1"
         ],
         "test": [
-            "phpunit -c phpunit.xml > ./log/phpunit.log 2>&1"
+            "./bin/punit.sh > ./log/phpunit.log 2>&1"
         ],
         "clear_log": [
             "rm -rf log/*"

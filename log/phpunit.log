@@ -1,0 +1,27 @@
+PHPUnit 8.5.2 by Sebastian Bergmann and contributors.
+
+...............................................................  63 / 343 ( 18%)
+......................................................I........ 126 / 343 ( 36%)
+........................................................sh: 1: del: not found
+Esh: 1: del: not found
+E..... 189 / 343 ( 55%)
+............................................................... 252 / 343 ( 73%)
+............................................................... 315 / 343 ( 91%)
+............................                                    343 / 343 (100%)
+
+Time: 1.46 seconds, Memory: 10.00 MB
+
+There were 2 errors:
+
+1) Concerto\test\mbstring\MbStringFileTest::fileOperation
+Undefined index: OS
+
+/home/user/document/src/Movement/test/mbstring/MbStringFileTest.php:17
+
+2) Concerto\test\mbstring\MbStringFileTest::splFileObject
+Undefined index: OS
+
+/home/user/document/src/Movement/test/mbstring/MbStringFileTest.php:17
+
+ERRORS!
+Tests: 343, Assertions: 597, Errors: 2, Incomplete: 1.

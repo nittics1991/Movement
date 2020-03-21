@@ -38,7 +38,7 @@ class PdoTestTraitTest extends ConcertoTestCase
         $this->assertEquals(count($data), count($actual));
         
         array_map(
-            function($expect_row, $actual_row) {
+            function ($expect_row, $actual_row) {
                 $this->assertSame($expect_row, $actual_row);
             },
             $data,

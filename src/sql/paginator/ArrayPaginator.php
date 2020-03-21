@@ -5,6 +5,7 @@
 *
 *   @ver 200307
 */
+
 declare(strict_types=1);
 
 namespace Concerto\sql\paginator;
@@ -46,10 +47,10 @@ class ArrayPaginator extends BasePaginator implements
         
         $this->container['total'] = count($this->iterate);
         
-        $this->container['last_page'] = 
-            (int)floor  ($this->container['total'] / $this->container['page_size'])
-            + (($this->container['total'] % $this->container['page_size']) > 0?
-             1:0);
+        $this->container['last_page'] =
+            (int)floor($this->container['total'] / $this->container['page_size'])
+            + (($this->container['total'] % $this->container['page_size']) > 0 ?
+             1 : 0);
         
         return $this;
     }

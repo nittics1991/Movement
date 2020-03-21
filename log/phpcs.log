@@ -1,0 +1,3 @@
+PHP Notice:  Undefined variable: countWidth in /usr/share/php/PHP/CodeSniffer/src/Reports/Info.php on line 119
+Time: 4.97 secs; Memory: 8MB
+

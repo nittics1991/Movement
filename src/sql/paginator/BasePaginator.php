@@ -5,6 +5,7 @@
 *
 *   @ver 200307
 **/
+
 declare(strict_types=1);
 
 namespace Concerto\sql\paginator;
@@ -21,7 +22,7 @@ abstract class BasePaginator implements PaginatorInterface
     *   @var array
     */
     protected $schema = [
-        'total', 'page_size', 'current_page', 'last_page', 'data', 
+        'total', 'page_size', 'current_page', 'last_page', 'data',
     ];
     
     /**
@@ -96,5 +97,5 @@ abstract class BasePaginator implements PaginatorInterface
     protected function resolveName(string $name): string
     {
         return MbString::toSnake($name);
-   }
+    }
 }

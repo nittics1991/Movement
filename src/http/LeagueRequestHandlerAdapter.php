@@ -5,6 +5,7 @@
 *
 *   @version 191222
 **/
+
 declare(strict_types=1);
 
 namespace Concerto\http;
@@ -47,7 +48,7 @@ class LeagueRequestHandlerAdapter implements RequestHandlerInterface
     *   {inherit}
     *
     */
-    public function __call (string $name, array $arguments)
+    public function __call(string $name, array $arguments)
     {
         return call_user_func_array(
             [$this->router, $name],

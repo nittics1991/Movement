@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Concerto\test\mbstring;
 
-use \SplFileObject;
+use SplFileObject;
 use Concerto\test\ConcertoTestCase;
 use Concerto\mbstring\MbString;
 

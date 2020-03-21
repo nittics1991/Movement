@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Concerto\test\sql\paginator;
@@ -39,7 +40,7 @@ class ArrayPaginatorTest extends ConcertoTestCase
     }
     
     /**
-    *  @test 
+    *  @test
     *  @dataProvider paginateProvider
     */
     public function paginate(
@@ -61,5 +62,4 @@ class ArrayPaginatorTest extends ConcertoTestCase
         $this->assertEquals($expectPageSize, $extractClass->pageSize());
         $this->assertEquals($expectLastPage, $extractClass->lastPage());
     }
-
 }

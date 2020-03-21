@@ -1,3 +1,395 @@
+Array Access Trait (Concerto\test\accessor\ArrayAccessTrait)
+ [x] Basic success
+
+Attribute Immutable Trait (Concerto\test\accessor\AttributeImmutableTrait)
+ [x] Accessor success
+ [x] Immutable set exception
+ [x] Immutable unset exception
+
+Attribute Trait (Concerto\test\accessor\AttributeTrait)
+ [x] Initial state success
+ [x] Method unit test success
+ [x] Check property name exception
+
+Enum (Concerto\test\accessor\Enum)
+ [x] Construct exception with data set #0
+ [x] Construct exception with data set #1
+ [x] Construct exception with data set #2
+ [x] Construct call with data set #0
+ [x] Construct call with data set #1
+ [x] Construct call with data set #2
+ [x] Construct call with data set #3
+ [x] Method call
+ [x] Static call exception with data set #0
+ [x] Static call exception with data set #1
+ [x] Static call with data set #0
+ [x] Static call with data set #1
+
+Getter Trait (Concerto\test\accessor\GetterTrait)
+ [x] Std class has getter success
+ [x] Std class is getter method success
+ [x] Std class getter success
+ [x] Attribute imp has getter success
+ [x] Attribute imp is getter method success
+ [x] Attribute impl getter success
+ [x] Not defined propery exception
+ [x] Setter getter success
+ [x] Called from getter success
+ [x] Called from getter exception
+
+Setter Trait (Concerto\test\accessor\SetterTrait)
+ [x] Std class has setter success
+ [x] Std class is setter method success
+ [x] Std class setter success
+ [x] Attribute imp has setter success
+ [x] Attribute imp is setter method success
+ [x] Attribute impl setter success
+ [x] Not defined propery exception
+ [x] Called from setter success
+ [x] Called from setter exception
+
+Type Cast Trait (Concerto\test\accessor\TypeCastTrait)
+ [x] Std class success
+ [x] To cast data type success with data set #0
+ [x] To cast data type success with data set #1
+ [x] To cast data type success with data set #2
+ [x] To cast data type success with data set #3
+ [x] To cast data type success with data set #4
+ [x] To cast data type success with data set #5
+ [x] To cast data type success with data set #6
+ [x] To cast data type success with data set #7
+ [x] To cast data type success with data set #8
+ [x] To cast data type success with data set #9
+ [x] To cast data type success with data set #10
+ [x] To cast data type success with data set #11
+ [x] Set cast type exception
+ [x] Get cast type exception
+ [x] Actually get success with data set #0
+ [x] Actually get success with data set #1
+ [x] Actually get success with data set #2
+ [x] Actually get success with data set #3
+ [x] Actually get success with data set #4
+ [x] Actually get success with data set #5
+ [x] Actually g set success with data set #0
+ [x] Actually g set success with data set #1
+ [x] Actually g set success with data set #2
+ [x] Actually g set success with data set #3
+ [x] Actually g set success with data set #4
+ [x] Actually g set success with data set #5
+
+Array Exchangerl Trait (Concerto\test\accessor\impl\ArrayExchangerlTrait)
+ [x] Basic success
+
+Attribute Immutable Trait (Concerto\test\accessor\impl\AttributeImmutableTrait)
+ [x] Initial state success
+ [x] Method unit test success
+ [x] Check property name exception
+ [x] Accessor success
+ [x] Dummy property name get exception
+ [x] Dummy property name set exception
+ [x] Dummy property name isset exception
+ [x] Dummy property name unset exception
+
+Attribute Trait (Concerto\test\accessor\impl\AttributeTrait)
+ [x] Initial state success
+ [x] Method unit test success
+ [x] Check property name exception
+ [x] Accessor success
+ [x] Dummy property name get exception
+ [x] Dummy property name set exception
+ [x] Dummy property name isset exception
+ [x] Dummy property name unset exception
+
+Restrict To Setter Gettert Impl Trait (Concerto\test\accessor\RestrictToSetterGettertImplTrait)
+ [x] Basic success
+ [x] Getter exception
+ [x] Setter exception
+ [x] Unset exception
+
+Setter Gettert Impl Trait (Concerto\test\accessor\SetterGettertImplTrait)
+ [x] Basic success
+ [x] Getter exception
+ [x] Setter exception
+
+Type Cast Immutable Impl Trait (Concerto\test\accessor\TypeCastImmutableImplTrait)
+ [x] Actually get success with data set #0
+ [x] Actually get success with data set #1
+ [x] Actually get success with data set #2
+ [x] Actually get success with data set #3
+ [x] Actually get success with data set #4
+ [x] Actually get success with data set #5
+ [x] Dummy property name set exception
+
+Type Cast Impl Trait (Concerto\test\accessor\TypeCastImplTrait)
+ [x] Actually get success with data set #0
+ [x] Actually get success with data set #1
+ [x] Actually get success with data set #2
+ [x] Actually get success with data set #3
+ [x] Actually get success with data set #4
+ [x] Actually get success with data set #5
+ [x] Actually set success with data set #0
+ [x] Actually set success with data set #1
+ [x] Actually set success with data set #2
+ [x] Actually set success with data set #3
+ [x] Actually set success with data set #4
+ [x] Actually set success with data set #5
+
+Reflection Container (Concerto\test\container\ReflectionContainer)
+ [x] Reflect class and constructor class parameter
+ [x] Failure reflect class not default value
+
+Service Container Original (Concerto\test\container\ServiceContainerOriginal)
+ [x] Sets and gets simple prototyped closure or strings
+ [x] Sets and get instance as shared
+ [x] Sets and get string as shared
+ [x] Throws when getting unmanaged service
+ [x] Get shared item returns the same item
+ [x] Has returns true for shared definition
+ [x] Extend throws when cannot find definition
+ [ ] Extends addition
+ [x] Providing no concrete results in alias
+ [x] Providing arguments to binding
+ [x] Providing class arguments to binding
+ [x] Requesting none bound class results in reflection call
+ [x] Reflection delegation results in instance being created
+ [x] Service provider delegation results in instance being created
+ [x] Container delegation results in method calls being passed down
+
+Service Container (Concerto\test\container\ServiceContainer)
+ [x] Set parameter
+ [x] Set function
+ [x] Set object
+ [x] Replace service
+ [x] Change argument
+ [x] Parameter
+ [x] Raw
+ [x] Not accept closure
+
+Service Provider (Concerto\test\container\ServiceProvider)
+ [x] Concatenate multiple bind in service provider
+ [x] Boot of service provider
+ [x] Mix reflection and provider
+
+Mb Convert (Concerto\test\mbstring\MbConvert)
+ [x] Roma 2kana with data set #0
+ [x] Roma 2kana with data set #1
+ [x] Roma 2kana with data set #2
+ [x] Roma 2kana with data set #3
+ [x] Roma 2kana with data set #4
+ [x] Roma 2kana with data set #5
+ [x] Roma 2kana with data set #6
+ [x] Roma 2kana with data set #7
+ [x] Roma 2kana with data set #8
+ [x] Roma 2kana with data set #9
+ [x] Roma 2kana with data set #10
+ [x] Roma 2kana with data set #11
+ [x] Roma 2kana with data set #12
+ [x] Roma 2kana with data set #13
+ [x] Roma 2kana with data set #14
+ [x] Roma 2kana with data set #15
+ [x] Roma 2kana with data set #16
+ [x] Roma 2kana with data set #17
+ [x] Roma 2kana with data set #18
+ [x] Roma 2kana with data set #19
+ [x] Roma 2kana with data set #20
+ [x] Roma 2kana with data set #21
+ [x] Roma 2kana with data set #22
+ [x] Roma 2kana with data set #23
+ [x] Roma 2kana with data set #24
+ [x] Roma 2kana with data set #25
+ [x] Roma 2kana with data set #26
+ [x] Roma 2kana with data set #27
+ [x] Roma 2kana with data set #28
+ [x] Roma 2kana with data set #29
+ [x] Roma 2kana with data set #30
+ [x] Roma 2kana with data set #31
+ [x] Roma 2kana with data set #32
+ [x] Roma 2kana with data set #33
+ [x] Roma 2kana with data set #34
+ [x] Roma 2kana with data set #35
+ [x] Roma 2kana with data set #36
+ [x] Roma 2kana with data set #37
+ [x] Roma 2kana with data set #38
+ [x] Roma 2kana with data set #39
+ [x] Roma 2kana with data set #40
+ [x] Roma 2kana with data set #41
+ [x] Roma 2kana with data set #42
+ [x] Roma 2kana with data set #43
+ [x] Roma 2kana with data set #44
+ [x] Roma 2kana with data set #45
+
+Mb String File (Concerto\test\mbstring\MbStringFile)
+ [ ] File operation
+ [ ] Spl file object
+
+Mb String (Concerto\test\mbstring\MbString)
+ [x] Is 5c sucess with data set #0
+ [x] Is 5c sucess with data set #1
+ [x] Is 5c sucess with data set #2
+ [x] Is 5c sucess with data set #3
+ [x] Is 5c sucess with data set #4
+ [x] Is 5c sucess with data set #5
+ [x] Is 5c sucess with data set #6
+ [x] Is 5c sucess with data set #7
+ [x] Is 5c sucess with data set #8
+ [x] Is 5c sucess with data set #9
+ [x] Is 5c sucess with data set #10
+ [x] Is 5c sucess with data set #11
+ [x] Is 5c sucess with data set #12
+ [x] Is 5c sucess with data set #13
+ [x] Is 5c sucess with data set #14
+ [x] Is 5c sucess with data set #15
+ [x] Is 5c sucess with data set #16
+ [x] Is 5c sucess with data set #17
+ [x] Is 5c sucess with data set #18
+ [x] Is 5c sucess with data set #19
+ [x] Is 5c sucess with data set #20
+ [x] Is 5c sucess with data set #21
+ [x] Is 5c sucess with data set #22
+ [x] Is 5c sucess with data set #23
+ [x] Is 5c sucess with data set #24
+ [x] Is 5c sucess with data set #25
+ [x] Is 5c sucess with data set #26
+ [x] Is 5c sucess with data set #27
+ [x] Is 5c sucess with data set #28
+ [x] Is 5c sucess with data set #29
+ [x] Is 5c sucess with data set #30
+ [x] Is 5c sucess with data set #31
+ [x] Is 5c sucess with data set #32
+ [x] Is 5c sucess with data set #33
+ [x] Is 5c sucess with data set #34
+ [x] Is 5c sucess with data set #35
+ [x] Is 5c sucess with data set #36
+ [x] Is 5c sucess with data set #37
+ [x] Is 5c sucess with data set #38
+ [x] Is 5c sucess with data set #39
+ [x] Escape 5c sucess with data set #0
+ [x] Escape 5c sucess with data set #1
+ [x] Escape 5c sucess with data set #2
+ [x] Escape 5c sucess with data set #3
+ [x] Escape 5c sucess with data set #4
+ [x] Escape 5c sucess with data set #5
+ [x] Escape 5c sucess with data set #6
+ [x] Escape 5c sucess with data set #7
+ [x] Escape 5c sucess with data set #8
+ [x] Escape 5c sucess with data set #9
+ [x] Escape 5c sucess with data set #10
+ [x] Escape 5c sucess with data set #11
+ [x] Escape 5c sucess with data set #12
+ [x] Escape 5c sucess with data set #13
+ [x] Escape 5c sucess with data set #14
+ [x] Escape 5c sucess with data set #15
+ [x] Escape 5c sucess with data set #16
+ [x] Escape 5c sucess with data set #17
+ [x] Escape 5c sucess with data set #18
+ [x] Escape 5c sucess with data set #19
+ [x] Escape 5c sucess with data set #20
+ [x] Escape 5c sucess with data set #21
+ [x] Escape 5c sucess with data set #22
+ [x] Escape 5c sucess with data set #23
+ [x] Escape 5c sucess with data set #24
+ [x] Escape 5c sucess with data set #25
+ [x] Escape 5c sucess with data set #26
+ [x] Escape 5c sucess with data set #27
+ [x] Escape 5c sucess with data set #28
+ [x] Escape 5c sucess with data set #29
+ [x] Escape 5c sucess with data set #30
+ [x] Escape 5c sucess with data set #31
+ [x] Escape 5c sucess with data set #32
+ [x] Escape 5c sucess with data set #33
+ [x] Escape 5c sucess with data set #34
+ [x] Escape 5c sucess with data set #35
+ [x] Escape 5c sucess with data set #36
+ [x] Escape 5c sucess with data set #37
+ [x] Escape 5c sucess with data set #38
+ [x] Escape 5c sucess with data set #39
+ [x] Escape 5c false with data set #0
+ [x] Escape 5c false with data set #1
+ [x] Escape 5c false with data set #2
+ [x] Escape 5c false with data set #3
+ [x] Escape 5c false with data set #4
+ [x] Escape 5c false with data set #5
+ [x] Escape 5c false with data set #6
+ [x] Escape 5c false with data set #7
+ [x] Escape 5c false with data set #8
+ [x] Escape 5c false with data set #9
+ [x] Escape 5c false with data set #10
+ [x] Escape 5c false with data set #11
+ [x] Escape 5c false with data set #12
+ [x] Escape 5c false with data set #13
+ [x] Escape 5c false with data set #14
+ [x] Escape 5c false with data set #15
+ [x] Escape 5c false with data set #16
+ [x] Escape 5c false with data set #17
+ [x] Escape 5c false with data set #18
+ [x] Escape 5c false with data set #19
+ [x] Escape 5c false with data set #20
+ [x] Escape 5c false with data set #21
+ [x] Escape 5c false with data set #22
+ [x] Escape 5c false with data set #23
+ [x] Escape 5c false with data set #24
+ [x] Escape 5c false with data set #25
+ [x] Escape 5c false with data set #26
+ [x] Escape 5c false with data set #27
+ [x] Escape 5c false with data set #28
+ [x] Escape 5c false with data set #29
+ [x] Escape 5c false with data set #30
+ [x] Escape 5c false with data set #31
+ [x] Escape 5c false with data set #32
+ [x] Escape 5c false with data set #33
+ [x] Escape 5c false with data set #34
+ [x] Escape 5c false with data set #35
+ [x] Escape 5c false with data set #36
+ [x] Escape 5c false with data set #37
+ [x] Escape 5c false with data set #38
+ [x] Escape 5c false with data set #39
+ [x] Mb explode
+ [x] Mb split
+ [x] Mb trim
+ [x] Mb replace
+ [x] Str to array
+ [x] Splice
+ [x] Ereg match all
+ [x] Valid encode name
+ [x] Insert
+ [x] Delete
+ [x] Tab 2space exception 2
+ [x] Tab 2space with data set #0
+ [x] Tab 2space with data set #1
+ [x] To snake with data set #0
+ [x] To snake with data set #1
+ [x] To snake with data set #2
+ [x] To snake with data set #3
+ [x] To snake with data set #4
+ [x] To upper camel with data set #0
+ [x] To upper camel with data set #1
+ [x] To upper camel with data set #2
+ [x] To upper camel with data set #3
+ [x] To upper camel with data set #4
+ [x] To lower camel with data set #0
+ [x] To lower camel with data set #1
+ [x] To lower camel with data set #2
+ [x] To lower camel with data set #3
+ [x] To lower camel with data set #4
+
+Array Paginator (Concerto\test\sql\paginator\ArrayPaginator)
+ [x] Paginate with data set #0
+ [x] Paginate with data set #1
+
+PDOStatement Paginator (Concerto\test\sql\paginator\PDOStatementPaginator)
+ [x] Paginate with data set #0
+ [x] Paginate with data set #1
+
+Csv Reader Trait (Concerto\test\CsvReaderTrait)
+ [x] Csv read with data set #0
+ [x] Tsv read with data set #0
+
 Pdo Test Trait (Concerto\test\PdoTestTrait)
  [x] Build pdo
+
+Private Test Trait (Concerto\test\PrivateTestTrait)
+ [x] Private of direct class
+ [x] Protected of direct class
+ [x] Private of inherit class
+ [x] Protected of inherit class
 

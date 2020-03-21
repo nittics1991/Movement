@@ -1,0 +1,211 @@
+
+FILE: ...me/user/document/src/Movement/test/test/PrivateTestTraitTest.php
+----------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 38 | ERROR | Each class must be in a file by itself
+ 68 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...home/user/document/src/Movement/test/test/CsvReaderTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 18 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: /home/user/document/src/Movement/test/mbstring/MbStringTest.php
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+  97 | ERROR | Method name "MbStringTest::mb_split" is not in camel
+     |       | caps format
+ 117 | ERROR | Method name "MbStringTest::mb_trim" is not in camel
+     |       | caps format
+ 140 | ERROR | Method name "MbStringTest::mb_replace" is not in camel
+     |       | caps format
+----------------------------------------------------------------------
+
+
+FILE: ...er/document/src/Movement/test/container/ServiceContainerTest.php
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 112 | WARNING | Line exceeds 120 characters; contains 133 characters
+----------------------------------------------------------------------
+
+
+FILE: ...cument/src/Movement/test/accessor/impl/TypeCastImplTraitTest.php
+----------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 39 | ERROR | Method name "TestTypeCastImplTrait1::getProp_m" is not
+    |       | in camel caps format
+ 45 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...c/Movement/test/accessor/impl/TypeCastImmutableImplTraitTest.php
+----------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 39 | ERROR | Method name
+    |       | "TestTypeCastImmutableImplTrait1::getProp_m" is not in
+    |       | camel caps format
+ 45 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...t/src/Movement/test/accessor/impl/SetterGettertImplTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 32 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...ment/test/accessor/impl/RestrictToSetterGettertImplTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 34 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...ument/src/Movement/test/accessor/impl/AttributeImplTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 22 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: .../Movement/test/accessor/impl/AttributeImmutableImplTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 24 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...ent/src/Movement/test/accessor/impl/ArrayExchangerlTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 22 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...e/user/document/src/Movement/test/accessor/TypeCastTraitTest.php
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 35 | ERROR | Method name "TestTypeCastTrait1::getProp_m" is not in
+    |       | camel caps format
+ 66 | ERROR | Each class must be in a file by itself
+ 71 | ERROR | Method name "TypeCastTraitTest::StdClassSuccess" is not
+    |       | in camel caps format
+----------------------------------------------------------------------
+
+
+FILE: ...ome/user/document/src/Movement/test/accessor/SetterTraitTest.php
+----------------------------------------------------------------------
+FOUND 9 ERRORS AFFECTING 9 LINES
+----------------------------------------------------------------------
+  30 | ERROR | Each class must be in a file by itself
+  52 | ERROR | Each class must be in a file by itself
+  65 | ERROR | Each class must be in a file by itself
+  70 | ERROR | Method name
+     |       | "SetterTraitTest::StdClassHasSetterSuccess" is not in
+     |       | camel caps format
+  84 | ERROR | Method name
+     |       | "SetterTraitTest::StdClassIsSetterMethodSuccess" is
+     |       | not in camel caps format
+  98 | ERROR | Method name "SetterTraitTest::StdClassSetterSuccess"
+     |       | is not in camel caps format
+ 115 | ERROR | Method name
+     |       | "SetterTraitTest::AttributeImpHasSetterSuccess" is not
+     |       | in camel caps format
+ 129 | ERROR | Method name
+     |       | "SetterTraitTest::AttributeImpIsSetterMethodSuccess"
+     |       | is not in camel caps format
+ 143 | ERROR | Method name
+     |       | "SetterTraitTest::AttributeImplSetterSuccess" is not
+     |       | in camel caps format
+----------------------------------------------------------------------
+
+
+FILE: ...ome/user/document/src/Movement/test/accessor/GetterTraitTest.php
+----------------------------------------------------------------------
+FOUND 11 ERRORS AFFECTING 11 LINES
+----------------------------------------------------------------------
+  32 | ERROR | Each class must be in a file by itself
+  54 | ERROR | Each class must be in a file by itself
+  90 | ERROR | Each class must be in a file by itself
+ 103 | ERROR | Each class must be in a file by itself
+ 108 | ERROR | Method name
+     |       | "GetterTraitTest::StdClassHasGetterSuccess" is not in
+     |       | camel caps format
+ 122 | ERROR | Method name
+     |       | "GetterTraitTest::StdClassIsGetterMethodSuccess" is
+     |       | not in camel caps format
+ 136 | ERROR | Method name "GetterTraitTest::StdClassGetterSuccess"
+     |       | is not in camel caps format
+ 154 | ERROR | Method name
+     |       | "GetterTraitTest::AttributeImpHasGetterSuccess" is not
+     |       | in camel caps format
+ 168 | ERROR | Method name
+     |       | "GetterTraitTest::AttributeImpIsGetterMethodSuccess"
+     |       | is not in camel caps format
+ 182 | ERROR | Method name
+     |       | "GetterTraitTest::AttributeImplGetterSuccess" is not
+     |       | in camel caps format
+ 213 | ERROR | Method name "GetterTraitTest::SetterGetterSuccess" is
+     |       | not in camel caps format
+----------------------------------------------------------------------
+
+
+FILE: /home/user/document/src/Movement/test/accessor/EnumTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AND 5 WARNINGS AFFECTING 6 LINES
+----------------------------------------------------------------------
+ 13 | WARNING | Visibility must be declared on all constants if your
+    |         | project supports PHP 7.1 or later
+ 14 | WARNING | Visibility must be declared on all constants if your
+    |         | project supports PHP 7.1 or later
+ 15 | WARNING | Visibility must be declared on all constants if your
+    |         | project supports PHP 7.1 or later
+ 16 | WARNING | Visibility must be declared on all constants if your
+    |         | project supports PHP 7.1 or later
+ 17 | WARNING | Visibility must be declared on all constants if your
+    |         | project supports PHP 7.1 or later
+ 22 | ERROR   | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: .../user/document/src/Movement/test/accessor/AttributeTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 22 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...ument/src/Movement/test/accessor/AttributeImmutableTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 28 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+
+FILE: ...ser/document/src/Movement/test/accessor/ArrayAccessTraitTest.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 26 | ERROR | Each class must be in a file by itself
+----------------------------------------------------------------------
+
+

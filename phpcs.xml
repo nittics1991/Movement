@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="standard">
     <file>./src/</file>
+    <file>./test/</file>
     <autoload>./vendor/autoload.php</autoload>
     <rule ref="PSR12"></rule>
     

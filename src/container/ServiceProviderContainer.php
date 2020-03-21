@@ -6,6 +6,7 @@
 *   @ver 170714
 *   @see https://github.com/ecfectus/container
 **/
+
 declare(strict_types=1);
 
 namespace Concerto\container;

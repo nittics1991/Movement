@@ -5,6 +5,7 @@
 *
 *   @ver 200307
 **/
+
 declare(strict_types=1);
 
 namespace Concerto\sql\paginator;
