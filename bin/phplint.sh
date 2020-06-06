@@ -2,7 +2,7 @@
 
 cd $(dirname "$0")
 
-find ../src -name *.php \
+find .. -name *.php -not -path '*/@/*' \
     |xargs -n 1 php -l  \
     |grep -e "No syntax errors detected" -v
 

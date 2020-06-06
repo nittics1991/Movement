@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Concerto\test;
+namespace Movement\test;
 
 use InvalidArgumentException;
 use ReflectionClass;
@@ -13,46 +13,50 @@ trait PrivateTestTrait
     /**
     *   call method
     *
-    *   @param object 対象オブジェクト
-    *   @param string メソッド名
-    *   @params array 引数
-    **/
-    public function callPrivateMethod($class, $method, $args = array())
-    {
-        $refMethod = new ReflectionMethod($class, $method);
-        $refMethod->setAccessible(true);
-        return $refMethod->invokeArgs($class, $args);
+    *   @param object|string $class 対象オブジェクト
+    *   @param string $method_name メソッド名
+    *   @param array $arguments 引数
+    */
+    public function callPrivateMethod(
+        $class,
+        $method_name,
+        $arguments= []
+    ) {
+        $reflectionMethod = new ReflectionMethod($class, $method_name);
+        $reflectionMethod->setAccessible(true);
+        return $reflectionMethod->invokeArgs($class, $arguments);
     }
     
     /**
     *   get property
     *
-    *   @param object | string 対象クラス
-    *   @param string プロパティ名
+    *   @param object|string $object 対象クラス
+    *   @param string $property_name プロパティ名
     *   @return mixed
-    **/
-    public function getPrivateProperty($object, $property)
+    */
+    public function getPrivateProperty($object, $property_name)
     {
         return $this->doPropertyProcess(
             [$this, 'doGetProperty'],
             $object,
-            $property
+            $property_name
         );
     }
     
     /**
     *   set property
     *
-    *   @param object | string 対象クラス
-    *   @param string プロパティ名
-    *   @param mixed 値
-    **/
-    public function setPrivateProperty($object, $property, $value)
+    *   @param object|string $class 対象クラス
+    *   @param string $property_name プロパティ名
+    *   @param mixed $value 値
+    *   @returm mixed
+    */
+    public function setPrivateProperty($class, $property_name, $value)
     {
         return $this->doPropertyProcess(
             [$this, 'doSetProperty'],
-            $object,
-            $property,
+            $class,
+            $property_name,
             $value
         );
     }
@@ -60,69 +64,80 @@ trait PrivateTestTrait
     /**
     *  プロパティ処理ルーチン
     *
-    *   @param callable 処理本体
-    *   @param object | string 対象クラス
-    *   @param string プロパティ名
-    *   @param null | mixed 設定値
-    *   @param null | object 対象オブジェクト
+    *   @param callable $process 処理本体
+    *   @param object|string $class 対象クラス
+    *   @param string プ$property_name ロパティ名
+    *   @param ?mixed 設定値
+    *   @param ?object $target 対象オブジェクト
     *   @return mixed
     *   @throws InvalidArguentException
-    **/
+    */
     protected function doPropertyProcess(
         $process,
         $class,
-        $property,
+        $property_name,
         $value = null,
         $target = null
     ) {
-        $refClass = new ReflectionClass($class);
+        $reflectionClass = new ReflectionClass($class);
         
-        if ($refClass->hasProperty($property)) {
-            $refProp = $refClass->getProperty($property);
-            $refProp->setAccessible(true);
+        if ($reflectionClass->hasProperty($property_name)) {
+            $reflectionProperty =
+                $reflectionClass->getProperty($property_name);
+            $reflectionProperty->setAccessible(true);
             
-            $obj = (isset($target)) ? $target : $class;
+            $object = $target?? $class;
             
             //do process
-            return $process($refProp, $obj, $value);
+            return $process($reflectionProperty, $object, $value);
         }
         
-        if (($parent = $refClass->getParentClass()) === false) {
-            throw new InvalidArgumentException("{$class} not have:{$property}");
+        if (($parent = $reflectionClass->getParentClass()) === false) {
+            throw new InvalidArgumentException(
+                "{$class} not have:{$property_name}"
+            );
         }
         return $this->doPropertyProcess(
             $process,
             $parent->getName(),
-            $property,
+            $property_name,
             $value,
             $class
         );
     }
-      
+    
     /**
     *   doGetProperty
     *
-    *   @param ReflectionProperty
-    *   @param object
+    *   @param ReflectionProperty $reflectionProperty
+    *   @param object|string $object
+    *   @param mixed $dummy
     *   @return mixed
-    **/
-    protected function doGetProperty($refProp, $object, $dummy)
-    {
-        return $refProp->getValue($object);
+    */
+    protected function doGetProperty(
+        ReflectionProperty $reflectionProperty,
+        $object,
+        $dummy
+    ) {
+        return $reflectionProperty->getValue($object);
     }
     
     /**
     *   doSetProperty
     *
-    *   @param ReflectionProperty
-    *   @param object
+    *   @param ReflectionProperty $reflectionProperty
+    *   @param object|string $object
+    *   @param mixed $value
     *   @return mixed
-    **/
-    protected function doSetProperty($refProp, $object, $value)
-    {
-        if ($refProp->isStatic()) {
-            return $refProp->setValue($value);
+    */
+    protected function doSetProperty(
+        ReflectionProperty $reflectionProperty,
+        $object,
+        $value
+    ) {
+        if ($reflectionProperty->isStatic()) {
+            return $reflectionProperty->setValue($value);
         }
-        return $refProp->setValue($object, $value);
+        return $reflectionProperty->setValue($object, $value);
     }
 }

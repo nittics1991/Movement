@@ -1,3 +1,6 @@
-request    
-    phpcs エラーが出る
+200606
+    PrivateTestTraitTest作成中
     
+    
+
+
