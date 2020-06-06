@@ -48,22 +48,22 @@ class PrivateTestTraitTest extends TestCase
         
         $this->assertEquals(
             'A',
-            $obj->callPriveteMethod($target, 'protectedMethod', 'A')
+            $obj->callPrivateMethod($target, 'protectedMethod', ['A'])
         );
         
         $this->assertEquals(
             'B',
-            $obj->callPriveteMethod($target, 'privateMethod', 'B')
+            $obj->callPrivateMethod($target, 'privateMethod', ['B'])
         );
         
         $this->assertEquals(
             'protectedProperty',
-            $obj->getPriveteProperty($target, 'protected_property')
+            $obj->getPrivateProperty($target, 'protected_property')
         );
         
         $this->assertEquals(
             'privateProperty',
-            $obj->getPriveteProperty($target, 'private_property')
+            $obj->getPrivateProperty($target, 'private_property')
         );
     }
 }

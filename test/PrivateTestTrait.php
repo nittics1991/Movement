@@ -7,6 +7,7 @@ namespace Movement\test;
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionMethod;
+use ReflectionProperty;
 
 trait PrivateTestTrait
 {
@@ -19,8 +20,8 @@ trait PrivateTestTrait
     */
     public function callPrivateMethod(
         $class,
-        $method_name,
-        $arguments = []
+        string $method_name,
+        array $arguments = []
     ) {
         $reflectionMethod = new ReflectionMethod($class, $method_name);
         $reflectionMethod->setAccessible(true);
@@ -30,15 +31,17 @@ trait PrivateTestTrait
     /**
     *   get property
     *
-    *   @param object|string $object 対象クラス
+    *   @param object|string $class 対象クラス
     *   @param string $property_name プロパティ名
     *   @return mixed
     */
-    public function getPrivateProperty($object, $property_name)
-    {
+    public function getPrivateProperty(
+        $class,
+        string $property_name
+    ) {
         return $this->doPropertyProcess(
             [$this, 'doGetProperty'],
-            $object,
+            $class,
             $property_name
         );
     }
@@ -51,8 +54,11 @@ trait PrivateTestTrait
     *   @param mixed $value 値
     *   @returm mixed
     */
-    public function setPrivateProperty($class, $property_name, $value)
-    {
+    public function setPrivateProperty(
+        $class,
+        string $property_name,
+        $value
+    ) {
         return $this->doPropertyProcess(
             [$this, 'doSetProperty'],
             $class,
