@@ -13,6 +13,6 @@ namespace Movement\accessor;
 use Movement\accessor\ReflectePropertyTraitInterface;
 
 interface AccessorTraitInterface extends
-    ReflectePropertyTrait
+    ReflectePropertyTraitInterface
 {
 }

@@ -1,0 +1,9 @@
+parameters:
+	level: 8
+	paths:
+		- src
+		- test
+	bootstrap: test/bootstrap.php
+	excludes_analyse:
+		- */@/*
+		- */vendor/*

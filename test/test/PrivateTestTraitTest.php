@@ -46,6 +46,7 @@ class PrivateTestTraitTest extends TestCase
         $obj = new TestPrivateTestTrait();
         $target = new PrivateTestTraitTarget1();
         
+        //call
         $this->assertEquals(
             'A',
             $obj->callPrivateMethod($target, 'protectedMethod', ['A'])
@@ -56,6 +57,7 @@ class PrivateTestTraitTest extends TestCase
             $obj->callPrivateMethod($target, 'privateMethod', ['B'])
         );
         
+        //get
         $this->assertEquals(
             'protectedProperty',
             $obj->getPrivateProperty($target, 'protected_property')
@@ -63,6 +65,29 @@ class PrivateTestTraitTest extends TestCase
         
         $this->assertEquals(
             'privateProperty',
+            $obj->getPrivateProperty($target, 'private_property')
+        );
+        
+        //set
+        $obj->setPrivateProperty(
+            $target,
+            'protected_property',
+            'newProtectedProperty'
+        );
+        
+        $this->assertEquals(
+            'newProtectedProperty',
+            $obj->getPrivateProperty($target, 'protected_property')
+        );
+        
+        $obj->setPrivateProperty(
+            $target,
+            'private_property',
+            'newPrivateProperty'
+        );
+        
+        $this->assertEquals(
+            'newPrivateProperty',
             $obj->getPrivateProperty($target, 'private_property')
         );
     }

@@ -1,10 +1,1 @@
 
-FILE: /home/user/document/src/Movement/src/accessor/CastPropertyTrait.php
---------------------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
---------------------------------------------------------------------------------
- 114 | ERROR | There must be a comment when fall-through is intentional in a
-     |       | non-empty case body
---------------------------------------------------------------------------------
-
-

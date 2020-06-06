@@ -1,0 +1,19 @@
+ ------ ------------------------------------------------------------- 
+  Line   test/MovementTestCase.php                                    
+ ------ ------------------------------------------------------------- 
+         Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+ ------ ------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   test/test/PrivateTestTraitTest.php                                 
+ ------ ------------------------------------------------------------------- 
+         Class Movement\test\test\TestPrivateTestTrait was not found while  
+         trying to analyse it - autoloading is probably not configured      
+         properly.                                                          
+         💡 Learn more at https://phpstan.org/user-guide/autoloading         
+ ------ ------------------------------------------------------------------- 
+
+ [ERROR] Found 2 errors                                                         
+

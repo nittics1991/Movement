@@ -113,6 +113,7 @@ trait CastPropertyTrait
                 return new ArrayObject($val);
             case 'self':
                 $type = get_called_class();
+                // no break
             default:
                 if (is_object($val)) {
                     return $val;
