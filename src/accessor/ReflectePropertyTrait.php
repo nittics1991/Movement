@@ -47,7 +47,7 @@ trait ReflectePropertyTrait
             if ($property->getName() == 'properties') {
                 continue;
             }
-            $this->properties[$property->getName() => $property];
+            $this->properties[$property->getName()] = $property;
         }
     }
     

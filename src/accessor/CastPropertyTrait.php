@@ -31,12 +31,12 @@ trait CastPropertyTrait
     {
         $casted = [];
         foreach ($data as $name => $val) {
-            if (in_array($name, $this->casts) {
+            if (in_array($name, $this->casts)) {
                 $casted[$name] = $this->castByProperty($name, $val);
             } else {
                 $casted[$name] = $val;
             }
-        );
+        };
         return $casted;
     }
     
@@ -53,14 +53,14 @@ trait CastPropertyTrait
             return $val;
         }
         
-        $changed = false
+        $changed = false;
         
         //setter
         if (method_exists($this, 'hasAccessor')
             && $this->hasSetter('set' . ucfirst($name))
         ) {
            $val = call_user_func(
-                [$this'set' . ucfirst($name)],
+                [$this, 'set' . ucfirst($name)],
                 $val
             );
             $changed = true;
@@ -71,7 +71,7 @@ trait CastPropertyTrait
             && $this->hasGetter('get' . ucfirst($name))
         ) {
            $val = call_user_func(
-                [$this'get' . ucfirst($name)],
+                [$this, 'get' . ucfirst($name)],
                 $val
             );
             $changed = true;

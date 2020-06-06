@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Movement\accessor;
 
-use Movement\accessor\ReflectePropertyTraitInterface
+use Movement\accessor\ReflectePropertyTraitInterface;
 
 interface AccessorTraitInterface extends
     ReflectePropertyTrait
