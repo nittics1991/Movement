@@ -2,6 +2,7 @@
     "name": "nittics1991/movement",
     "type": "library",
     "description": "Concerto Library",
+    "license": "proprietary",
     "authors": [
         {
             "name": "nittics1991",
@@ -9,7 +10,8 @@
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": "^7",
+        "ext-mbstring": "*"
     },
     "autoload": {
         "psr-4": {

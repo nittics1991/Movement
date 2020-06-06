@@ -25,7 +25,7 @@ trait ReflectePropertyTrait
     
     /*
     *   classでpropertyを定義する
-    * 
+    *
     *   public string $fullName;     set/get OK
     *   protected string $fullName;  get only
     *   private string $fullName;    private
@@ -43,7 +43,7 @@ trait ReflectePropertyTrait
             ReflectionProperty::IS_PUBLIC
         );
         
-        foreach($properties as $property) {
+        foreach ($properties as $property) {
             if ($property->getName() == 'properties') {
                 continue;
             }
@@ -53,7 +53,7 @@ trait ReflectePropertyTrait
     
     /**
     *   has
-    * 
+    *
     *   @param string $name
     *   @return bool
     */
@@ -72,7 +72,7 @@ trait ReflectePropertyTrait
     public function __get(string $name)
     {
         if (!$this->has($name)) {
-           throw new InvalidArgumentException(
+            throw new InvalidArgumentException(
                 "not defined property:{$name}"
             );
         }
@@ -91,7 +91,7 @@ trait ReflectePropertyTrait
     
     /**
     *   isWritable
-    *   
+    *
     *   @param string $name
     *   @return bool
     */
@@ -112,7 +112,7 @@ trait ReflectePropertyTrait
             $this->reflecteProperty();
         }
         
-        foreach($data as $name => $val) {
+        foreach ($data as $name => $val) {
             if (!array_key_exists($name, $this->properties)) {
                 throw new InvalidArgumentException(
                     "not defined property:{$name}"
@@ -141,7 +141,7 @@ trait ReflectePropertyTrait
         }
         
         return array_map(
-            function($name) {
+            function ($name) {
                 return $this->$name;
             },
             array_keys($this->properties)

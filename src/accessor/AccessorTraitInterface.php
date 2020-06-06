@@ -16,4 +16,3 @@ interface AccessorTraitInterface extends
     ReflectePropertyTrait
 {
 }
-

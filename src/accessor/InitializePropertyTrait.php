@@ -17,7 +17,7 @@ trait InitializePropertyTrait
     *
     *   @param array $data
     *   @param array $init
-    *   @return $this 
+    *   @return $this
     */
     protected function initializeProperties(
         array $data,
@@ -33,7 +33,7 @@ trait InitializePropertyTrait
     *   未定義のpropertyデータを無視してfromArray
     *
     *   @param array $data
-    *   @return $this 
+    *   @return $this
     */
     protected function importExceptUndefinedProperties(array $data)
     {

@@ -45,7 +45,7 @@ trait CastPropertyTrait
     *
     *   @param string $name
     *   @param mixed $val
-    *   @return mixed 
+    *   @return mixed
     */
     protected function castByProperty(string $name, $val)
     {
@@ -56,10 +56,11 @@ trait CastPropertyTrait
         $changed = false;
         
         //setter
-        if (method_exists($this, 'hasAccessor')
+        if (
+            method_exists($this, 'hasAccessor')
             && $this->hasSetter('set' . ucfirst($name))
         ) {
-           $val = call_user_func(
+            $val = call_user_func(
                 [$this, 'set' . ucfirst($name)],
                 $val
             );
@@ -67,10 +68,11 @@ trait CastPropertyTrait
         }
         
         //getter
-        if (method_exists($this, 'hasAccessor')
+        if (
+            method_exists($this, 'hasAccessor')
             && $this->hasGetter('get' . ucfirst($name))
         ) {
-           $val = call_user_func(
+            $val = call_user_func(
                 [$this, 'get' . ucfirst($name)],
                 $val
             );

@@ -27,11 +27,9 @@ trait ReflectePropertyVaridateTrait
         foreach (array_keys($this->properties) as $property) {
             $result = $result && $this->commonValidate($val);
             
-            if ($)
-            
-            $result = $result && $this->propertyValidate($name, $val);
-            
-            
+            if ($) {
+                $result = $result && $this->propertyValidate($name, $val);
+            }
         }
         return $result;
     }
@@ -60,8 +58,8 @@ trait ReflectePropertyVaridateTrait
         $methodName = 'isValid' .
             mb_convert_case($name, MB_CASE_TITLE);
         
-        return method_exists($this, $methodName)?
-            $this->$methodName($val):
+        return method_exists($this, $methodName) ?
+            $this->$methodName($val) :
             true;
     }
 }

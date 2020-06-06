@@ -88,7 +88,8 @@ trait AccessorTrait
     */
     protected function callAccessor(string $name, array $arguments = [])
     {
-        if ($this->hasGetter($name)
+        if (
+            $this->hasGetter($name)
             || $this->hasSetter($name)
         ) {
             return call_user_func_array([$this, $name], $arguments);

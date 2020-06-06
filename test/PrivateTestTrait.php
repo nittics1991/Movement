@@ -20,7 +20,7 @@ trait PrivateTestTrait
     public function callPrivateMethod(
         $class,
         $method_name,
-        $arguments= []
+        $arguments = []
     ) {
         $reflectionMethod = new ReflectionMethod($class, $method_name);
         $reflectionMethod->setAccessible(true);
@@ -86,7 +86,7 @@ trait PrivateTestTrait
                 $reflectionClass->getProperty($property_name);
             $reflectionProperty->setAccessible(true);
             
-            $object = $target?? $class;
+            $object = $target ?? $class;
             
             //do process
             return $process($reflectionProperty, $object, $value);

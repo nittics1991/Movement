@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Moverment\test;
+namespace Movement\test\test;
 
 use PHPUnit\Framework\TestCase;
-use Moverment\test\PrivateTestTrait;
+use Movement\test\PrivateTestTrait;
 
 class TestPrivateTestTrait
 {
@@ -65,11 +65,5 @@ class PrivateTestTraitTest extends TestCase
             'privateProperty',
             $obj->getPriveteProperty($target, 'private_property')
         );
-        
-        
-        
-        
-        
-        
     }
 }

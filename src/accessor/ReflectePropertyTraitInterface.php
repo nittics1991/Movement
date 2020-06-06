@@ -13,4 +13,3 @@ namespace Movement\accessor;
 interface ReflectePropertyTraitInterface
 {
 }
-
