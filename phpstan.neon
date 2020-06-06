@@ -1,9 +1,17 @@
+#srcとtestを検査したいのだが,この設定でなぜか実行する
+#testについて「was not found while  
+#         trying to analyse it - autoloading is probably not configured      
+#         properly.」メッセージ
+
 parameters:
 	level: 8
 	paths:
 		- src
-		- test
-	bootstrap: test/bootstrap.php
+#		- test
+#	bootstrap: test/bootstrap.php
 	excludes_analyse:
 		- */@/*
 		- */vendor/*
+#		- */test/*
+#	autoload_directories:
+#		- test
