@@ -1,6 +1,42 @@
 200606
     PrivateTestTraitTest作成中
     
+    外部と内部(domain)の切り分けをよく考える
+        Taskとかhttp等は外
+        arrayなどdomain内で使い物は内
     
+    Domainを中心に、interfaceを考える
+        RepositoryInterface
+            insert(ModelInterface $domain)
+            update(ModelInterface $domain, ModelInterface $where)
+            delete(ModelInterface $where)
+            
+            select()はライブラリの外で拡張?
+            getModel()はライブラリの外で拡張?
+        
+        Service interface
+            POST,QUERYは分ける
+            http/GETはQUERYをdomainに渡す
+            http/CUDはPOSTをdomainに渡す
+        
+        session,cookie
+            cacheと見る
+        
+    ArrayUtilのmethodを分割したい
+        ArrayDotは複数method持つ
+        DBを参考にTableのjoin,leftjoin等も1class N個 method
+        Pivotは１つだけ
+        引数は型の検査を行いたい
+        interfaceでmethodを定義しても型が曖昧になる?
+            さらに子methodを呼び出す? invoke(){$this->method(array $data)}
+        Symfonyはどうやっている?
+        JOINのような共通的なmethodはライブラリ内
+        projectオリジナルは、生成をサポートするinterface/abstractを用意?
+            必要あるのか?
+        
+    Static methodとinstance method を、どうする?
+        Laravelとかinstanceを、どうstatic call?
+        
+        
 
 
