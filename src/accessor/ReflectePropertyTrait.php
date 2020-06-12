@@ -17,7 +17,7 @@ use ReflectionProperty;
 trait ReflectePropertyTrait
 {
     /**
-    *   properties
+    *   properties(only protected property)
     *
     *   @var ReflectionProperty[] [name=>ReflectionProperty, ...]
     */
@@ -31,6 +31,11 @@ trait ReflectePropertyTrait
     *   private string $fullName;    private
     */
     
+    
+    
+    //reflecteProperty()は名前だけ保持?
+    
+    
     /**
     *   classのpropertyを解析してpropertiesに定義
     *
@@ -39,8 +44,7 @@ trait ReflectePropertyTrait
     {
         $reflectionClass = new ReflectionClass($this);
         $properties = $reflectionClass->getProperties(
-            ReflectionProperty::IS_PROTECTED |
-            ReflectionProperty::IS_PUBLIC
+            ReflectionProperty::IS_PROTECTED
         );
         
         foreach ($properties as $property) {
@@ -59,6 +63,13 @@ trait ReflectePropertyTrait
     */
     public function has(string $name): bool
     {
+        //public property
+        foreach ($this as $property => $val) {
+            if ($name === $property) {
+                return true;
+            }
+        }
+        
         if (empty($this->properties)) {
             $this->reflecteProperty();
         }
@@ -73,8 +84,12 @@ trait ReflectePropertyTrait
     */
     public function isWritable(string $name): bool
     {
-        return $this->has($name)
-            && ($this->properties[$name])->isPublic();
+        foreach ($this as $property => $val) {
+            if ($name === $property) {
+                return true;
+            }
+        }
+        return false;
     }
     
     /**
@@ -107,9 +122,7 @@ trait ReflectePropertyTrait
     **/
     public function __unset(string $name): void
     {
-        if ($this->has($name)
-            && $this->isWritable($name)
-        ) {
+        if ($this->has($name)) {
             unset($this->properties[$name]);
         }
     }
@@ -117,7 +130,10 @@ trait ReflectePropertyTrait
     /**
     *   fromArray
     *
+    *   public/protectedプロパティを設定
+    * 
     *   @param array $data
+    * 
     */
     protected function fromArray(array $data)
     {
@@ -125,18 +141,20 @@ trait ReflectePropertyTrait
             $this->reflecteProperty();
         }
         
+        $public_properties = [];
+        foreach ($this as $property => $val) {
+            $public_properties[] = $property;
+        }
+        
         foreach ($data as $name => $val) {
-            if (!array_key_exists($name, $this->properties)) {
+            if (!in_array($name, $public_properties)
+                && !array_key_exists($name, $this->properties)
+            ) {
                 throw new InvalidArgumentException(
                     "not defined property:{$name}"
                 );
             }
             
-            if (($this->properties[$name])->isPrivate()) {
-                throw new InvalidArgumentException(
-                    "invalid visibility:{$name}"
-                );
-            }
             $this->$name = $val;
         }
         return $this;
@@ -153,24 +171,29 @@ trait ReflectePropertyTrait
             $this->reflecteProperty();
         }
         
-        return array_map(
-            function ($name) {
-                return $this->$name;
-            },
-            array_keys($this->properties)
-        );
+        $public_properties = [];
+        foreach ($this as $property => $val) {
+            $public_properties[$property] = $val;
+        }
+        
+        $protected_properties = [];
+        foreach (array_keys($this->$properties as $property) {
+            $protected_properties[$property] = $this->$property;
+        }
+        
+        return array_merge($public_properties, $protected_properties);
     }
         
     /**
     *   getProperties
     *
-    *   @return array
+    *   @return string[]
     */
     public function getProperties(): array
     {
-        if (empty($this->properties)) {
-            $this->reflecteProperty();
-        }
-        return $this->properties;
+        
+        //public/protected判断できない
+        
+        return array_keys($this->toArray());
     }
 }
