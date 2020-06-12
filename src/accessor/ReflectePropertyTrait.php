@@ -59,10 +59,22 @@ trait ReflectePropertyTrait
     */
     public function has(string $name): bool
     {
-        if (!isset($this->properties)) {
+        if (empty($this->properties)) {
             $this->reflecteProperty();
         }
         return array_key_exists($name, $this->properties);
+    }
+    
+    /**
+    *   isWritable
+    *
+    *   @param string $name
+    *   @return bool
+    */
+    public function isWritable(string $name): bool
+    {
+        return $this->has($name)
+            && ($this->properties[$name])->isPublic();
     }
     
     /**
@@ -90,15 +102,16 @@ trait ReflectePropertyTrait
     }
     
     /**
-    *   isWritable
+    *   {inherit}
     *
-    *   @param string $name
-    *   @return bool
-    */
-    public function isWritable(string $name): bool
+    **/
+    public function __unset(string $name): void
     {
-        return $this->has($name)
-            && ($this->properties[$name])->isPublic();
+        if ($this->has($name)
+            && $this->isWritable($name)
+        ) {
+            unset($this->properties[$name]);
+        }
     }
     
     /**
@@ -108,7 +121,7 @@ trait ReflectePropertyTrait
     */
     protected function fromArray(array $data)
     {
-        if (!isset($this->properties)) {
+        if (empty($this->properties)) {
             $this->reflecteProperty();
         }
         
@@ -136,7 +149,7 @@ trait ReflectePropertyTrait
     */
     public function toArray(): array
     {
-        if (!isset($this->properties)) {
+        if (empty($this->properties)) {
             $this->reflecteProperty();
         }
         
@@ -155,7 +168,7 @@ trait ReflectePropertyTrait
     */
     public function getProperties(): array
     {
-        if (!isset($this->properties)) {
+        if (empty($this->properties)) {
             $this->reflecteProperty();
         }
         return $this->properties;
