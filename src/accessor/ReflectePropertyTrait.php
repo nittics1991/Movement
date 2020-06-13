@@ -17,9 +17,9 @@ use ReflectionProperty;
 trait ReflectePropertyTrait
 {
     /**
-    *   properties(only protected property)
+    *   properties
     *
-    *   @var string[protected_property_name]
+    *   @var ReflectionProperty[] [name=>ReflectionProperty, ...]
     */
     private array $properties = [];
     
@@ -31,24 +31,23 @@ trait ReflectePropertyTrait
     *   private string $fullName;    private
     */
     
-    
-    
     /**
-    *   classのprotected propertyを解析してpropertiesに定義
+    *   classのpropertyを解析してpropertiesに定義
     *
     */
     protected function reflecteProperty()
     {
         $reflectionClass = new ReflectionClass($this);
         $properties = $reflectionClass->getProperties(
-            ReflectionProperty::IS_PROTECTED
+            ReflectionProperty::IS_PROTECTED |
+            ReflectionProperty::IS_PUBLIC
         );
         
         foreach ($properties as $property) {
             if ($property->getName() == 'properties') {
                 continue;
             }
-            $this->properties[] = $property->getName();
+            $this->properties[$property->getName()] = $property;
         }
     }
     
@@ -60,36 +59,10 @@ trait ReflectePropertyTrait
     */
     public function has(string $name): bool
     {
-        
-        var_dump("^^^^^^^^^^^^^^^^");
-        
-        $that = clone $this;
-        
-        
-        //public property
-        foreach ($that as $property => $val) {
-            
-            
-            var_dump($property);
-            
-            
-            
-            //if ($name === $property) {
-                //return true;
-                
-                
-                
-            //}
-        }
-        
-        
-        die;
-        
-        //protected property
         if (empty($this->properties)) {
             $this->reflecteProperty();
         }
-        return in_array($name, $this->properties);
+        return array_key_exists($name, $this->properties);
     }
     
     /**
@@ -100,12 +73,8 @@ trait ReflectePropertyTrait
     */
     public function isWritable(string $name): bool
     {
-        foreach ($this as $property => $val) {
-            if ($name === $property) {
-                return true;
-            }
-        }
-        return false;
+        return $this->has($name)
+            && ($this->properties[$name])->isPublic();
     }
     
     /**
@@ -126,10 +95,14 @@ trait ReflectePropertyTrait
     *   {inherit}
     *
     **/
-    public function __isset(string $name): bool
+    public function __set(string $name, $value)
     {
-        return $this->has($name)
-            && isset($this->$name);
+        if (!$this->has($name)) {
+            throw new InvalidArgumentException(
+                "not defined property:{$name}"
+            );
+        }
+        $this->$name = $value;
     }
     
     /**
@@ -138,18 +111,22 @@ trait ReflectePropertyTrait
     **/
     public function __unset(string $name): void
     {
-        if ($this->has($name)) {
-            unset($this->properties[$name]);
-        }
+        //nop
+    }
+    
+    /**
+    *   {inherit}
+    *
+    **/
+    public function __unset(string $name): void
+    {
+        //nop
     }
     
     /**
     *   fromArray
     *
-    *   public/protectedプロパティを設定
-    * 
     *   @param array $data
-    *   @return $this
     */
     protected function fromArray(array $data)
     {
@@ -157,20 +134,18 @@ trait ReflectePropertyTrait
             $this->reflecteProperty();
         }
         
-        $public_properties = [];
-        foreach ($this as $property => $val) {
-            $public_properties[] = $property;
-        }
-        
         foreach ($data as $name => $val) {
-            if (!in_array($name, $public_properties)
-                && !in_array($name, $this->properties)
-            ) {
+            if (!array_key_exists($name, $this->properties)) {
                 throw new InvalidArgumentException(
                     "not defined property:{$name}"
                 );
             }
             
+            if (($this->properties[$name])->isPrivate()) {
+                throw new InvalidArgumentException(
+                    "invalid visibility:{$name}"
+                );
+            }
             $this->$name = $val;
         }
         return $this;
@@ -187,16 +162,24 @@ trait ReflectePropertyTrait
             $this->reflecteProperty();
         }
         
-        $public_properties = [];
-        foreach ($this as $property => $val) {
-            $public_properties[$property] = $val;
-        }
+        return array_map(
+            function ($name) {
+                return $this->$name;
+            },
+            array_keys($this->properties)
+        );
+    }
         
-        $protected_properties = [];
-        foreach ($this->$properties as $property) {
-            $protected_properties[$property] = $this->$property;
+    /**
+    *   getProperties
+    *
+    *   @return array
+    */
+    public function getProperties(): array
+    {
+        if (empty($this->properties)) {
+            $this->reflecteProperty();
         }
-        
-        return array_merge($public_properties, $protected_properties);
+        return $this->properties;
     }
 }
