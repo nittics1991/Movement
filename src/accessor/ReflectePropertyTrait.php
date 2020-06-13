@@ -19,7 +19,7 @@ trait ReflectePropertyTrait
     /**
     *   properties(only protected property)
     *
-    *   @var ReflectionProperty[] [name=>ReflectionProperty, ...]
+    *   @var string[protected_property_name]
     */
     private array $properties = [];
     
@@ -33,11 +33,8 @@ trait ReflectePropertyTrait
     
     
     
-    //reflecteProperty()は名前だけ保持?
-    
-    
     /**
-    *   classのpropertyを解析してpropertiesに定義
+    *   classのprotected propertyを解析してpropertiesに定義
     *
     */
     protected function reflecteProperty()
@@ -51,7 +48,7 @@ trait ReflectePropertyTrait
             if ($property->getName() == 'properties') {
                 continue;
             }
-            $this->properties[$property->getName()] = $property;
+            $this->properties[] = $property->getName();
         }
     }
     
@@ -63,17 +60,36 @@ trait ReflectePropertyTrait
     */
     public function has(string $name): bool
     {
+        
+        var_dump("^^^^^^^^^^^^^^^^");
+        
+        $that = clone $this;
+        
+        
         //public property
-        foreach ($this as $property => $val) {
-            if ($name === $property) {
-                return true;
-            }
+        foreach ($that as $property => $val) {
+            
+            
+            var_dump($property);
+            
+            
+            
+            //if ($name === $property) {
+                //return true;
+                
+                
+                
+            //}
         }
         
+        
+        die;
+        
+        //protected property
         if (empty($this->properties)) {
             $this->reflecteProperty();
         }
-        return array_key_exists($name, $this->properties);
+        return in_array($name, $this->properties);
     }
     
     /**
@@ -133,7 +149,7 @@ trait ReflectePropertyTrait
     *   public/protectedプロパティを設定
     * 
     *   @param array $data
-    * 
+    *   @return $this
     */
     protected function fromArray(array $data)
     {
@@ -148,7 +164,7 @@ trait ReflectePropertyTrait
         
         foreach ($data as $name => $val) {
             if (!in_array($name, $public_properties)
-                && !array_key_exists($name, $this->properties)
+                && !in_array($name, $this->properties)
             ) {
                 throw new InvalidArgumentException(
                     "not defined property:{$name}"
@@ -177,23 +193,10 @@ trait ReflectePropertyTrait
         }
         
         $protected_properties = [];
-        foreach (array_keys($this->$properties as $property) {
+        foreach ($this->$properties as $property) {
             $protected_properties[$property] = $this->$property;
         }
         
         return array_merge($public_properties, $protected_properties);
-    }
-        
-    /**
-    *   getProperties
-    *
-    *   @return string[]
-    */
-    public function getProperties(): array
-    {
-        
-        //public/protected判断できない
-        
-        return array_keys($this->toArray());
     }
 }
