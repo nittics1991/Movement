@@ -1,9 +1,11 @@
+Accessor Trait (Movement\test\accessor\AccessorTrait)
+ [x] Has accessorメソッド
+
 Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Reflecte propertyメソッド
  [x] Hasメソッド
  [x] Is writableメソッド
  [x] マジックメソッド
- [ ] 例外アノテーション動かない
  [x] Protectedプロパティunset例外
  [x] Protectedプロパティset例外
  [x] Privateプロパティunset例外

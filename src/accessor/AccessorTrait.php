@@ -15,19 +15,24 @@ use ReflectionMethod;
 
 trait AccessorTrait
 {
+    /*
+    *   classで下記propertyを定義する
+    *
+    */
+    
     /**
     *   getters
     *
     *   @var string[] ['propertyName1', ...]
     */
-    private array $getters = [];
+    //private array $getters = [];
      
     /**
     *   setters
     *
     *   @var string[] ['propertyName1', ...]
     */
-    private array $setters = [];
+    //private array $setters = [];
     
     /**
     *   hasAccessor
@@ -40,7 +45,11 @@ trait AccessorTrait
         string $method_name,
         string $type
     ): bool {
-        if (!method_exists($method_name)) {
+        //前提条件
+        assert(property_exists($this, 'getters'));
+        assert(property_exists($this, 'setters'));
+        
+        if (!method_exists($this, $method_name)) {
             return false;
         }
         
@@ -65,7 +74,7 @@ trait AccessorTrait
     */
     protected function hasGetter(string $method_name): bool
     {
-        return $this->hasAccessoor($method_name, 'get');
+        return $this->hasAccessor($method_name, 'get');
     }
     
     /**
@@ -76,7 +85,7 @@ trait AccessorTrait
     */
     protected function hasSetter(string $method_name): bool
     {
-        return $this->hasAccessoor($method_name, 'set');
+        return $this->hasAccessor($method_name, 'set');
     }
     
     /**

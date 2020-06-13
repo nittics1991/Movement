@@ -166,18 +166,6 @@ class ReflectePropertyTraitTest extends MovementTestCase
     
     /**
     *   @test
-    *   @expectedException BadMethodCallException
-    */
-    public function 例外アノテーション動かない()
-    {
-      $this->markTestIncomplete('Incomplete:例外アノテーション動かない');
-        
-        $obj = new ReflectePropertyTraitTarget();
-        unset($obj->protected_property);
-    }
-    
-    /**
-    *   @test
     */
     public function protectedプロパティunset例外()
     {
