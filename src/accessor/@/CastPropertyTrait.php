@@ -10,33 +10,35 @@ declare(strict_types=1);
 
 namespace Movement\accessor;
 
-use ReflectionClass;
-
-
-//use ArrayObject;
+use ArrayObject;
 
 trait CastPropertyTrait
 {
-    /**
-    *   子クラスで下記propertyを定義する
-    *
-    * 
-    */
-    
     /**
     *   casts
     *
     *   @var string[] ['propertyName1', ...]
     */
-    //private array $casts = [];
+    private array $casts = [];
     
     /**
-    *   プロパティで型変換
+    *   プロパティで配列を型変換
     *
-    *   @var ReflectionProperty
+    *   @param array $data
+    *   @return array
     */
-    private $reflectionPropertyCache;
-    
+    protected function castByProperties(array $data): array
+    {
+        $casted = [];
+        foreach ($data as $name => $val) {
+            if (in_array($name, $this->casts)) {
+                $casted[$name] = $this->castByProperty($name, $val);
+            } else {
+                $casted[$name] = $val;
+            }
+        };
+        return $casted;
+    }
     
     /**
     *   プロパティで型変換
@@ -47,24 +49,38 @@ trait CastPropertyTrait
     */
     protected function castByProperty(string $name, $val)
     {
-        //前提条件
-        assert(property_exists($this, 'casts');
-        
-        if (!in_array($name, $this->casts) {
-            return $this->$name = $val;
+        if (!$this->has($name)) {
+            return $val;
         }
         
-        if (!isset($this->reflectionPropertyCache)) {
-            $this->reflectionProperties = (new ReflectionClass($this))
-                ->getProperties(
-                    ReflectionProperty::IS_PUBLIC |
-                    ReflectionProperty::IS_PROTECTED
-                );
+        $changed = false;
+        
+        //setter
+        if (
+            method_exists($this, 'hasAccessor')
+            && $this->hasSetter('set' . ucfirst($name))
+        ) {
+            $val = call_user_func(
+                [$this, 'set' . ucfirst($name)],
+                $val
+            );
+            $changed = true;
         }
         
-        foreach ($this->reflectionPropertyCache as $reflectionProperty) {
-            
-            
+        //getter
+        if (
+            method_exists($this, 'hasAccessor')
+            && $this->hasGetter('get' . ucfirst($name))
+        ) {
+            $val = call_user_func(
+                [$this, 'get' . ucfirst($name)],
+                $val
+            );
+            $changed = true;
+        }
+        
+        if ($changed) {
+            return $val;
         }
         
         $type = ($this->properties[$name])
