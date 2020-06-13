@@ -37,6 +37,14 @@
     Static methodとinstance method を、どうする?
         Laravelとかinstanceを、どうstatic call?
         
+20200613
+    ArrayUtil loopを少なくしたい
+        DataTableClassを作り、インスタンス化する==>2次元正規テーブルが対象のclass
+        現在のpivotなどtranseverseをしない
+        methodの最後にexecute()で実際に処理する
+        その為には1行の操作と全行の操作との切り分けが必要
+        
+        
         
 
 

@@ -323,4 +323,54 @@ class ReflectePropertyTraitTest extends MovementTestCase
             $obj->toArray()
         );
     }
+    
+    /**
+    *   @test
+    */
+    public function fromIterableプロパティ未定義例外()
+    {
+//      $this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        
+        $data = [
+            'public_property' => 'newPublicProperty',
+            'DUMMY' => 'dummy',
+            'protected_property' => 'newProtectedProperty',
+        ];
+        $arrayObject = new ArrayObject($data);
+        
+        try {
+            $obj->fromIterable($arrayObject);
+        } catch (InvalidArgumentException $e) {
+            $this->assertEquals(1,1);
+            return;
+        }
+        $this->assertEquals(1,0);
+    }
+    
+    /**
+    *   @test
+    */
+    public function fromIterablePrivateプロパティ例外()
+    {
+//      $this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        
+        $data = [
+            'public_property' => 'newPublicProperty',
+            'private_property' => 'newPrivateProperty',
+            'protected_property' => 'newProtectedProperty',
+        ];
+        $arrayObject = new ArrayObject($data);
+        
+        try {
+            $obj->fromIterable($arrayObject);
+        } catch (InvalidArgumentException $e) {
+            $this->assertEquals(1,1);
+            return;
+        }
+        $this->assertEquals(1,0);
+    }
 }

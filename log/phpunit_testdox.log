@@ -12,6 +12,8 @@ Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] To arrayメソッドarray
  [x] From iterableメソッドarray
  [x] From iterableメソッドobject
+ [x] From iterableプロパティ未定義例外
+ [x] From iterable privateプロパティ例外
 
 Private Test Trait (Movement\test\test\PrivateTestTrait)
  [x] 基本的なクラス
