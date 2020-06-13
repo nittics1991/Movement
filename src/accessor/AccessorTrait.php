@@ -1,7 +1,5 @@
 <?php
 
-//setterで　CastPropertyTrait::castByProperty　を使う?
-
 /**
 *   AccessorTrait
 *
@@ -45,7 +43,7 @@ trait AccessorTrait
         string $method_name
     ): string {
         return (string)mb_strtolower(
-            (string)mb_ereg_replace('(.)(?=[A-Z])', '_\\1', $method_name)
+            (string)mb_ereg_replace('(.)(?=[A-Z])', '\\1_', $method_name)
         );
     }
     
@@ -65,7 +63,7 @@ trait AccessorTrait
         $action = mb_substr($name, 0, 3);
         if ($action !== 'set' && $action !== 'get') {
             throw new BadMethodCallException(
-                "not accesed method:{$name}"
+                "not get/set method:{$name}"
             );
         }
         
@@ -83,21 +81,11 @@ trait AccessorTrait
             && isset($arguments[0])
             && in_array($property_name, $this->setters)
         ) {
-            
-            
-            
-            //CastPropertyTrait::castByPropertyが定義されている
-            if (method_exists($this, 'castByProperty')) {
-                return $this->castByProperty($property_name, $arguments[0]);
-            }
-            
-            
-            
             return $this->$property_name = $arguments[0];
         }
         
         throw new BadMethodCallException(
-            "not accesed method:{$name}"
+            "not defined accesor method:{$name}"
         );
     }
     

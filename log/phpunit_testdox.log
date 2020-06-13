@@ -1,5 +1,25 @@
 Accessor Trait (Movement\test\accessor\AccessorTrait)
- [ ] Has accessorメソッド
+ [x] Method name to property nameメソッド with data set #0
+ [x] Method name to property nameメソッド with data set #1
+ [x] Method name to property nameメソッド with data set #2
+ [x] Getメソッド with data set #0
+ [x] Getメソッド with data set #1
+ [x] Getメソッド with data set #2
+ [x] Setメソッド with data set #0
+ [x] Setメソッド with data set #1
+ [x] Setメソッド with data set #2
+ [x] Getメソッド例外 with data set #0
+ [x] Getメソッド例外 with data set #1
+ [x] Getメソッド例外 with data set #2
+ [x] Getメソッド例外 with data set #3
+ [x] Getメソッド例外 with data set #4
+ [x] Getメソッド例外 with data set #5
+ [x] Setメソッド例外 with data set #0
+ [x] Setメソッド例外 with data set #1
+ [x] Setメソッド例外 with data set #2
+ [x] Setメソッド例外 with data set #3
+ [x] Setメソッド例外 with data set #4
+ [x] Setメソッド例外 with data set #5
 
 Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Reflecte propertyメソッド

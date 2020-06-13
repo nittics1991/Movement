@@ -1,15 +1,9 @@
 <?php
 
-//どうやって使う?
-//AccessorTrait::setter?
-//ReflectionPropertyTrait::__set()では public propertyはだめ
-//ReflectionPropertyTrait::__get()では、そもそも型が定義できない
-
-
 /**
-*   CastPropertyTrait
+*   CastByPropertyTypeTrait
 *
-*   @version 200613
+*   @version 200614
 */
 
 declare(strict_types=1);
@@ -18,7 +12,7 @@ namespace Movement\accessor;
 
 use ArrayObject;
 
-trait CastPropertyTrait
+trait CastByPropertyTypeTrait
 {
     /**
     *   子クラスで下記propertyを定義する
@@ -30,7 +24,7 @@ trait CastPropertyTrait
     *   @var string[] ['propertyName1', ...]
     */
     //private array $casts = [];
-   
+    
     /**
     *   プロパティで型変換
     *
@@ -38,7 +32,7 @@ trait CastPropertyTrait
     *   @param mixed $val
     *   @return mixed
     */
-    protected function castByProperty(string $name, $val)
+    protected function castByPropertyType(string $name, $val)
     {
         //前提条件
         assert(property_exists($this, 'casts'));
@@ -46,18 +40,19 @@ trait CastPropertyTrait
         assert(method_exists($this, 'reflecteProperty'));
         
         if (!in_array($name, $this->casts)) {
-            return $this->$name = $val;
+            return $val;
         }
-        
-        
         
         $type = ($this->properties[$name])
             ->getType()
             ->getName();
         
+        if (mb_substr($type, 0, 1) === '?') {
+            $type = mb_substr($type, 1);
+        }
+        
         switch ($type) {
             case '':
-            case 'callable':
                 return $val;
             case 'bool':
                 return boolval($val);
@@ -79,8 +74,11 @@ trait CastPropertyTrait
                     return $val;
                 }
                 return new ArrayObject($val);
+            case 'parent':
             case 'self':
-                $type = get_called_class();
+                $type = $type === 'parent' ?
+                    get_parent_class($this):
+                    get_called_class();
                 // no break
             default:
                 if (is_object($val)) {
@@ -88,5 +86,20 @@ trait CastPropertyTrait
                 }
                 return new $type($val);
         }
+    }
+   
+    /**
+    *   型一括変換
+    *
+    *   @param iterable|object $aggregate
+    *   @return array
+    */
+    protected function castAggregateToArray($aggregate): array
+    {
+        $result = [];
+        foreach ($aggregate as $name => $val) {
+            $result[$name] = $this->castByPropertyType($name, $val);
+        }
+        return $result;
     }
 }

@@ -3,7 +3,7 @@
 /**
 *   CastPropertyTraitInterface
 *
-*   @version 200405
+*   @version 200614
 */
 
 declare(strict_types=1);
@@ -12,7 +12,7 @@ namespace Movement\accessor;
 
 use Movement\accessor\ReflectePropertyTraitInterface;
 
-interface CastPropertyTraitInterface extends
+interface CastByPropertyTypeTraitInterface extends
     ReflectePropertyTraitInterface
 {
 }
