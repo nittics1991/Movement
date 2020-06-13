@@ -1,5 +1,7 @@
 <?php
 
+//setterで　CastPropertyTrait::castByProperty　を使う?
+
 /**
 *   AccessorTrait
 *
@@ -78,8 +80,19 @@ trait AccessorTrait
         }
         
         if ($action === 'set'
+            && isset($arguments[0])
             && in_array($property_name, $this->setters)
         ) {
+            
+            
+            
+            //CastPropertyTrait::castByPropertyが定義されている
+            if (method_exists($this, 'castByProperty')) {
+                return $this->castByProperty($property_name, $arguments[0]);
+            }
+            
+            
+            
             return $this->$property_name = $arguments[0];
         }
         

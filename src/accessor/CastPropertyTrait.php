@@ -1,26 +1,27 @@
 <?php
 
+//どうやって使う?
+//AccessorTrait::setter?
+//ReflectionPropertyTrait::__set()では public propertyはだめ
+//ReflectionPropertyTrait::__get()では、そもそも型が定義できない
+
+
 /**
 *   CastPropertyTrait
 *
-*   @version 200517
+*   @version 200613
 */
 
 declare(strict_types=1);
 
 namespace Movement\accessor;
 
-use ReflectionClass;
-
-
-//use ArrayObject;
+use ArrayObject;
 
 trait CastPropertyTrait
 {
     /**
     *   子クラスで下記propertyを定義する
-    *
-    * 
     */
     
     /**
@@ -29,15 +30,7 @@ trait CastPropertyTrait
     *   @var string[] ['propertyName1', ...]
     */
     //private array $casts = [];
-    
-    /**
-    *   プロパティで型変換
-    *
-    *   @var ReflectionProperty
-    */
-    private $reflectionPropertyCache;
-    
-    
+   
     /**
     *   プロパティで型変換
     *
@@ -49,23 +42,14 @@ trait CastPropertyTrait
     {
         //前提条件
         assert(property_exists($this, 'casts');
+        assert(property_exists($this, 'properties');
+        assert(method_exists($this, 'reflecteProperty');
         
         if (!in_array($name, $this->casts) {
             return $this->$name = $val;
         }
         
-        if (!isset($this->reflectionPropertyCache)) {
-            $this->reflectionProperties = (new ReflectionClass($this))
-                ->getProperties(
-                    ReflectionProperty::IS_PUBLIC |
-                    ReflectionProperty::IS_PROTECTED
-                );
-        }
         
-        foreach ($this->reflectionPropertyCache as $reflectionProperty) {
-            
-            
-        }
         
         $type = ($this->properties[$name])
             ->getType()
