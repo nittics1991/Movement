@@ -3,7 +3,7 @@
 /**
 *   AccessorTrait
 *
-*   @version 200517
+*   @version 200613
 */
 
 declare(strict_types=1);
@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace Movement\accessor;
 
 use BadMethodCallException;
-use ReflectionMethod;
 
 trait AccessorTrait
 {
@@ -35,57 +34,17 @@ trait AccessorTrait
     //private array $setters = [];
     
     /**
-    *   hasAccessor
+    *   methodNameToPropertyName
     *
     *   @param string $method_name
-    *   @param string $type get|set
-    *   @return bool
+    *   @return string
     */
-    protected function hasAccessor(
-        string $method_name,
-        string $type
-    ): bool {
-        //前提条件
-        assert(property_exists($this, 'getters'));
-        assert(property_exists($this, 'setters'));
-        
-        if (!method_exists($this, $method_name)) {
-            return false;
-        }
-        
-        $propery_name = mb_convert_case(
-            (string)mb_ereg_replace("^{$type}", '', $method_name),
-            MB_CASE_LOWER
+    protected function methodNameToPropertyName(
+        string $method_name
+    ): string {
+        return (string)mb_strtolower(
+            (string)mb_ereg_replace('(.)(?=[A-Z])', '_\\1', $method_name)
         );
-        
-        if (!$this->has($propery_name)) {
-            return false;
-        }
-        
-        $accessor_name = "{$type}ters";
-        return in_array($propery_name, $this->$accessor_name);
-    }
-    
-    /**
-    *   hasGetter
-    *
-    *   @param string $method_name
-    *   @return bool
-    */
-    protected function hasGetter(string $method_name): bool
-    {
-        return $this->hasAccessor($method_name, 'get');
-    }
-    
-    /**
-    *   hasSetter
-    *
-    *   @param string $method_name
-    *   @return bool
-    */
-    protected function hasSetter(string $method_name): bool
-    {
-        return $this->hasAccessor($method_name, 'set');
     }
     
     /**
@@ -97,11 +56,31 @@ trait AccessorTrait
     */
     protected function callAccessor(string $name, array $arguments = [])
     {
-        if (
-            $this->hasGetter($name)
-            || $this->hasSetter($name)
+        //前提条件
+        assert(property_exists($this, 'getters'));
+        assert(property_exists($this, 'setters'));
+        
+        $action = mb_substr($name, 0, 3);
+        if ($action !== 'set' && $action !== 'get') {
+            throw new BadMethodCallException(
+                "not accesed method:{$name}"
+            );
+        }
+        
+        $property_name = $this->methodNameToPropertyName(
+            mb_substr($name, 3)
+        );
+        
+        if ($action === 'get'
+            && in_array($property_name, $this->getters)
         ) {
-            return call_user_func_array([$this, $name], $arguments);
+            return $this->$property_name;
+        }
+        
+        if ($action === 'set'
+            && in_array($property_name, $this->setters)
+        ) {
+            return $this->$property_name = $arguments[0];
         }
         
         throw new BadMethodCallException(

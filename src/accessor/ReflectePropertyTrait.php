@@ -45,7 +45,7 @@ trait ReflectePropertyTrait
         );
         
         foreach ($properties as $property) {
-            if ($property->getName() == 'properties') {
+            if ($property->getName() === 'properties') {
                 continue;
             }
             $this->properties[$property->getName()] = $property;
