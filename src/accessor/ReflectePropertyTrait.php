@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Movement\accessor;
 
 use InvalidArgumentException;
+use BadMethodCallException;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -88,7 +89,7 @@ trait ReflectePropertyTrait
                 "not defined property:{$name}"
             );
         }
-        return $this->$name;
+        return $this->$name?? null;
     }
     
     /**
@@ -97,12 +98,23 @@ trait ReflectePropertyTrait
     **/
     public function __set(string $name, $value)
     {
-        if (!$this->has($name)) {
-            throw new InvalidArgumentException(
-                "not defined property:{$name}"
-            );
+        throw new InvalidArgumentException(
+            "not defined property:{$name}"
+        );
+    }
+    
+    /**
+    *   {inherit}
+    *
+    **/
+    public function __isset(string $name): bool
+    {
+        if (!$this->has($name)
+            && !$this->isWritable($name)
+        ) {
+            return false;
         }
-        $this->$name = $value;
+        return isset($this->$name);
     }
     
     /**
@@ -111,30 +123,23 @@ trait ReflectePropertyTrait
     **/
     public function __unset(string $name): void
     {
-        //nop
+        throw new BadMethodCallException(
+            "can not call unset:{$name}"
+        );
     }
     
     /**
-    *   {inherit}
+    *   fromIterable
     *
-    **/
-    public function __unset(string $name): void
-    {
-        //nop
-    }
-    
-    /**
-    *   fromArray
-    *
-    *   @param array $data
+    *   @param iterable $data
     */
-    protected function fromArray(array $data)
+    protected function fromIterable(iterable $iterator)
     {
         if (empty($this->properties)) {
             $this->reflecteProperty();
         }
         
-        foreach ($data as $name => $val) {
+        foreach ($iterator as $name => $val) {
             if (!array_key_exists($name, $this->properties)) {
                 throw new InvalidArgumentException(
                     "not defined property:{$name}"
@@ -168,18 +173,5 @@ trait ReflectePropertyTrait
             },
             array_keys($this->properties)
         );
-    }
-        
-    /**
-    *   getProperties
-    *
-    *   @return array
-    */
-    public function getProperties(): array
-    {
-        if (empty($this->properties)) {
-            $this->reflecteProperty();
-        }
-        return $this->properties;
     }
 }

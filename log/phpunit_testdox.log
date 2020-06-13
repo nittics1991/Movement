@@ -1,1 +1,17 @@
 Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
+ [x] Reflecte propertyメソッド
+ [x] Hasメソッド
+ [x] Is writableメソッド
+ [x] マジックメソッド
+ [ ] Protectedプロパティunset例外動かない
+ [x] Protectedプロパティunset例外
+ [x] Protectedプロパティset例外
+ [x] Privateプロパティunset例外
+ [x] Privateプロパティset例外
+ [x] Privateプロパティget例外
+
+Private Test Trait (Movement\test\test\PrivateTestTrait)
+ [x] 基本的なクラス
+ [x] 継承した親
+ [x] 子クラス
+
