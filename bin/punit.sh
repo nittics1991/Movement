@@ -1,1 +1,1 @@
-cd $(dirname "$0"); cd ..; ./dist/phpunit "$*"
+cd $(dirname "$0"); cd ..; ./dist/phpunit -v "$*"

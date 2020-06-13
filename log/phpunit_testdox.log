@@ -3,13 +3,15 @@ Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Hasメソッド
  [x] Is writableメソッド
  [x] マジックメソッド
- [ ] Protectedプロパティunset例外動かない
+ [ ] 例外アノテーション動かない
  [x] Protectedプロパティunset例外
  [x] Protectedプロパティset例外
  [x] Privateプロパティunset例外
  [x] Privateプロパティset例外
  [x] Privateプロパティget例外
+ [x] To arrayメソッドarray
  [x] From iterableメソッドarray
+ [x] From iterableメソッドobject
 
 Private Test Trait (Movement\test\test\PrivateTestTrait)
  [x] 基本的なクラス

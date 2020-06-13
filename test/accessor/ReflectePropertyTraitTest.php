@@ -8,6 +8,7 @@ use Movement\test\MovementTestCase;
 use Movement\accessor\ReflectePropertyTrait;
 use BadMethodCallException;
 use InvalidArgumentException;
+use ArrayObject;
 
 /**
 *   ReflectePropertyTraitで操作するクラス
@@ -167,9 +168,9 @@ class ReflectePropertyTraitTest extends MovementTestCase
     *   @test
     *   @expectedException BadMethodCallException
     */
-    public function protectedプロパティunset例外動かない()
+    public function 例外アノテーション動かない()
     {
-      $this->markTestIncomplete();
+      $this->markTestIncomplete('Incomplete:例外アノテーション動かない');
         
         $obj = new ReflectePropertyTraitTarget();
         unset($obj->protected_property);
@@ -263,6 +264,24 @@ class ReflectePropertyTraitTest extends MovementTestCase
     /**
     *   @test
     */
+    public function toArrayメソッドarray()
+    {
+      //$this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        
+        $this->assertSame(
+            [
+                'public_property' => 'publicProperty',
+                'protected_property' => 'protectedProperty',
+            ],
+            $obj->toArray()
+        );
+    }
+    
+    /**
+    *   @test
+    */
     public function fromIterableメソッドarray()
     {
       //$this->markTestIncomplete();
@@ -276,20 +295,32 @@ class ReflectePropertyTraitTest extends MovementTestCase
         
         $obj->fromIterable($data);
         
-        $this->assertEquals(
-            'newPublicProperty',
-            $obj->public_property
-        );
-        
-        $this->assertEquals(
-            'newProtectedProperty',
-            $obj->protected_property
+        $this->assertSame(
+            $data,
+            $obj->toArray()
         );
     }
     
-    
-    
-    
-    
-    
+    /**
+    *   @test
+    */
+    public function fromIterableメソッドobject()
+    {
+      //$this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        
+        $data = [
+            'public_property' => 'newPublicProperty',
+            'protected_property' => 'newProtectedProperty',
+        ];
+        $arrayObject = new ArrayObject($data);
+        
+        $obj->fromIterable($arrayObject);
+        
+        $this->assertSame(
+            (array)$arrayObject,
+            $obj->toArray()
+        );
+    }
 }

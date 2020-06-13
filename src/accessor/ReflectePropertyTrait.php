@@ -167,11 +167,11 @@ trait ReflectePropertyTrait
             $this->reflecteProperty();
         }
         
-        return array_map(
-            function ($name) {
-                return $this->$name;
-            },
-            array_keys($this->properties)
-        );
+        $result = [];
+        foreach(array_keys($this->properties) as $name) {
+            $result[$name] = $this->$name;
+        }
+        
+        return $result;
     }
 }
