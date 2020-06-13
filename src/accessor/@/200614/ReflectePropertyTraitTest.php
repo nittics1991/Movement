@@ -9,12 +9,11 @@ use Movement\accessor\ReflectePropertyTrait;
 use BadMethodCallException;
 use InvalidArgumentException;
 use ArrayObject;
-use StdClass;
 
 /**
 *   ReflectePropertyTraitで操作するクラス
 */
-class ReflectePropertyTraitTarget
+class ReflectePropertyTraitTarget implements \IteratorAggregate
 {
     use ReflectePropertyTrait{
         fromAggregate as public;
@@ -38,6 +37,17 @@ class ReflectePropertyTraitTest extends MovementTestCase
 //      $this->markTestIncomplete();
         
         $obj = new ReflectePropertyTraitTarget();
+        
+        
+        
+        
+        foreach ($obj as $name => $val) {
+            var_dump("{$name}_{$val}");
+        }
+        
+        
+        
+        
         
         $this->callPrivateMethod($obj, 'reflecteProperty', []);
         
@@ -303,33 +313,6 @@ class ReflectePropertyTraitTest extends MovementTestCase
             'public_property' => 'newPublicProperty',
             'protected_property' => 'newProtectedProperty',
         ];
-        $stdClass = new StdClass();
-        
-        foreach ($data as $key => $val) {
-            $stdClass->$key = $val;
-        }
-        
-        $obj->fromAggregate($stdClass);
-        
-        $this->assertSame(
-            (array)$stdClass,
-            $obj->toArray()
-        );
-    }
-    
-    /**
-    *   @test
-    */
-    public function fromAggregateメソッドTraversable()
-    {
-      //$this->markTestIncomplete();
-        
-        $obj = new ReflectePropertyTraitTarget();
-        
-        $data = [
-            'public_property' => 'newPublicProperty',
-            'protected_property' => 'newProtectedProperty',
-        ];
         $arrayObject = new ArrayObject($data);
         
         $obj->fromAggregate($arrayObject);
@@ -339,14 +322,6 @@ class ReflectePropertyTraitTest extends MovementTestCase
             $obj->toArray()
         );
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     /**
     *   @test

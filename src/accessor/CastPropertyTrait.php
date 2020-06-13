@@ -41,11 +41,11 @@ trait CastPropertyTrait
     protected function castByProperty(string $name, $val)
     {
         //前提条件
-        assert(property_exists($this, 'casts');
-        assert(property_exists($this, 'properties');
-        assert(method_exists($this, 'reflecteProperty');
+        assert(property_exists($this, 'casts'));
+        assert(property_exists($this, 'properties'));
+        assert(method_exists($this, 'reflecteProperty'));
         
-        if (!in_array($name, $this->casts) {
+        if (!in_array($name, $this->casts)) {
             return $this->$name = $val;
         }
         

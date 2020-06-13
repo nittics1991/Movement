@@ -14,6 +14,7 @@ use InvalidArgumentException;
 use BadMethodCallException;
 use ReflectionClass;
 use ReflectionProperty;
+use Traversable;
 
 trait ReflectePropertyTrait
 {
@@ -27,9 +28,9 @@ trait ReflectePropertyTrait
     /*
     *   classでpropertyを定義する
     *
-    *   public string $fullName;     mutable proptery
-    *   protected string $fullName;  immutable proptery
-    *   private string $fullName;    private proptery
+    *   public string $fullName;     set/get OK
+    *   protected string $fullName;  get only
+    *   private string $fullName;    private
     */
     
     /**
@@ -157,21 +158,32 @@ trait ReflectePropertyTrait
     }
     
     /**
+    *   getIterator
+    *
+    *   @return Traversable
+    */
+    public function getIterator(): Traversable
+    {
+        if (empty($this->properties)) {
+            $this->reflecteProperty();
+        }
+        
+        foreach (array_keys($this->properties) as $name) {
+            yield $name => $this->$name;
+        }
+    }
+    
+    /**
     *   toArray
     *
     *   @return array
     */
     public function toArray(): array
     {
-        if (empty($this->properties)) {
-            $this->reflecteProperty();
-        }
-        
         $result = [];
-        foreach(array_keys($this->properties) as $name) {
-            $result[$name] = $this->$name;
+        foreach($this->getIterator() as $name => $value) {
+            $result[$name] = $value;
         }
-        
         return $result;
     }
 }
