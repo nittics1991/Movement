@@ -9,6 +9,7 @@ Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Privateプロパティunset例外
  [x] Privateプロパティset例外
  [x] Privateプロパティget例外
+ [x] From iterableメソッドarray
 
 Private Test Trait (Movement\test\test\PrivateTestTrait)
  [x] 基本的なクラス

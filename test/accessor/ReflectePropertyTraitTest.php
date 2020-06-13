@@ -14,7 +14,9 @@ use InvalidArgumentException;
 */
 class ReflectePropertyTraitTarget
 {
-    use ReflectePropertyTrait;
+    use ReflectePropertyTrait{
+        fromIterable as public;
+    }
     
     public $public_property = 'publicProperty';
     protected $protected_property = 'protectedProperty';
@@ -258,6 +260,32 @@ class ReflectePropertyTraitTest extends MovementTestCase
         $this->assertEquals(1,0);
     }
     
+    /**
+    *   @test
+    */
+    public function fromIterableメソッドarray()
+    {
+      //$this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        
+        $data = [
+            'public_property' => 'newPublicProperty',
+            'protected_property' => 'newProtectedProperty',
+        ];
+        
+        $obj->fromIterable($data);
+        
+        $this->assertEquals(
+            'newPublicProperty',
+            $obj->public_property
+        );
+        
+        $this->assertEquals(
+            'newProtectedProperty',
+            $obj->protected_property
+        );
+    }
     
     
     

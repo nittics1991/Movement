@@ -3,7 +3,7 @@
 /**
 *   ReflectAttributeTrait
 *
-*   @version 200516
+*   @version 200613
 */
 
 declare(strict_types=1);
@@ -129,9 +129,9 @@ trait ReflectePropertyTrait
     }
     
     /**
-    *   fromIterable
+    *   fromIterable(public & protected property)
     *
-    *   @param iterable $data
+    *   @param iterable $iterator
     */
     protected function fromIterable(iterable $iterator)
     {
