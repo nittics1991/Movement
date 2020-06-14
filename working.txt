@@ -44,7 +44,113 @@
         methodの最後にexecute()で実際に処理する
         その為には1行の操作と全行の操作との切り分けが必要
         
+202004
+    各機能を分離し、変化に耐えられるように考える
+        emitter 出力するもの フレームワーク/cliライブラリ
+        render  出力に合わせた変換を行う HtmlRender,Jsonrender,PrinterRender,FileRender etc
+                    HtmlRender->ignoreEscape([])->execute($viwer)
+        viewer  出力のデータ(+加工する処理) XxxHtmlViewerとか出力に応じて分けるかも?
+                    viewer->build($domain)
+        
+        POST/QUERYと同じように出力データの定義＆変換を任せたい==>viewer?
+        DOMAINから渡されるデータは、例えばDBからの生データarrayで、ここで変換する？
+            数値は桁区切りとか多言語化とかEnum変換とか
+        
+        DOMAIN=>DBは、RepositoryでMataMapperでデータ型をDBに合わせている
+        DB=>DOMAINは、DBのデータ型でデータが渡される
+            viewerで出力に合わせたデータ型にする
+        
+        REQUEST=>DOMAINはどうなる？
+            POST/QUERYでValidation,そのままRepositoryに渡しているが・・
+            データ型の変換は必要？
+            Validationを考えると型変換が欲しい
+                DataMapperの型を使いたい==>DataMapperに依存するのは・・
+            Validatorを外出し？ persistanceに合わせて作る?
+                XxxDbValidator,XxxFileValidator==>無駄だよね
+            DataMapperでValidate==>遅い　入口で行いたい
+            Validateの定義を、入力に左右されずに定義できるか？
+                POST/QUERYで型変換？、Validate？
+            VOで渡す？
+                Validateは何に属する DOMAIN知識？
+            そもそもDOMAINへのINPUTって何がある
+                HTTP Request,CLI Input 他には?
+                    いずれもTEXTデータ
+                    ソケット(ストリーム)とかファイルとかもありえる？
+                        でもTEXTデータ? EXCEL/TXT/CSV 
+            TEXTって事で共通なのか？
+                TEXTでValidate,Repositoryでpersistanceに合わせた型変換
+                データ保存時に計算とか保存時刻とか、REQUESTに無いデータの作成がある
+                    Repositoryで実施？
+                    RepositoryはDOMAIN知識か?
+                            DataMapperはpersistance側 repositoryはDOMAIN側
+            入力データはTEXTなのでPOST/QUERYでText Validate
+            
+            型変換はPersistanceで、渡されたデータをDataMapperで加工
+                POST/QUERYでINPUTの定義==>表示画面作る時の定義情報になる？
+
+        画面の定義を１箇所にできるか？
+            POST/QUERY ==> HTMLではFORM部分、あるいはJsの中？
+            出力から見ると、それ以外にもデータはある
+                RiotJsとかでBuild画面する場合
+                    でも、これってAjaxリクエストだからPOST/QUERY
+           Concertoのcontroller->BuildData() 部分は？
+                これはOUTPUT(VIEWER)側に属する
+                画面とは出力だから、Viewer側に属する
+                    form部分はPOST/QUERYにあるから、Viewerにconstruct inject?
+                そういえばsymfonyとかFormのマニュアルがあった
+                という事は、viewerに取り込む?
+        
+        では、一体、どういう定義になるのか？
+            (変数)名称(=データ)、データ型(変換ルール)
+        
+        例えば、mitumori.bunruiは、HTML画面上文字列(番号+名称)
+            リクエストデータは、番号が文字列としてINPUTされる
+            出力もTEXTで、DBデータから番号と名称を生成して出力
+            Enumにしたいから、どうなる？
+                入力はValidateでEnum.Valid()みたいな？
+                    (new Enum($val))->validate() ==>Exception
+                    それともEnum->validate($val)？
+        
+        では、注文主とか単純な文字列とかは？
+            DataMapperとは独立して、ValidatorでValidate定義
+                Validate::Text($val)?
+                  現状と変わらないで良いのでは
+        
+        DOMAIN外にPsrRequestがあって、DOMAIN側にQUERT/POSTがある
+        入力のValidateはQUERT/POSTでTEXTの判定
+        
+        ModelDataは、あくまでもDBカラムの定義
+        RepositoryでModelDataに合わせた変換
+            DbRepository、CsvRepositoryなど分かれる？
+            RepositoryInterfaceの役割は＝＝＞INSERT/DELETEなどの定義
+                データの変換定義ではない
+            
+        保存するデータの(変換)定義はどうなる？　必要？
+            定義とは？　名称、データの形(datetimeではなくYYYYMMDDとか)?
+            ModelDataでYYYYMMDD変換? ==>ちょっと違う
+        変換はRepositoryで？
+            ModelDataから自動でできないか？　Text=>Dateとかはできる
+        画面からON/OFFフラグをDBに合わせて変換したい
+            基本的な変換ルールはあるけど、大抵、生データをそのまま？　YYYYMMとか
+        LaravelModelとかCastを持っているけど
+            Action(service)でModelにrequestデータをセット
+            Model内でCASTし、そのままModelsクラスで保存
+        POSTから、(Laravel)ModelClassにmapingし、repositoryへ
+            (Laravel)ModelClassで保存するデータの形を整える？
+                    なにがある？
+                    WfFreeのJsonデータとか？
+                    DateTimeは、画面の作り(客先)が変わっても、
+                        保存時の型をYYYYMMDDとか、システムで変化させないとか？
+            RepositoryでModelDataに、さらにmapping？
+                大変だけど、改造には強そう 本来のrepositoryパターンの考え方って事？
+        
+        
+        
+        
         
         
 
-
+            
+            
+        
+        
