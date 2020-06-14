@@ -144,9 +144,53 @@
             RepositoryでModelDataに、さらにmapping？
                 大変だけど、改造には強そう 本来のrepositoryパターンの考え方って事？
         
+        no_cyuなどのValidateルールは１箇所に決めたい
+        それを色々な画面のValidateで使いたい
+        ModelData(DB)ではなく、(Laravel)ModelClassで定義？
+            それをPOSTとかModelDataでValidate使う?
+                ModelData->validateは、あくまでもDBデータとしてのvalidate
+                        intとか、型変換しかない
+                        Validateは、(Laravel)ModelClassで？
+            でも、MstTantoの全データ保存と、一部保存でModelが違う
+        Validateルールは、別途、別クラス？
+            no_cyuとか、共通ぽいもものと、注文主とかって、同列で扱えるか？
+                そもそも、どのようにno_cyuとかnm_syohinとかグループ化するの?
+            ==>全データ保存のオブジェクトモデルを考える?
+                そもそも、オブジェクトモデルは、何を基準に考えるものなのか？
+                やはり、保存データになる？
+        ModelDbは、保存がDBやCSVで変わるけど、保存データは変える必要は無い？
+            DBだとデータ型があるけど、他はどうなる(CSVとかEXCELとか)
+            EXCELはDBとは異なる型(日付とかyyyy/mm/dd DBはyyyy-mm-dd)
+            その変換は、どこで？　(Laravel)ModelClass？ Repository？
+                Repositoryで(Laravel)ModelClassからModelDataに？
+            
+        ..なにかループしている
         
+        Persistance(永続化)とは、何がある DB,FILE(CSV,EXCEL)、あとは？
+            MongoDbなどkey-val(DBと同じ)
+            memcacheとかのcache(DB/FILEと同じ)　(永続化と考えた場合)    
+            他のサーバ(送信するから、永続化と言っても、requestを投げるから、repositoryではない)
+            stack(メモリ)(DB/FILEと同じ)
         
+        RepositoryはDBRepository,ExcelRepositoryと別
+        Repository内でデータを、DbModelData,ExcelModelDataにマッピング
+            RepositoryInterfaceはinsertとかmethod定義なので無関係
         
+        つまり
+            DBは DBRepository, DbModelData, DbModelDb        
+            EXCELは EXCELRepository, EXCELModelData, EXCELModelDb        
+            マッピング,型変換作業はRepository内
+            Validateは不要(POSTでOKなら通過)
+            RepositoryへのデータはPOST/QUERY
+                ConcertoもDispとMntDispが別だが更に分ける？
+                    bumon_listとgrid_listは別の子repository
+                        集計表とgrid_listは同じ子repository
+                        直課計画立案データと集計表は別の子repository
+            ただし、親のAggregateRepositoryにPOST/QUERYに渡す            
+                QUERYの場合、grid表同じ行データは、大抵1SQLなので1repository
+                たまにWf alarmなど、同時取得が厳しいと別々
+            
+    
         
         
 
