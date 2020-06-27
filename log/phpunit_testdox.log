@@ -21,6 +21,27 @@ Accessor Trait (Movement\test\accessor\AccessorTrait)
  [x] Setメソッド例外 with data set #4
  [x] Setメソッド例外 with data set #5
 
+Cast By Property Type Trait (Movement\test\accessor\CastByPropertyTypeTrait)
+ [x] Cast by property typeメソッド with data set #0
+ [x] Cast by property typeメソッド with data set #1
+ [x] Cast by property typeメソッド with data set #2
+ [x] Cast by property typeメソッド with data set #3
+ [x] Cast by property typeメソッド with data set #4
+ [x] Cast by property typeメソッド with data set #5
+ [x] Cast by property typeメソッド with data set #6
+ [x] Cast by property typeメソッド with data set #7
+ [x] Cast by property typeメソッド with data set #8
+ [x] Cast by property typeメソッド with data set #9
+ [x] Cast by property typeメソッド with data set #10
+ [x] Cast by property typeメソッド with data set #11
+ [x] Cast by property typeメソッド with data set #12
+ [x] Cast by property typeメソッド with data set #13
+ [x] Cast by property typeメソッド with data set #14
+ [x] Cast by property typeメソッド with data set #15
+ [x] Cast by property typeメソッド with data set #16
+ [x] Cast by property typeメソッド with data set #17
+ [x] Cast by property typeメソッド with data set #18
+
 Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Reflecte propertyメソッド
  [x] Hasメソッド

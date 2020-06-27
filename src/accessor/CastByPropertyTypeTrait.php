@@ -43,9 +43,17 @@ trait CastByPropertyTypeTrait
             return $val;
         }
         
-        $type = ($this->properties[$name])
-            ->getType()
-            ->getName();
+        if (empty($this->properties)) {
+            $this->reflecteProperty();
+        }
+        
+        $reflectionType = ($this->properties[$name])->getType();
+        
+        if (is_null($reflectionType)) {
+            return $val;
+        }
+        
+        $type = $reflectionType->getName();
         
         if (mb_substr($type, 0, 1) === '?') {
             $type = mb_substr($type, 1);

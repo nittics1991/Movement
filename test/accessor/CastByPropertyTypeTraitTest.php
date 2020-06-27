@@ -9,6 +9,7 @@ use Movement\accessor\{
     CastByPropertyTypeTrait,
     ReflectePropertyTrait
 };
+use ArrayObject;
 use StdClass;
 
 /**
@@ -18,6 +19,20 @@ class CastByPropertyTypeTraitTarget extends StdClass
 {
     use CastByPropertyTypeTrait;
     use ReflectePropertyTrait;
+    
+    private $casts = [
+        'non_data',
+        'bool_data',
+        'int_data',
+        'float_data',
+        'string_data',
+        'array_data',
+        'object_data',
+        'itelable_data',
+        'parent_data',
+        'self_data',
+        'stdclass_data',
+    ];
     
     protected $non_data;
     protected bool $bool_data;
@@ -51,7 +66,66 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
     public function castByPropertyTypeメソッドdataProvider()
     {
         return [
+            //not defined type
             ['non_data', 'NON_DATA', 'NON_DATA'],
+            //bool
+            ['bool_data', false, false],
+            ['bool_data', '1', true],
+            ['bool_data', 0, false],
+            //int
+            ['int_data', 111, 111],
+            ['int_data', '222', 222],
+            ['int_data', -3.14, -3],
+            //float
+            ['float_data', -3.14, -3.14],
+            ['float_data', 11, 11.0],
+            ['float_data', '9.8', 9.8],
+            //string
+            ['string_data', 'abc', 'abc'],
+            ['string_data', 11.3, '11.3'],
+            ['string_data', '漢 字', '漢 字'],
+            //array
+            ['array_data', ['abc', 'abc'], ['abc', 'abc']],
+            ['array_data', [1, [2,3], 'a' => 4], [1, [2,3], 'a' => 4]],
+            ['array_data', new ArrayObject(['abc', 'abc']), ['abc', 'abc']],
+            //object
+            [
+                'object_data',
+                'aaa',
+                (function() {
+                    $result = new StdClass();
+                    $result->scalar = 'aaa';
+                    return $result;
+                })()
+            ],
+            [
+                'object_data',
+                (function() {
+                    $result = new ArrayObject(['aaa', 111]);
+                    return $result;
+                })(),
+                (function() {
+                    $result = new ArrayObject(['aaa', 111]);
+                    return $result;
+                })()
+            ],
+            [
+                'object_data',
+                ['aaa', 'bbb' => 111],
+                (function() {
+                    $result = new StdClass();
+                    $result->{0} = 'aaa';
+                    $result->bbb = 111;
+                    return $result;
+                })()
+            ],
+            
+            
+            
+            
+            
+            
+            
         ];
     }
     
@@ -68,7 +142,7 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
 
         $obj = new CastByPropertyTypeTraitTarget();
         
-        $this->callPrivateMethod(
+        $actual = $this->callPrivateMethod(
             $obj,
             'castByPropertyType',
             [
@@ -77,12 +151,13 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
             ]
         );
         
-        $this->assertEquals(
-            $expect,
-            $this->getPrivateProperty(
-                $obj,
-                $property_name
-            )
-        );
+        switch ($property_name) {
+            case 'object_data':
+            
+                $this->assertEquals($expect, $actual);
+                break;
+            default:
+                $this->assertSame($expect, $actual);
+        }
     }
 }
