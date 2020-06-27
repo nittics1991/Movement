@@ -81,7 +81,7 @@ trait CastByPropertyTypeTrait
                 if (is_iterable($val)) {
                     return $val;
                 }
-                return new ArrayObject($val);
+                return new ArrayObject([$val]);
             case 'parent':
             case 'self':
                 $type = $type === 'parent' ?

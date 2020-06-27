@@ -119,7 +119,28 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $result;
                 })()
             ],
-            
+            //iterable
+            [
+                'iterable_data',
+                (function() {
+                    $result = new ArrayObject(['xxx', 222]);
+                    return $result;
+                })(),
+                (function() {
+                    $result = new ArrayObject(['xxx', 222]);
+                    return $result;
+                })()
+            ],
+            [
+                'iterable_data',
+                ['aaa', 111],
+                ['aaa', 111],
+            ],
+            //[
+                //'iterable_data',
+                //['aaa', 'bbb' => 111],
+                //['aaa', 'bbb' => 111],
+             //],
             
             
             
@@ -153,7 +174,10 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
         
         switch ($property_name) {
             case 'object_data':
-            
+            case 'iterable_data':
+            case 'parent_data':
+            case 'self_data':
+            case 'stdclass_data':
                 $this->assertEquals($expect, $actual);
                 break;
             default:

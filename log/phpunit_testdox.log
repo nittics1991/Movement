@@ -41,6 +41,8 @@ Cast By Property Type Trait (Movement\test\accessor\CastByPropertyTypeTrait)
  [x] Cast by property typeメソッド with data set #16
  [x] Cast by property typeメソッド with data set #17
  [x] Cast by property typeメソッド with data set #18
+ [x] Cast by property typeメソッド with data set #19
+ [x] Cast by property typeメソッド with data set #20
 
 Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Reflecte propertyメソッド
