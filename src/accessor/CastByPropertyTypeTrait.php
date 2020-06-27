@@ -53,20 +53,8 @@ trait CastByPropertyTypeTrait
             return $val;
         }
         
+        //??? ReflectionType. not ReflectionNamedType
         $type = $reflectionType->getName();
-        
-        
-        
-        var_dump("--------------------------");
-        var_dump($val);
-        var_dump($type);
-        //var_dump($reflectionType->getDeclaringClass());
-        
-        if (is_object($val))
-            var_dump($reflectionType->getName());
-        
-        
-        
         
         if (mb_substr($type, 0, 1) === '?') {
             $type = mb_substr($type, 1);
@@ -90,6 +78,8 @@ trait CastByPropertyTypeTrait
                     return $val;
                 }
                 return (object)$val;
+                
+            /*以下不動作?*/
             case 'iterable':
                 if (is_iterable($val)) {
                     return $val;

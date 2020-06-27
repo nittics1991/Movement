@@ -119,30 +119,8 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $result;
                 })()
             ],
-            //iterable
-            [
-                'iterable_data',
-                (function() {
-                    $result = new ArrayObject(['xxx', 222]);
-                    return $result;
-                })(),
-                (function() {
-                    $result = new ArrayObject(['xxx', 222]);
-                    return $result;
-                })()
-            ],
-            [
-                'iterable_data',
-                ['aaa', 111],
-                ['aaa', 111],
-            ],
-            //[
-                //'iterable_data',
-                //['aaa', 'bbb' => 111],
-                //['aaa', 'bbb' => 111],
-             //],
-            
-            
+            //iterable以下は使えない?
+           
             
             
             

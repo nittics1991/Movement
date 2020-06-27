@@ -44,7 +44,7 @@
         methodの最後にexecute()で実際に処理する
         その為には1行の操作と全行の操作との切り分けが必要
         
-202004
+20200614
     各機能を分離し、変化に耐えられるように考える
         emitter 出力するもの フレームワーク/cliライブラリ
         render  出力に合わせた変換を行う HtmlRender,Jsonrender,PrinterRender,FileRender etc
@@ -191,7 +191,8 @@
                 たまにWf alarmなど、同時取得が厳しいと別々
             
     
-        
+20200627
+    CastはReflectionNamedTypeが取得できないので、判定できないtypeがある
         
 
             
