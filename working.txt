@@ -193,9 +193,45 @@
     
 20200627
     CastはReflectionNamedTypeが取得できないので、判定できないtypeがある
+    
+20200628
+    validator
+        validatorの判定は、post/queryの外で実行
+        post/queryはルールのみ定義
+        ルールはcontainerぽく、名前を定義して取得
+        exceptionを拡張して、transitionに対応
+    
+    controller/service
+        処理はおおよそパターン化していると思われるので、パターンを抽出する
+        パターン毎にclass(HtmlQueryControllerとか)->__invoke()
+        URL=>名前でdomein serviceクラスを解決
+        つまり、画面個別にcontrollerを作らない
+        routerでもURLで呼び出すcontrollerの切り替え処理必要
+            
+        現在のaaa_disp.phpならば
+            query->validate
+            query ==> session 記憶
+            repositoryからデータ取得
+            HtmlViewで画面組み立て
+            HtmlResponseEmitterでPsr7Response返す
+        現在のaaa_mnt.phpならば
+            post->validate
+            repositoryで保存
+            上記HtmlViewを呼び出したい
+        現在のsetEnvは?
         
+    cookie/session
+        domainでの処理を簡単にしたいので、objectプロパティでアクセス
+        saveをどうするか
+            Psr7Response　でcookieは返す
+            Sessionは ajaxを考えると、書き込み直後に保存が必要
 
-            
-            
-        
-        
+
+
+
+
+
+
+
+
+

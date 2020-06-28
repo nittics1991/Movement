@@ -16,9 +16,11 @@ use Movement\accessor\{
     ReflectePropertyTrait,
     ReflectePropertyTraitInterface
 };
+use Movement\validator\ValidaterRuleDefinedInterface;
 
 class InputValueObject implements ReflectePropertyTraitInterface,
-    CastByPropertyTypeTraitInterface
+    CastByPropertyTypeTraitInterface,
+    ValidaterRuleDefinedInterface
 {
     use ReflectePropertyTrait;
     use CastByPropertyTypeTrait;
@@ -33,6 +35,13 @@ class InputValueObject implements ReflectePropertyTraitInterface,
     //private array $casts = [];
     
     /**
+    *   validator_rules
+    *
+    *   @val array
+    */
+    private array $validator_rules = [];
+    
+    /**
     *   __construct
     *
     *   @param array $parameters
@@ -42,5 +51,23 @@ class InputValueObject implements ReflectePropertyTraitInterface,
     ): {
         $casted = $this->castAggregateToArray($parameters);
         $this->fromAggregate($casted);
+    }
+    
+    /**
+    *   {inherit}
+    *
+    */
+    public function getValidatorRules(): array
+    {
+        return $this->validator_rules;
+    }
+    
+    /**
+    *   {inherit}
+    *
+    */
+    public function getValidatorValues(): array
+    {
+        return $this->toArray();
     }
 }
