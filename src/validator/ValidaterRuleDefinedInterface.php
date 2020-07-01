@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Movement\standard;
+namespace Movement\validator;
 
 interface ValidaterRuleDefinedInterface
 {
