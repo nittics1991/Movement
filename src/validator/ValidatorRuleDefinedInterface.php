@@ -1,7 +1,7 @@
 <?php
 
 /**
-*   ValidaterRuleDefinedInterface
+*   ValidatorRuleDefinedInterface
 *
 *   @version 200628
 */
@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Movement\validator;
 
-interface ValidaterRuleDefinedInterface
+interface ValidatorRuleDefinedInterface
 {
     /**
     *   getValidatorRules

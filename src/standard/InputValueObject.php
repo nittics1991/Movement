@@ -16,11 +16,11 @@ use Movement\accessor\{
     ReflectePropertyTrait,
     ReflectePropertyTraitInterface
 };
-use Movement\validator\ValidaterRuleDefinedInterface;
+use Movement\validator\ValidatorRuleDefinedInterface;
 
 class InputValueObject implements ReflectePropertyTraitInterface,
     CastByPropertyTypeTraitInterface,
-    ValidaterRuleDefinedInterface
+    ValidatorRuleDefinedInterface
 {
     use ReflectePropertyTrait;
     use CastByPropertyTypeTrait;

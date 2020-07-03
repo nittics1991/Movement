@@ -3,7 +3,7 @@
 /**
 *   ValidatorInterface
 *
-*   @version 200701
+*   @version 200704
 */
 
 declare(strict_types=1);
@@ -15,11 +15,11 @@ interface ValidatorInterface
     /**
     *   validate
     *
-    *   @param mixed $value
-    *   @param array $parameters
+    *   @param array $values
+    *   @param array $rules
     */
     public function validate(
-        $value,
-        array $parameters = []
+        array $values,
+        array $rules
     );
 }
