@@ -74,12 +74,12 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
     */
     private function otherRule()
     {
-        $this->methods['isTrue'] = fn($v) => $v == true;
-        $this->methods['isFalse'] = fn($v) => $v == false;
-        $this->methods['isEmpty'] = fn($v) => empty($v);
-        $this->methods['isNotEmpty'] = fn($v) => !empty($v);
-        $this->methods['isBlank'] = fn($v) => $v == '';
-        $this->methods['isNotBlank'] = fn($v) => $v != '';
+        $this->rules['isTrue'] = fn($v) => $v == true;
+        $this->rules['isFalse'] = fn($v) => $v == false;
+        $this->rules['isEmpty'] = fn($v) => empty($v);
+        $this->rules['isNotEmpty'] = fn($v) => !empty($v);
+        $this->rules['isBlank'] = fn($v) => $v == '';
+        $this->rules['isNotBlank'] = fn($v) => $v != '';
     }
     
     /**

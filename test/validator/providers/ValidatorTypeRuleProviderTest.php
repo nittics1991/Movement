@@ -17,7 +17,7 @@ class ValidatorTypeRuleProviderTest extends MovementTestCase
     /**
     *
     */
-    public function registerメソッドdataProvider()
+    public function provider動作dataProvider()
     {
         return [
             ['isArray', [[123]], true],
@@ -44,14 +44,53 @@ class ValidatorTypeRuleProviderTest extends MovementTestCase
             ['isScalar', [new StdClass()], false],
             ['isString', ['123'], true],
             ['isString', [123], false],
+            
+            ['isNotArray', [[123]], false],
+            ['isNotArray', [123], true],
+            ['isNotBool', [false], false],
+            ['isNotBool', [0], true],
+            ['isNotCallable', ['is_callable'], false],
+            ['isNotCallable', ['dummy'], true],
+            ['isNotCountable', [[123]], false],
+            ['isNotCountable', [123], true],
+            ['isNotFloat', [123.4], false],
+            ['isNotFloat', [123], true],
+            ['isNotInt', [123], false],
+            ['isNotInt', ['123'], true],
+            ['isNotNull', [null], false],
+            ['isNotNull', [0], true],
+            ['isNotNumeric', [123.4], false],
+            ['isNotNumeric', ['abc'], true],
+            ['isNotObject', [new StdClass()], false],
+            ['isNotObject', [0], true],
+            ['isNotResource', [tmpfile()], false],
+            ['isNotResource', [0], true],
+            ['isNotScalar', [false], false],
+            ['isNotScalar', [new StdClass()], true],
+            ['isNotString', ['123'], false],
+            ['isNotString', [123], true],
+            
+            ['isTrue', [true], true],
+            ['isTrue', [false], false],
+            ['isFalse', [false], true],
+            ['isFalse', [true], false],
+            ['isEmpty', [0], true],
+            ['isEmpty', [1], false],
+            ['isNotEmpty', ['A'], true],
+            ['isNotEmpty', [''], false],
+            ['isBlank', [''], true],
+            ['isBlank', [1], false],
+            ['isNotBlank', ['A'], true],
+            ['isNotBlank', [''], false],
+            
         ];
     }
     
     /**
     *   @test
-    *   @dataProvider registerメソッドdataProvider
+    *   @dataProvider provider動作dataProvider
     */
-    public function registerメソッド(
+    public function provider動作(
         $name,
         $arguments,
         $expect
