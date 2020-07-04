@@ -90,17 +90,17 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
     */
     private function toSnake(string $string): string
     {
-        $replaced = (string)preg_replace_callback(
-            '/[A-Z]/',
-            fn ($matches) => '_'  . strtolower($matches[0]),
+        $replaced = (string)mb_ereg_replace_callback(
+            '[A-Z]',
+            fn ($matches) => '_'  . mb_strtolower($matches[0]),
             $string
         );
         
         if (
-            substr($replaced, 0, 1) == '_'
-            && substr($string, 0, 1) != '_'
+            mb_substr($replaced, 0, 1) == '_'
+            && mb_substr($string, 0, 1) != '_'
         ) {
-            return substr($replaced, 1);
+            return mb_substr($replaced, 1);
         }
         return $replaced;
     }
@@ -113,6 +113,6 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
     */
     private function toNegativeName(string $string): string
     {
-       return substr($string, 0, 2) . 'Not' . substr($string, 2);
+       return mb_substr($string, 0, 2) . 'Not' . mb_substr($string, 2);
     }
 }

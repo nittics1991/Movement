@@ -3,7 +3,7 @@
 cd $(dirname "$0")
 cd ..
 
-sudo apt install -y php7.4-cli php7.4-xml php7.4-mbstring
+sudo apt install -y php7.4-cli php7.4-xml php7.4-mbstring php7.4-bcmath
 
 if [[ ! -d dist ]] ; then
     mkdir dist
