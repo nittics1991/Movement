@@ -100,3 +100,6 @@ Private Test Trait (Movement\test\test\PrivateTestTrait)
  [x] 継承した親
  [x] 子クラス
 
+Abstract Validator Rule Provider (Movement\test\validator\AbstractValidatorRuleProvider)
+ [x] Providesプロパティ設定 with data set #0
+

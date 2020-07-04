@@ -51,9 +51,9 @@ abstract class AbstractValidatorRuleProvider extends AbstractServiceProvider
     public function register()
     {
         foreach ($this->rules as $name => $rule) {
-            if (!($rule instanceof Closure)) {
+            if (!is_callable($rule)) {
                 throw RuntimeException(
-                    "rule must be Closure:{$name}"
+                    "rule must be callable:{$name}"
                 );
             }
             
