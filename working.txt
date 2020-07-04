@@ -236,6 +236,9 @@ pstan反映する事
         Laravel参照
         DateTime,String
         Stringは正規表現classも参照
+        
+        BCMathでの比較
+        
 
 
 

@@ -18,8 +18,9 @@ class ValidatorMathRuleProvider extends AbstractValidatorRuleProvider
     */
     protected function setRules()
     {
-        $this->methods = [
+        $this->rules = [
             'isNan' => fn($v) => is_nan($v),
+            'isNotNan' => fn($v) => !is_nan($v),
             'isFinite' => fn($v) => is_finite($v),
             'isInfinite' => fn($v) => is_infinite($v),
             'positive' => fn($v) => $v > 0,
@@ -36,8 +37,10 @@ class ValidatorMathRuleProvider extends AbstractValidatorRuleProvider
                  return !is_nan($v) && $v > $min && $v < $max;
              },
             'outer' => function($v, $min, $max) {
-                 return !is_nan($v) && $v < $min && $v > $max;
+                 return !is_nan($v) && $v < $min || $v > $max;
              },
+            'min' => fn($v, $p) => $v >= $p,
+            'max' => fn($v, $p) => $v <= $p,
         ];
    }
 }

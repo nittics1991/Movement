@@ -153,6 +153,50 @@ Validator Compare Rule Provider (Movement\test\validator\providers\ValidatorComp
  [x] Provider動作 with data set #30
  [x] Provider動作 with data set #31
 
+Validator Math Rule Provider (Movement\test\validator\providers\ValidatorMathRuleProvider)
+ [x] Provider動作 with data set #0
+ [x] Provider動作 with data set #1
+ [x] Provider動作 with data set #2
+ [x] Provider動作 with data set #3
+ [x] Provider動作 with data set #4
+ [x] Provider動作 with data set #5
+ [x] Provider動作 with data set #6
+ [x] Provider動作 with data set #7
+ [x] Provider動作 with data set #8
+ [x] Provider動作 with data set #9
+ [x] Provider動作 with data set #10
+ [x] Provider動作 with data set #11
+ [x] Provider動作 with data set #12
+ [x] Provider動作 with data set #13
+ [x] Provider動作 with data set #14
+ [x] Provider動作 with data set #15
+ [x] Provider動作 with data set #16
+ [x] Provider動作 with data set #17
+ [x] Provider動作 with data set #18
+ [x] Provider動作 with data set #19
+ [x] Provider動作 with data set #20
+ [x] Provider動作 with data set #21
+ [x] Provider動作 with data set #22
+ [x] Provider動作 with data set #23
+ [x] Provider動作 with data set #24
+ [x] Provider動作 with data set #25
+ [x] Provider動作 with data set #26
+ [x] Provider動作 with data set #27
+ [x] Provider動作 with data set #28
+ [x] Provider動作 with data set #29
+ [x] Provider動作 with data set #30
+ [x] Provider動作 with data set #31
+ [x] Provider動作 with data set #32
+ [x] Provider動作 with data set #33
+ [x] Provider動作 with data set #34
+ [x] Provider動作 with data set #35
+ [x] Provider動作 with data set #36
+ [x] Provider動作 with data set #37
+ [x] Provider動作 with data set #38
+ [x] Provider動作 with data set #39
+ [x] Provider動作 with data set #40
+ [x] Provider動作 with data set #41
+
 Validator Type Rule Provider (Movement\test\validator\providers\ValidatorTypeRuleProvider)
  [x] Provider動作 with data set #0
  [x] Provider動作 with data set #1
