@@ -48,7 +48,7 @@ class InputValueObject implements ReflectePropertyTraitInterface,
     */
     public function __construct(
         array $parameters
-    ): {
+    ) {
         $casted = $this->castAggregateToArray($parameters);
         $this->fromAggregate($casted);
     }

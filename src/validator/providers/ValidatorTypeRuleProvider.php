@@ -17,9 +17,10 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
     *
     */
     protected function setRules()
+    {
         $this->rules = [
-            'isbool' => fn($v, $p) => is_bool($v),
-            'isInt' => fn($v, $p) => is_int($v),
+            'isBool' => 'is_bool',
+            'isInt' => 'is_int',
             
             
             
