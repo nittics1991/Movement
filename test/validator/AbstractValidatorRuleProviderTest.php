@@ -34,7 +34,25 @@ class AbstractValidatorRuleProviderTarget extends
                 }
                 return $result;
             },
+            'isText' => [$this, 'isText'],
         ];
+    }
+    
+    /**
+    *
+    */
+    public function isText($val, $params = [])
+    {
+        $result = is_string($val);
+        
+        if (isset($params[0])) {
+            $result = $result && strlen($val) >= $params[0];
+        }
+        
+        if (isset($params[1])) {
+            $result = $result && strlen($val) <= $params[1];
+        }
+        return $result;
     }
 }
 
@@ -48,7 +66,7 @@ class AbstractValidatorRuleProviderTest extends MovementTestCase
     public function providesプロパティ設定dataProvider()
     {
         return [
-            [['is_bool', 'isInt', 'isFloat']],
+            [['is_bool', 'isInt', 'isFloat', 'isText']],
         ];
     }
     
@@ -88,6 +106,12 @@ class AbstractValidatorRuleProviderTest extends MovementTestCase
             ['isFloat', [123.4, [200]], false],
             ['isFloat', [123.4, [100, 200]], true],
             ['isFloat', [123.4, [100, 110]], false],
+            ['isText', ['123'], true],
+            ['isText', [123], false],
+            ['isText', ['123', [2]], true],
+            ['isText', ['123', [4]], false],
+            ['isText', ['123', [2, 3]], true],
+            ['isText', ['123', [1, 2]], false],
         ];
     }
     
