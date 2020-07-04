@@ -39,8 +39,31 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
     */
     protected function setRules()
     {
+        $this->positiveRule();
+        $this->negativeRule();
+    }
+    
+    /**
+    *   positiveRule
+    *
+    */
+    private function positiveRule()
+    {
         foreach ($this->methods as $method) {
             $this->rules[$method] = $this->toSnake($method);
+        }
+    }
+    
+    /**
+    *   negativeRule
+    *
+    */
+    private function negativeRule()
+    {
+        foreach ($this->methods as $method) {
+            $callback = $this->toSnake($method);
+            $name = $this->toNegativeName($method);
+            $this->rules[$name] = fn($v) => !$callback($v);
         }
     }
     
@@ -65,5 +88,16 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
             return substr($replaced, 1);
         }
         return $replaced;
+    }
+    
+    /**
+    *   toNegativeName
+    *
+    *   @param string $string
+    *   @return string
+    */
+    private function toNegativeName(string $string): string
+    {
+       return substr($string, 0, 2) . 'Not' . substr($string, 2);
     }
 }
