@@ -1,3 +1,536 @@
+ ------ --------------------------------------------------------------------------------------------------- 
+  Line   src/accessor/CastByPropertyTypeTrait.php (in context of class Movement\standard\InputValueObject)  
+ ------ --------------------------------------------------------------------------------------------------- 
+  57     Call to an undefined method ReflectionType::getName().                                             
+  108    Method Movement\standard\InputValueObject::castAggregateToArray() has                              
+         parameter $aggregate with no value type specified in iterable type                                 
+         iterable.                                                                                          
+         💡 Consider adding something like iterable<Foo> to the                                              
+         PHPDoc.                                                                                            
+         You can turn off this check by setting                                                             
+         checkMissingIterableValueType: false in your                                                       
+         phpstan.neon.                                                                                      
+  108    Method Movement\standard\InputValueObject::castAggregateToArray()                                  
+         return type has no value type specified in iterable type array.                                    
+         💡 Consider adding something like array<Foo> to the                                                 
+         PHPDoc.                                                                                            
+         You can turn off this check by setting                                                             
+         checkMissingIterableValueType: false in your                                                       
+         phpstan.neon.                                                                                      
+  111    Argument of an invalid type iterable|object supplied for foreach,                                  
+         only iterables are supported.                                                                      
+ ------ --------------------------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------- 
+  Line   src/accessor/ReflectePropertyTrait.php (in context of class Movement\standard\InputValueObject)  
+ ------ ------------------------------------------------------------------------------------------------- 
+  39     Method Movement\standard\InputValueObject::reflecteProperty() has no                             
+         return typehint specified.                                                                       
+  85     Method Movement\standard\InputValueObject::__get() has no return                                 
+         typehint specified.                                                                              
+  99     Method Movement\standard\InputValueObject::__set() has no return                                 
+         typehint specified.                                                                              
+  99     Method Movement\standard\InputValueObject::__set() has parameter                                 
+         $value with no typehint specified.                                                               
+  137    Method Movement\standard\InputValueObject::fromAggregate() has no                                
+         return typehint specified.                                                                       
+  137    Method Movement\standard\InputValueObject::fromAggregate() has                                   
+         parameter $aggregate with no value type specified in iterable type                               
+         iterable.                                                                                        
+         💡 Consider adding something like iterable<Foo> to the                                            
+         PHPDoc.                                                                                          
+         You can turn off this check by setting                                                           
+         checkMissingIterableValueType: false in your                                                     
+         phpstan.neon.                                                                                    
+  143    Argument of an invalid type iterable|object supplied for foreach,                                
+         only iterables are supported.                                                                    
+  165    Method Movement\standard\InputValueObject::toArray() return type has                             
+         no value type specified in iterable type array.                                                  
+         💡 Consider adding something like array<Foo> to the                                               
+         PHPDoc.                                                                                          
+         You can turn off this check by setting                                                           
+         checkMissingIterableValueType: false in your                                                     
+         phpstan.neon.                                                                                    
+ ------ ------------------------------------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/container/ContainerRegisterInterface.php                           
+ ------ ----------------------------------------------------------------------- 
+  24     Method Movement\container\ContainerRegisterInterface::bind() has no    
+         return typehint specified.                                             
+  32     Method Movement\container\ContainerRegisterInterface::share() has no   
+         return typehint specified.                                             
+  40     Method Movement\container\ContainerRegisterInterface::extend() has no  
+         return typehint specified.                                             
+  47     Method Movement\container\ContainerRegisterInterface::delegate() has   
+         no return typehint specified.                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/container/ReflectionContainer.php                                  
+ ------ ----------------------------------------------------------------------- 
+  56     Method Movement\container\ReflectionContainer::reflectArguments()      
+         return type has no value type specified in iterable type array.        
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  59     Anonymous function has an unused use $method.                          
+  86     Method Movement\container\ReflectionContainer::resolveArguments() has  
+         parameter $arguments with no value type specified in iterable type     
+         array.                                                                 
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  86     Method Movement\container\ReflectionContainer::resolveArguments()      
+         return type has no value type specified in iterable type array.        
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/container/ServiceContainer.php                                     
+ ------ ----------------------------------------------------------------------- 
+  31     Property Movement\container\ServiceContainer::$definitions type has    
+         no value type specified in iterable type array.                        
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  38     Property Movement\container\ServiceContainer::$sharedDefinitions type  
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  45     Property Movement\container\ServiceContainer::$sharedInstances type    
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  52     Property Movement\container\ServiceContainer::$delegates type has no   
+         value type specified in iterable type array.                           
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  59     Property Movement\container\ServiceContainer::$extenders type has no   
+         value type specified in iterable type array.                           
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  66     Property Movement\container\ServiceContainer::$raws type has no value  
+         type specified in iterable type array.                                 
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  146    Method Movement\container\ServiceContainer::bind() has no return       
+         typehint specified.                                                    
+  166    Call to function is_array() with string will always evaluate to        
+         false.                                                                 
+  166    Result of && is always false.                                          
+  166    Result of && is always false.                                          
+  186    Call to function is_array() with string will always evaluate to        
+         false.                                                                 
+  186    Result of && is always false.                                          
+  186    Result of && is always false.                                          
+  207    Method Movement\container\ServiceContainer::share() has no return      
+         typehint specified.                                                    
+  218    Method Movement\container\ServiceContainer::extend() has no return     
+         typehint specified.                                                    
+  294    Call to function is_callable() with mixed will always evaluate to      
+         false.                                                                 
+  363    Method Movement\container\ServiceContainer::__call() has no return     
+         typehint specified.                                                    
+  363    Method Movement\container\ServiceContainer::__call() has parameter     
+         $arguments with no value type specified in iterable type array.        
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  378    Method Movement\container\ServiceContainer::raw() has no return        
+         typehint specified.                                                    
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/container/ServiceProviderContainer.php                             
+ ------ ----------------------------------------------------------------------- 
+  41     Property Movement\container\ServiceProviderContainer::$providers type  
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  48     Property Movement\container\ServiceProviderContainer::$provides type   
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  55     Method                                                                 
+         Movement\container\ServiceProviderContainer::addServiceProvider() has  
+         no return typehint specified.                                          
+  75     Argument of an invalid type array|bool supplied for foreach, only      
+         iterables are supported.                                               
+  91     Method                                                                 
+         Movement\container\ServiceProviderContainer::bootServiceProviders()    
+         has no return typehint specified.                                      
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/container/provider/AbstractDirectoryServiceProvider.php            
+ ------ ----------------------------------------------------------------------- 
+  42     Property                                                               
+         Movement\container\provider\AbstractDirectoryServiceProvider::$resole  
+         vedItems type has no value type specified in iterable type array.      
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  64     Method                                                                 
+         Movement\container\provider\AbstractDirectoryServiceProvider::addProv  
+         ides() has no return typehint specified.                               
+  72     Cannot call method isFile() on SplFileInfo|string.                     
+  73     Parameter #1 $fileinfo of method                                       
+         Movement\container\provider\AbstractDirectoryServiceProvider::resolve  
+         Item() expects SplFileInfo, SplFileInfo|string given.                  
+  123    Call to function is_null() with string will always evaluate to false.  
+  137    Method                                                                 
+         Movement\container\provider\AbstractDirectoryServiceProvider::resolve  
+         Item() has no return typehint specified.                               
+  153    Method                                                                 
+         Movement\container\provider\AbstractDirectoryServiceProvider::registe  
+         r() has no return typehint specified.                                  
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/container/provider/AbstractServiceProvider.php                     
+ ------ ----------------------------------------------------------------------- 
+  26     Property                                                               
+         Movement\container\provider\AbstractServiceProvider::$provides type    
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  32     Method                                                                 
+         Movement\container\provider\AbstractServiceProvider::provides()        
+         return type has no value type specified in iterable type array.        
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  47     Method Movement\container\provider\AbstractServiceProvider::bind()     
+         has no return typehint specified.                                      
+  58     Method Movement\container\provider\AbstractServiceProvider::share()    
+         has no return typehint specified.                                      
+  69     Method Movement\container\provider\AbstractServiceProvider::raw() has  
+         no return typehint specified.                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   src/container/provider/BootableServiceProviderInterface.php           
+ ------ ---------------------------------------------------------------------- 
+  22     Method                                                                
+         Movement\container\provider\BootableServiceProviderInterface::boot()  
+         has no return typehint specified.                                     
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   src/container/provider/ServiceProviderInterface.php                   
+ ------ ---------------------------------------------------------------------- 
+  25     Method                                                                
+         Movement\container\provider\ServiceProviderInterface::provides()      
+         return type has no value type specified in iterable type array.       
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  31     Method                                                                
+         Movement\container\provider\ServiceProviderInterface::register() has  
+         no return typehint specified.                                         
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/standard/InputValueObject.php                                      
+ ------ ----------------------------------------------------------------------- 
+  43     Property Movement\standard\InputValueObject::$validator_rules type     
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  50     Method Movement\standard\InputValueObject::__construct() has           
+         parameter $parameters with no value type specified in iterable type    
+         array.                                                                 
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  61     Method Movement\standard\InputValueObject::getValidatorRules() return  
+         type has no value type specified in iterable type array.               
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  70     Method Movement\standard\InputValueObject::getValidatorValues()        
+         return type has no value type specified in iterable type array.        
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------- 
+  Line   src/standard/InputValueObjectFactory.php                             
+ ------ --------------------------------------------------------------------- 
+  27     Parameter $request of method                                         
+         Movement\standard\InputValueObjectFactory::buildQuery() has invalid  
+         typehint type Psr\Http\Message\RequestInterface.                     
+  27     Parameter $request of method                                         
+         Movement\standard\InputValueObjectFactory::buildQuery() has invalid  
+         typehint type Psr\Http\Message\RequestInterface.                     
+  30     Instantiated class Movement\standard\InvalidArgumentException not    
+         found.                                                               
+  30     Throwing object of an unknown class                                  
+         Movement\standard\InvalidArgumentException.                          
+  37     Call to method getQueryParams() on an unknown class                  
+         Psr\Http\Message\RequestInterface.                                   
+  38     Undefined variable: $_QUERY                                          
+  51     Parameter $request of method                                         
+         Movement\standard\InputValueObjectFactory::buildPost() has invalid   
+         typehint type Psr\Http\Message\RequestInterface.                     
+  51     Parameter $request of method                                         
+         Movement\standard\InputValueObjectFactory::buildPost() has invalid   
+         typehint type Psr\Http\Message\RequestInterface.                     
+  54     Instantiated class Movement\standard\InvalidArgumentException not    
+         found.                                                               
+  54     Throwing object of an unknown class                                  
+         Movement\standard\InvalidArgumentException.                          
+  61     Call to method getParsedBody() on an unknown class                   
+         Psr\Http\Message\RequestInterface.                                   
+ ------ --------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   src/validator/AbstractValidatorRuleProvider.php                       
+ ------ ---------------------------------------------------------------------- 
+  21     Property Movement\validator\AbstractValidatorRuleProvider::$provides  
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  45     Method Movement\validator\AbstractValidatorRuleProvider::setRules()   
+         has no return typehint specified.                                     
+  51     Method Movement\validator\AbstractValidatorRuleProvider::register()   
+         has no return typehint specified.                                     
+  55     Function RuntimeException not found.                                  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/validator/Validator.php                                            
+ ------ ----------------------------------------------------------------------- 
+  51     Method Movement\validator\Validator::validate() has no return          
+         typehint specified.                                                    
+  51     Method Movement\validator\Validator::validate() has parameter $rules   
+         with no value type specified in iterable type array.                   
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  51     Method Movement\validator\Validator::validate() has parameter $values  
+         with no value type specified in iterable type array.                   
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  72     Method Movement\validator\Validator::doValidate() has no return        
+         typehint specified.                                                    
+  77     Call to an undefined method Movement\validator\Validator::resolver().  
+  85     Cannot access an offset on Movement\validator\ValidatorException.      
+  86     Class Movement\validator\ValidatorException constructor invoked with   
+         2 parameters, 6 required.                                              
+  98     Method Movement\validator\Validator::errors() return type has no       
+         value type specified in iterable type array.                           
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   src/validator/ValidatorException.php                                  
+ ------ ---------------------------------------------------------------------- 
+  37     Property Movement\validator\ValidatorException::$parameters type has  
+         no value type specified in iterable type array.                       
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  49     Method Movement\validator\ValidatorException::__construct() has       
+         parameter $parameters with no value type specified in iterable type   
+         array.                                                                
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  55     Parameter $previous of method                                         
+         Movement\validator\ValidatorException::__construct() has invalid      
+         typehint type Movement\validator\Throwable.                           
+  55     Parameter $previous of method                                         
+         Movement\validator\ValidatorException::__construct() has invalid      
+         typehint type Movement\validator\Throwable.                           
+  60     Parameter #3 $previous of method Exception::__construct() expects     
+         Throwable|null, Movement\validator\Throwable|null given.              
+  78     Method Movement\validator\ValidatorException::getParameters() return  
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  89     Method Movement\validator\ValidatorException::hasParameter() return   
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  91     Method Movement\validator\ValidatorException::hasParameter() should   
+         return array but returns bool.                                        
+  100    Method Movement\validator\ValidatorException::getParameter() return   
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  102    Call to an undefined method                                           
+         Movement\validator\ValidatorException::has().                         
+  118    Unsafe usage of new static().                                         
+         💡 Consider making the class or the constructor final.                 
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/validator/ValidatorInterface.php                                   
+ ------ ----------------------------------------------------------------------- 
+  21     Method Movement\validator\ValidatorInterface::validate() has no        
+         return typehint specified.                                             
+  21     Method Movement\validator\ValidatorInterface::validate() has           
+         parameter $rules with no value type specified in iterable type array.  
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  21     Method Movement\validator\ValidatorInterface::validate() has           
+         parameter $values with no value type specified in iterable type        
+         array.                                                                 
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   src/validator/ValidatorRuleDefinedInterface.php                        
+ ------ ----------------------------------------------------------------------- 
+  20     Method                                                                 
+         Movement\validator\ValidatorRuleDefinedInterface::getValidatorRules()  
+         return type has no value type specified in iterable type array.        
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  27     Method                                                                 
+         Movement\validator\ValidatorRuleDefinedInterface::getValidatorValues(  
+         ) return type has no value type specified in iterable type array.      
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------- 
+  Line   src/validator/ValidatorRuleInterface.php                             
+ ------ --------------------------------------------------------------------- 
+  22     Method Movement\validator\ValidatorRuleInterface::validate() has     
+         parameter $parameters with no value type specified in iterable type  
+         array.                                                               
+         💡 Consider adding something like array<Foo> to the                   
+         PHPDoc.                                                              
+         You can turn off this check by setting                               
+         checkMissingIterableValueType: false in your                         
+         phpstan.neon.                                                        
+ ------ --------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------- 
+  Line   src/validator/ValidatorRuleResolverInterface.php                     
+ ------ --------------------------------------------------------------------- 
+  25     Method Movement\validator\ValidatorRuleResolverInterface::resolve()  
+         return type has no value type specified in iterable type array.      
+         💡 Consider adding something like array<Foo> to the                   
+         PHPDoc.                                                              
+         You can turn off this check by setting                               
+         checkMissingIterableValueType: false in your                         
+         phpstan.neon.                                                        
+  25     PHPDoc tag @param has invalid value (array parameters): Unexpected   
+         token "parameters", expected variable at offset 161                  
+  25     PHPDoc tag @param references unknown parameter: $validator           
+ ------ --------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------- 
+  Line   src/validator/providers/ValidatorDateTimeRuleProvider.php            
+ ------ --------------------------------------------------------------------- 
+         Class Concerto\standard\ValidatorDateTimeRuleProvider was not found  
+         while trying to analyse it - autoloading is probably not configured  
+         properly.                                                            
+         💡 Learn more at https://phpstan.org/user-guide/autoloading           
+ ------ --------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   src/validator/providers/ValidatorTypeRuleProvider.php               
+ ------ -------------------------------------------------------------------- 
+  19     Method                                                              
+         Movement\validator\providers\ValidatorTypeRuleProvider::setRules()  
+         has no return typehint specified.                                   
+ ------ -------------------------------------------------------------------- 
+
  ------ ------------------------------------------------------------- 
   Line   test/MovementTestCase.php                                    
  ------ ------------------------------------------------------------- 
@@ -5,6 +538,263 @@
          autoloaded.                                                  
          💡 Learn more at https://phpstan.org/user-guide/autoloading   
  ------ ------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/accessor/AccessorTraitTest.php                                   
+ ------ ---------------------------------------------------------------------- 
+         Class Movement\test\accessor\AccessorTraitTarget was not found while  
+         trying to analyse it - autoloading is probably not configured         
+         properly.                                                             
+         💡 Learn more at https://phpstan.org/user-guide/autoloading            
+  7      Class PHPUnit\Framework\TestCase not found and could not be           
+         autoloaded.                                                           
+         💡 Learn more at https://phpstan.org/user-guide/autoloading            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   test/accessor/CastByPropertyTypeTraitTest.php                       
+ ------ -------------------------------------------------------------------- 
+         Class Movement\test\accessor\CastByPropertyTypeTraitTarget was not  
+         found while trying to analyse it - autoloading is probably not      
+         configured properly.                                                
+         💡 Learn more at https://phpstan.org/user-guide/autoloading          
+  7      Class PHPUnit\Framework\TestCase not found and could not be         
+         autoloaded.                                                         
+         💡 Learn more at https://phpstan.org/user-guide/autoloading          
+ ------ -------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------ 
+  Line   test/accessor/ReflectePropertyTraitTest.php                       
+ ------ ------------------------------------------------------------------ 
+         Class Movement\test\accessor\ReflectePropertyTraitTarget was not  
+         found while trying to analyse it - autoloading is probably not    
+         configured properly.                                              
+         💡 Learn more at https://phpstan.org/user-guide/autoloading        
+  7      Class PHPUnit\Framework\TestCase not found and could not be       
+         autoloaded.                                                       
+         💡 Learn more at https://phpstan.org/user-guide/autoloading        
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------- 
+  Line   test/container/ReflectionContainerTest.php                   
+ ------ ------------------------------------------------------------- 
+         Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  7      Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  14     Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+ ------ ------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------- 
+  Line   test/container/ServiceContainerOriginalTest.php              
+ ------ ------------------------------------------------------------- 
+         Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  7      Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  14     Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+ ------ ------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------- 
+  Line   test/container/ServiceContainerTest.php                      
+ ------ ------------------------------------------------------------- 
+         Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  7      Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  16     Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+ ------ ------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------- 
+  Line   test/container/ServiceProviderTest.php                       
+ ------ ------------------------------------------------------------- 
+         Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  7      Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+  16     Class PHPUnit\Framework\TestCase not found and could not be  
+         autoloaded.                                                  
+         💡 Learn more at https://phpstan.org/user-guide/autoloading   
+ ------ ------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------- 
+  Line   test/container/TestClassHasDependencies.php                   
+ ------ -------------------------------------------------------------- 
+  11     Access to an undefined property                               
+         Movement\test\container\TestClassHasDependencies::$argument.  
+ ------ -------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------- 
+  Line   test/container/TestClassInterface.php                            
+ ------ ----------------------------------------------------------------- 
+  9      Method Movement\test\container\TestClassInterface::get() has no  
+         return typehint specified.                                       
+ ------ ----------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   test/container/TestClassNotHasConstructParameter.php                   
+ ------ ----------------------------------------------------------------------- 
+  13     Access to an undefined property                                        
+         Movement\test\container\TestClassNotHasConstructParameter::$argument.  
+  19     Method                                                                 
+         Movement\test\container\TestClassNotHasConstructParameter::get() has   
+         no return typehint specified.                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   test/container/TestServiceProvider.php                                 
+ ------ ----------------------------------------------------------------------- 
+  11     Property Movement\test\container\TestServiceProvider::$provides type   
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  15     Method Movement\test\container\TestServiceProvider::register() has no  
+         return typehint specified.                                             
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   test/container/TestServiceProvider2.php                                
+ ------ ----------------------------------------------------------------------- 
+  11     Property Movement\test\container\TestServiceProvider2::$provides type  
+         has no value type specified in iterable type array.                    
+         💡 Consider adding something like array<Foo> to the                     
+         PHPDoc.                                                                
+         You can turn off this check by setting                                 
+         checkMissingIterableValueType: false in your                           
+         phpstan.neon.                                                          
+  16     Method Movement\test\container\TestServiceProvider2::register() has    
+         no return typehint specified.                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/container/TestServiceProvider31.php                              
+ ------ ---------------------------------------------------------------------- 
+  12     Property Movement\test\container\TestServiceProvider31::$provides     
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  16     Method Movement\test\container\TestServiceProvider31::register() has  
+         no return typehint specified.                                         
+  20     Method Movement\test\container\TestServiceProvider31::boot() has no   
+         return typehint specified.                                            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/container/TestServiceProvider32.php                              
+ ------ ---------------------------------------------------------------------- 
+  11     Property Movement\test\container\TestServiceProvider32::$provides     
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  15     Method Movement\test\container\TestServiceProvider32::register() has  
+         no return typehint specified.                                         
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/container/TestServiceProvider41.php                              
+ ------ ---------------------------------------------------------------------- 
+  12     Property Movement\test\container\TestServiceProvider41::$provides     
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  16     Method Movement\test\container\TestServiceProvider41::register() has  
+         no return typehint specified.                                         
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/container/TestServiceProvider42.php                              
+ ------ ---------------------------------------------------------------------- 
+  14     Property Movement\test\container\TestServiceProvider42::$provides     
+         type has no value type specified in iterable type array.              
+         💡 Consider adding something like array<Foo> to the                    
+         PHPDoc.                                                               
+         You can turn off this check by setting                                
+         checkMissingIterableValueType: false in your                          
+         phpstan.neon.                                                         
+  18     Method Movement\test\container\TestServiceProvider42::register() has  
+         no return typehint specified.                                         
+  22     Method Movement\test\container\TestServiceProvider42::boot() has no   
+         return typehint specified.                                            
+  24     Call to an undefined method                                           
+         Movement\test\container\TestServiceProvider42::extend().              
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/container/directory/ProviderTarget1.php                          
+ ------ ---------------------------------------------------------------------- 
+  9      Method Movement\test\container\directory\ProviderTarget1::__invoke()  
+         has no return typehint specified.                                     
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/container/directory/ProviderTarget2.php                          
+ ------ ---------------------------------------------------------------------- 
+  9      Method Movement\test\container\directory\ProviderTarget2::__invoke()  
+         has no return typehint specified.                                     
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   test/container/directory/ProviderTarget3.php                          
+ ------ ---------------------------------------------------------------------- 
+  9      Method                                                                
+         Movement\test\container\directory\ProviderTarget3::__construct() has  
+         parameter $params1 with no typehint specified.                        
+  9      Method                                                                
+         Movement\test\container\directory\ProviderTarget3::__construct() has  
+         parameter $params2 with no typehint specified.                        
+  11     Access to an undefined property                                       
+         Movement\test\container\directory\ProviderTarget3::$params1.          
+  12     Access to an undefined property                                       
+         Movement\test\container\directory\ProviderTarget3::$params2.          
+  15     Method Movement\test\container\directory\ProviderTarget3::__invoke()  
+         has no return typehint specified.                                     
+  17     Access to an undefined property                                       
+         Movement\test\container\directory\ProviderTarget3::$params1.          
+  17     Access to an undefined property                                       
+         Movement\test\container\directory\ProviderTarget3::$params2.          
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   test/container/directory/child/ChildProviderTarget1.php                
+ ------ ----------------------------------------------------------------------- 
+  9      Method                                                                 
+         Movement\test\container\directory\child\ChildProviderTarget1::__invok  
+         e() has no return typehint specified.                                  
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   test/container/directory/child/ChildProviderTarget2.php                
+ ------ ----------------------------------------------------------------------- 
+  9      Method                                                                 
+         Movement\test\container\directory\child\ChildProviderTarget2::__invok  
+         e() has no return typehint specified.                                  
+ ------ ----------------------------------------------------------------------- 
 
  ------ ------------------------------------------------------------------- 
   Line   test/test/PrivateTestTraitTest.php                                 
@@ -15,5 +805,17 @@
          💡 Learn more at https://phpstan.org/user-guide/autoloading         
  ------ ------------------------------------------------------------------- 
 
- [ERROR] Found 2 errors                                                         
+ ------ ----------------------------------------------------------------------- 
+  Line   test/validator/AbstractValidatorRuleProviderTest.php                   
+ ------ ----------------------------------------------------------------------- 
+         Class Movement\test\validator\AbstractValidatorRuleProviderTarget was  
+         not found while trying to analyse it - autoloading is probably not     
+         configured properly.                                                   
+         💡 Learn more at https://phpstan.org/user-guide/autoloading             
+  7      Class PHPUnit\Framework\TestCase not found and could not be            
+         autoloaded.                                                            
+         💡 Learn more at https://phpstan.org/user-guide/autoloading             
+ ------ ----------------------------------------------------------------------- 
+
+ [ERROR] Found 160 errors                                                       
 

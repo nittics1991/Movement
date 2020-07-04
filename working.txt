@@ -1,3 +1,8 @@
+pstan反映する事
+
+
+
+
 200606
     PrivateTestTraitTest作成中
     

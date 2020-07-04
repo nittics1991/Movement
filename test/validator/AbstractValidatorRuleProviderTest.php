@@ -6,6 +6,10 @@ namespace Movement\test\validator;
 
 use Movement\test\MovementTestCase;
 use Movement\validator\AbstractValidatorRuleProvider;
+use Movement\container\{
+    ServiceContainer,
+    ServiceProviderContainer
+};
 
 /**
 *   AbstractValidatorRuleProviderでを実装するクラス
@@ -30,9 +34,6 @@ class AbstractValidatorRuleProviderTarget extends
                 }
                 return $result;
             },
-            
-            
-            
         ];
     }
 }
@@ -77,9 +78,16 @@ class AbstractValidatorRuleProviderTest extends MovementTestCase
     public function registerメソッドdataProvider()
     {
         return [
-            [
-                
-            ],
+            ['is_bool', [true], true],
+            ['is_bool', [0], false],
+            ['isInt', [123], true],
+            ['isInt', ['123'], false],
+            ['isFloat', [123.4], true],
+            ['isFloat', [123], false],
+            ['isFloat', [123.4, [100]], true],
+            ['isFloat', [123.4, [200]], false],
+            ['isFloat', [123.4, [100, 200]], true],
+            ['isFloat', [123.4, [100, 110]], false],
         ];
     }
     
@@ -89,16 +97,25 @@ class AbstractValidatorRuleProviderTest extends MovementTestCase
     */
     public function registerメソッド(
         $name,
+        $arguments,
         $expect
     ) {
       //$this->markTestIncomplete();
 
-        $obj = new AbstractValidatorRuleProviderTarget();
-        $obj->register();
+        $container = new ServiceContainer();
+        $serviceProvider = new ServiceProviderContainer();
+        $container->delegate($serviceProvider);
+
+        $container->addServiceProvider(
+            AbstractValidatorRuleProviderTarget::class
+        );
         
+        $callback = $container->get($name);
+        
+        $this->assertEquals(true, is_callable($callback));
         $this->assertEquals(
             $expect,
-            $obj->get($name)
+            call_user_func_array($callback, $arguments)
         );
     }
 }

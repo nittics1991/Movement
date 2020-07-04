@@ -102,4 +102,14 @@ Private Test Trait (Movement\test\test\PrivateTestTrait)
 
 Abstract Validator Rule Provider (Movement\test\validator\AbstractValidatorRuleProvider)
  [x] Providesプロパティ設定 with data set #0
+ [x] Registerメソッド with data set #0
+ [x] Registerメソッド with data set #1
+ [x] Registerメソッド with data set #2
+ [x] Registerメソッド with data set #3
+ [x] Registerメソッド with data set #4
+ [x] Registerメソッド with data set #5
+ [x] Registerメソッド with data set #6
+ [x] Registerメソッド with data set #7
+ [x] Registerメソッド with data set #8
+ [x] Registerメソッド with data set #9
 
