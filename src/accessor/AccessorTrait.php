@@ -71,13 +71,15 @@ trait AccessorTrait
             mb_substr($name, 3)
         );
         
-        if ($action === 'get'
+        if (
+            $action === 'get'
             && in_array($property_name, $this->getters)
         ) {
             return $this->$property_name;
         }
         
-        if ($action === 'set'
+        if (
+            $action === 'set'
             && isset($arguments[0])
             && in_array($property_name, $this->setters)
         ) {

@@ -59,6 +59,42 @@ Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] From aggregateプロパティ未定義例外
  [x] From aggregate privateプロパティ例外
 
+Reflection Container (Movement\test\container\ReflectionContainer)
+ [x] Reflect class and constructor class parameter
+ [x] Failure reflect class not default value
+
+Service Container Original (Movement\test\container\ServiceContainerOriginal)
+ [x] Sets and gets simple prototyped closure or strings
+ [x] Sets and get instance as shared
+ [x] Sets and get string as shared
+ [x] Throws when getting unmanaged service
+ [x] Get shared item returns the same item
+ [x] Has returns true for shared definition
+ [x] Extend throws when cannot find definition
+ [ ] Extends addition
+ [x] Providing no concrete results in alias
+ [x] Providing arguments to binding
+ [x] Providing class arguments to binding
+ [x] Requesting none bound class results in reflection call
+ [x] Reflection delegation results in instance being created
+ [x] Service provider delegation results in instance being created
+ [x] Container delegation results in method calls being passed down
+
+Service Container (Movement\test\container\ServiceContainer)
+ [x] Set parameter
+ [x] Set function
+ [x] Set object
+ [x] Replace service
+ [x] Change argument
+ [x] Parameter
+ [x] Raw
+ [x] Not accept closure
+
+Service Provider (Movement\test\container\ServiceProvider)
+ [x] Concatenate multiple bind in service provider
+ [x] Boot of service provider
+ [x] Mix reflection and provider
+
 Private Test Trait (Movement\test\test\PrivateTestTrait)
  [x] 基本的なクラス
  [x] 継承した親

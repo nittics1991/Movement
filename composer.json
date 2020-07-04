@@ -11,7 +11,8 @@
     ],
     "require": {
         "php": "^7",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "psr/container": "^1.0"
     },
     "autoload": {
         "psr-4": {

@@ -12,8 +12,7 @@ use Closure;
 use RuntimeException;
 use Movement\container\provider\AbstractServiceProvider;
 
-abstract class AbstractValidatorRuleProvider extends
-    AbstractServiceProvider
+abstract class AbstractValidatorRuleProvider extends AbstractServiceProvider
 {
     /**
     *   {inherit}
@@ -41,7 +40,7 @@ abstract class AbstractValidatorRuleProvider extends
     
     /**
     *   setRules
-    *   user has to make $this->rules    
+    *   user has to make $this->rules
     */
     abstract protected function setRules();
     
@@ -58,7 +57,7 @@ abstract class AbstractValidatorRuleProvider extends
                 );
             }
             
-            $this->bind($name, function($container) use ($rule) {
+            $this->bind($name, function ($container) use ($rule) {
                 return $rule;
             });
         }

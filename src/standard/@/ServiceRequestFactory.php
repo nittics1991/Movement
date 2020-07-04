@@ -36,8 +36,8 @@ class ServiceRequestFactory
         }
         
         return new $class_name(
-            isset($request)?
-            $request->getQueryParams():
+            isset($request) ?
+            $request->getQueryParams() :
             $_QUERY;
         );
     }
@@ -59,8 +59,8 @@ class ServiceRequestFactory
         }
         
         return new $class_name(
-            isset($request)?
-            $request->getParsedBody():
+            isset($request) ?
+            $request->getParsedBody() :
             $_POST;
         );
     }
@@ -82,8 +82,8 @@ class ServiceRequestFactory
         }
         
         return new $class_name(
-            isset($request)?
-            $request->getCookieParams():
+            isset($request) ?
+            $request->getCookieParams() :
             $_COOKIE;
         );
     }

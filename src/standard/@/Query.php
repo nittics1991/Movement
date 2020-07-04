@@ -17,7 +17,8 @@ use Movement\accessor\{
     ReflectePropertyTraitInterface
 };
 
-class Query implements ReflectePropertyTraitInterface,
+class Query implements
+    ReflectePropertyTraitInterface,
     CastByPropertyTypeTraitInterface
 {
     use ReflectePropertyTrait;

@@ -19,14 +19,13 @@ class ValidatorDateTimeRuleProvider extends AbstractServiceProvider
     
     public function register()
     {
-        $this->bind('isYYYYMM', function($container) {
-            return function($value, $parameters = []) {
-                
+        $this->bind('isYYYYMM', function ($container) {
+            return function ($value, $parameters = []) {
             };
         });
         
-        $this->bind('isYYYYMM', function($container) {
-            return function($value, $parameters = []) {
+        $this->bind('isYYYYMM', function ($container) {
+            return function ($value, $parameters = []) {
                 return is_string($value)
                     && mb_ereg_match('\A20[0-9]{2}[0-1][0-9]\z', $value)
                     && checkdate(
@@ -36,12 +35,5 @@ class ValidatorDateTimeRuleProvider extends AbstractServiceProvider
                     );
             };
         });
-        
-        
-        
-        
-        
-        
-        
     }
 }

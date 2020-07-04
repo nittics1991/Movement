@@ -1,1 +1,2 @@
-cd $(dirname "$0"); cd ..; php ./dist/composer.phar "$*"
+#cd $(dirname "$0"); cd ..; php ./dist/composer.phar "$*"
+cd $(dirname "$0"); cd ..; php ./dist/composer.phar "$@"

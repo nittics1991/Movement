@@ -88,7 +88,7 @@ trait CastByPropertyTypeTrait
             case 'parent':
             case 'self':
                 $type = $type === 'parent' ?
-                    get_parent_class($this):
+                    get_parent_class($this) :
                     get_called_class();
                 // no break
             default:

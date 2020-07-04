@@ -18,7 +18,8 @@ use Movement\accessor\{
 };
 use Movement\validator\ValidatorRuleDefinedInterface;
 
-class InputValueObject implements ReflectePropertyTraitInterface,
+class InputValueObject implements
+    ReflectePropertyTraitInterface,
     CastByPropertyTypeTraitInterface,
     ValidatorRuleDefinedInterface
 {

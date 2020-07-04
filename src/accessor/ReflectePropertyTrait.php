@@ -89,7 +89,7 @@ trait ReflectePropertyTrait
                 "not defined property:{$name}"
             );
         }
-        return $this->$name?? null;
+        return $this->$name ?? null;
     }
     
     /**
@@ -109,7 +109,8 @@ trait ReflectePropertyTrait
     **/
     public function __isset(string $name): bool
     {
-        if (!$this->has($name)
+        if (
+            !$this->has($name)
             && !$this->isWritable($name)
         ) {
             return false;
@@ -168,7 +169,7 @@ trait ReflectePropertyTrait
         }
         
         $result = [];
-        foreach(array_keys($this->properties) as $name) {
+        foreach (array_keys($this->properties) as $name) {
             $result[$name] = $this->$name;
         }
         

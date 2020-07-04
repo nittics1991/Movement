@@ -22,5 +22,5 @@ interface ValidatorRuleResolverInterface
     *           @param array parameters
     *       ]
     */
-    public function resolve($rule):array;
+    public function resolve($rule): array;
 }

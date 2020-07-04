@@ -33,8 +33,8 @@ class InputValueObjectFactory
         }
         
         return new $class_name(
-            isset($request)?
-            $request->getQueryParams():
+            isset($request) ?
+            $request->getQueryParams() :
             $_QUERY
         );
     }
@@ -57,8 +57,8 @@ class InputValueObjectFactory
         }
         
         return new $class_name(
-            isset($request)?
-            $request->getParsedBody():
+            isset($request) ?
+            $request->getParsedBody() :
             $_POST
         );
     }
