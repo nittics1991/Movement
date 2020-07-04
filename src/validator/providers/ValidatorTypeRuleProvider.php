@@ -41,6 +41,7 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
     {
         $this->positiveRule();
         $this->negativeRule();
+        $this->otherRule();
     }
     
     /**
@@ -65,6 +66,20 @@ class ValidatorTypeRuleProvider extends AbstractValidatorRuleProvider
             $name = $this->toNegativeName($method);
             $this->rules[$name] = fn($v) => !$callback($v);
         }
+    }
+    
+    /**
+    *   otherRule
+    *
+    */
+    private function otherRule()
+    {
+        $this->methods['isTrue'] = fn($v) => $v == true;
+        $this->methods['isFalse'] = fn($v) => $v == false;
+        $this->methods['isEmpty'] = fn($v) => empty($v);
+        $this->methods['isNotEmpty'] = fn($v) => !empty($v);
+        $this->methods['isBlank'] = fn($v) => $v == '';
+        $this->methods['isNotBlank'] = fn($v) => $v != '';
     }
     
     /**

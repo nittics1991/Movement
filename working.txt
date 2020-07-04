@@ -231,8 +231,11 @@ pstan反映する事
             Psr7Response　でcookieは返す
             Sessionは ajaxを考えると、書き込み直後に保存が必要
 
-
-
+200704
+    validator
+        Laravel参照
+        DateTime,String
+        Stringは正規表現classも参照
 
 
 
