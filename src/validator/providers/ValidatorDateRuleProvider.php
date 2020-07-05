@@ -33,16 +33,6 @@ class ValidatorDateRuleProvider extends AbstractValidatorRuleProvider
                 list($date, $target) = $this->toDateTime($f, $v, $t);
                 
                 if (!$date || !$target) {
-                    
-                    
-                    var_dump($v);
-                    var_dump($t);
-                    var_dump($f);
-                    var_dump($date);
-                    var_dump($target);
-                    var_dump("-----------------");
-                    
-                    
                     return false;
                 }
                 return $date == $target;
@@ -67,8 +57,8 @@ class ValidatorDateRuleProvider extends AbstractValidatorRuleProvider
         string $value1,
         string $value2
     ): array {
-        $date1 = date_create_from_format("!{$value1}", $format);
-        $date2 = date_create_from_format("!{$value2}", $format);
+        $date1 = date_create_from_format("!{$format}", $value1);
+        $date2 = date_create_from_format("!{$format}", $value2);
         return [$date1, $date2];
     }
 }
