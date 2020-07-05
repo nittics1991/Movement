@@ -20,16 +20,24 @@ class ValidatorDateRuleProvider extends AbstractValidatorRuleProvider
     protected function setRules()
     {
         $this->rules = [
-            'dateFormat' => function($v, $p) {
-                if (!($date = date_create_from_format("!{$p}", $v))) {
+            'dateFormat' => function($v, $f) {
+                if (!($date = date_create_from_format("!{$f}", $v))) {
                     return false;
                 }
-                if (!($formatted = date_format($date, $p))) {
+                if (!($formatted = date_format($date, $f))) {
                     return false;
                 }
                 return $formatted == $v;
             },
-            
+            'dateEqual' => function($v, $f, $t) {
+                if (!($date = date_create_from_format("!{$f}", $v))) {
+                    return false;
+                }
+                if (!($target = date_create_from_format("!{$f}", $t))) {
+                    return false;
+                }
+                return $date == $target;
+            },
             
             
             

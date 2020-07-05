@@ -184,6 +184,13 @@ Validator Date Rule Provider (Movement\test\validator\providers\ValidatorDateRul
  [x] Provider動作 with data set #13
  [x] Provider動作 with data set #14
  [x] Provider動作 with data set #15
+ [x] Provider動作 with data set #16
+ [x] Provider動作 with data set #17
+ [x] Provider動作 with data set #18
+ [x] Provider動作 with data set #19
+ [x] Provider動作 with data set #20
+ [x] Provider動作 with data set #21
+ [x] Provider動作 with data set #22
 
 Validator Math Rule Provider (Movement\test\validator\providers\ValidatorMathRuleProvider)
  [x] Provider動作 with data set #0
@@ -260,6 +267,8 @@ Validator Text Rule Provider (Movement\test\validator\providers\ValidatorTextRul
  [x] Provider動作 with data set #27
  [x] Provider動作 with data set #28
  [x] Provider動作 with data set #29
+ [x] Provider動作 with data set #30
+ [x] Provider動作 with data set #31
 
 Validator Type Rule Provider (Movement\test\validator\providers\ValidatorTypeRuleProvider)
  [x] Provider動作 with data set #0

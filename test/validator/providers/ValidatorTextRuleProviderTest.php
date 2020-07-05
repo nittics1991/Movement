@@ -59,9 +59,9 @@ class ValidatorTextRuleProviderTest extends MovementTestCase
             ['hankana', ['ｱｲｳ'], true],
             ['hankana', ['アイウ'], false],
             
+            ['regex', ['bzac', '\A[a-z]*\z'], true],
+            ['regex', ['bzAc', '\A[a-z]*\z'], false],
 
-
-            
         ];
     }
     

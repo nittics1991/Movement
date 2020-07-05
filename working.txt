@@ -234,11 +234,7 @@ pstan反映する事
 200704
     validator
         Laravel参照
-        DateTime,String
-        Stringは正規表現classも参照
-        
-        BCMathでの比較
-        
+        DateTime
 
 
 

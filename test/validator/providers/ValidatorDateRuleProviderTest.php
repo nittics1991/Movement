@@ -35,6 +35,16 @@ class ValidatorDateRuleProviderTest extends MovementTestCase
             ['dateFormat', ['20200301_042159', 'Ymd_His'], true],
             ['dateFormat', ['20200301 0421', 'Ymd Hi'], true],
             ['dateFormat', ['200301 0421', 'ymd Hi'], true],
+            ['dateFormat', ['21', 'H'], true],
+            ['dateFormat', ['25', 'H'], false],
+            ['dateFormat', ['210359', 'His'], true],
+            ['dateFormat', ['03:59', 'i:s'], true],
+            
+            ['dateEqual', ['20200301', 'Ymd', '20200301'], true],
+            ['dateEqual', ['20200301', 'Ymd', '2020-03-01'], false],
+            ['dateEqual', ['20210229', 'Ymd', '20210301'], true],
+            
+            
             
             
             

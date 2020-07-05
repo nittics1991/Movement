@@ -28,6 +28,7 @@ class ValidatorTextRuleProvider extends AbstractValidatorRuleProvider
             'hiragana' => fn($v) => mb_ereg_match('\A[ぁ-ん]+\z', $v),
             'katakana' => fn($v) => mb_ereg_match('\A[ァ-ヶ]+\z', $v),
             'hankana' => fn($v) => mb_ereg_match('\A[｡-ﾟ]+\z', $v),
+            'regex' => fn($v, $p) => mb_ereg_match($p, $v),
         ];
    }
 }
