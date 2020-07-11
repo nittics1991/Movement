@@ -15,12 +15,12 @@ interface ValidatorRuleResolverInterface
     /**
     *   resolve
     *
-    *   @param mixed $rule
+    *   @param mixed $rules
     *   @return array
     *       [
     *           @param callable $validator
     *           @param array parameters
     *       ]
     */
-    public function resolve($rule): array;
+    public function resolve($rules): array;
 }

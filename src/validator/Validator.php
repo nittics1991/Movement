@@ -54,9 +54,9 @@ class Validator implements ValidatorInterface
     ) {
         $this->errors = [];
         
-        foreach ($values as $name => $val) {
-            if (isset($rules[$name])) {
-                $this->doValidate($name, $val, $rules[$name]);
+        foreach ($rules as $name => $rule) {
+            if (isset($values[$name])) {
+                $this->doValidate($name, $val, $rule);
             }
         }
         return empty($this->errors);
@@ -74,7 +74,7 @@ class Validator implements ValidatorInterface
         $value,
         $rule
     ) {
-        list($validator, $parameters) = $this->resolver($rule);
+        list($validator, $parameters) = $this->resolver->resolve($rule);
         
         $result = call_user_func_array(
             $validator,
