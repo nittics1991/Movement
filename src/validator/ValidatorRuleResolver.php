@@ -105,10 +105,11 @@ class ValidatorRuleResolver implements ValidatorRuleResolverInterface
         
         
         //要みなおし
-        
+        /*
         for($i = 0; $i < count($values); $i++) {
-            if (($val = mb_substr($values[$i], -1, 1)) == '\\') {
-                $stack .= "{$val}{$character}";
+            if (mb_substr($values[$i], -1, 1) == '\\') {
+                $stack .= mb_substr($values[$i], 0, mb_strlen($values[$i]) - 1)
+                    . $character;
             } else {
                 $result[] = "{$stack}{$values[$i]}";
                 $stack = '';
@@ -116,6 +117,20 @@ class ValidatorRuleResolver implements ValidatorRuleResolverInterface
         }
         if (!empty($stack)) {
             $result[] = $values[$i - 1];
+        }
+        */
+        
+        foreach($values as $value) {
+            if (mb_substr($value, -1, 1) == '\\') {
+                $stack .= mb_substr($value, 0, mb_strlen($value) - 1)
+                    . $character;
+            } else {
+                $result[] = "{$stack}{$value}";
+                $stack = '';
+            }
+        }
+        if (!empty($stack)) {
+            $result[] = $values[count($values) - 1];
         }
         return $result;
     }

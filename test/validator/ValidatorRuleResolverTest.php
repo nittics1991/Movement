@@ -74,18 +74,8 @@ class ValidatorRuleResolverTest extends MovementTestCase
              [
                 ['regex', '\\[A-Z#\\', '%]'],  //最初の文字「\」
                 ':',
-                ['regex', '\\[A-Z#:%\\]'],
+                ['regex', '\\[A-Z#:%]'],
             ],
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         ];
     }
     

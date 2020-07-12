@@ -121,10 +121,10 @@ Abstract Validator Rule Provider (Movement\test\validator\AbstractValidatorRuleP
 
 Validator Rule Resolver (Movement\test\validator\ValidatorRuleResolver)
  [x] Repair escape charactersメソッド with data set #0
- [ ] Repair escape charactersメソッド with data set #1
- [ ] Repair escape charactersメソッド with data set #2
- [ ] Repair escape charactersメソッド with data set #3
- [ ] Repair escape charactersメソッド with data set #4
+ [x] Repair escape charactersメソッド with data set #1
+ [x] Repair escape charactersメソッド with data set #2
+ [x] Repair escape charactersメソッド with data set #3
+ [x] Repair escape charactersメソッド with data set #4
 
 Validator Bc Compare Rule Provider (Movement\test\validator\providers\ValidatorBcCompareRuleProvider)
  [x] Provider動作 with data set #0
