@@ -18,12 +18,14 @@ class ValidatorRuleResolver implements ValidatorRuleResolverInterface
     /**
     *   container
     *
+    *   @var ContainerInterface
     */
     private ContainerInterface $container;
     
     /**
-    *   {inherit}
+    *   __construct
     *
+    *   @param ContainerInterface
     */
     public function __construct(
         ContainerInterface $container
@@ -46,7 +48,7 @@ class ValidatorRuleResolver implements ValidatorRuleResolverInterface
         $functions = $this->explodeRules($rules);
         $validator_parameters = [];
         
-        foreach ($functions => $function) {
+        foreach ($functions as $function) {
             $validator_parameters[] =
                 $this->explodeFunction($function);
         }
@@ -62,11 +64,7 @@ class ValidatorRuleResolver implements ValidatorRuleResolverInterface
     private function explodeRules($rules): array
     {
         $exploded = explode(',', $rules);
-        return $this->repairEscapeCharacters($exploded, ',')
-        
-        
-        
-        
+        return $this->repairEscapeCharacters($exploded, ',');
     }
     
     /**
@@ -77,9 +75,19 @@ class ValidatorRuleResolver implements ValidatorRuleResolverInterface
     */
     private function explodeFunction($function): array
     {
+        $exploded = explode(':', $rules);
+        $escaped = $this->repairEscapeCharacters($exploded, ':');
+        $function_name = array_shift($escaped);
         
-        
-        return explode(':', $rules);
+        if (!$this->container->has($function_name)) {
+            throw new InvalidArgumentException(
+                "not defined rule:{$function_name}"
+            );
+        }
+        return [
+            $this->container->get($function_name),
+            $escaped
+        ];
     }
     
     /**
@@ -92,19 +100,22 @@ class ValidatorRuleResolver implements ValidatorRuleResolverInterface
         array $values,
         string $character
     ): array {
-        
-        
-        
-        
-        
         $result = [];
+        $stack = '';
+        
+        
+        //要みなおし
+        
         for($i = 0; $i < count($values); $i++) {
-            if (mb_substr($values[$i], -1, 1) == '\\') {
-                $result[] = isset($values[$i + 1])?
-                    mb_substr($values[$i], 0, mb_strlen($values[$i]) - 1)
-                            . "{$character}{$values[$i + 1]}":
-                        $values[$i];
+            if (($val = mb_substr($values[$i], -1, 1)) == '\\') {
+                $stack .= "{$val}{$character}";
+            } else {
+                $result[] = "{$stack}{$values[$i]}";
+                $stack = '';
             }
+        }
+        if (!empty($stack)) {
+            $result[] = $values[$i - 1];
         }
         return $result;
     }
