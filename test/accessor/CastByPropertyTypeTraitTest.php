@@ -205,4 +205,49 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                 $this->assertSame($expect, $actual);
         }
     }
+    
+    /**
+    *
+    */
+    public function castAggregateToArrayメソッドdataProvider()
+    {
+        return [
+            [
+                [
+                    'non_data' => 'NON_DATA',
+                    'bool_data' => 1,
+                    'int_data' => false,
+                ],
+                (function() {
+                    $obj = new CastByPropertyTypeTraitTarget();
+                    $this->setPrivateProperty($obj, 'non_data','NON_DATA');
+                    $this->setPrivateProperty($obj, 'bool_data',true);
+                    $this->setPrivateProperty($obj, 'int_data',0);
+                    return $obj;
+                })(),
+            ],
+            
+        ];
+    }
+    
+    /**
+    *   @test
+    *   @dataProvider castAggregateToArrayメソッドdataProvider
+    */
+    public function castAggregateToArrayメソッド(
+        $data,
+        $expect
+    ) {
+      //$this->markTestIncomplete();
+
+        $obj = new CastByPropertyTypeTraitTarget();
+        
+        $actual = $this->callPrivateMethod(
+            $obj,
+            'castAggregateToArray',
+            [$data]
+        );
+        
+        $this->assertSame($expect, $actual);
+    }
 }
