@@ -10,6 +10,7 @@ use BadMethodCallException;
 use InvalidArgumentException;
 use ArrayObject;
 use StdClass;
+use TypeError;
 
 /**
 *   ReflectePropertyTraitで操作するクラス
@@ -20,11 +21,13 @@ class ReflectePropertyTraitTarget
         fromAggregate as public;
     }
     
-    public $public_property = 'publicProperty';
-    protected $protected_property = 'protectedProperty';
-    private $private_property = 'privateProperty';
+    public string $public_property = 'publicProperty';
+    protected string $protected_property = 'protectedProperty';
+    private string $private_property = 'privateProperty';
+    
+    //unset test用
+    public ?string $public_property_null = 'publicPropertyNull';
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -54,6 +57,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
             [
                 'public_property' => 'public_property',
                 'protected_property' => 'protected_property',
+                'public_property_null' => 'public_property_null',
             ],
             $actual
         );
@@ -79,6 +83,10 @@ class ReflectePropertyTraitTest extends MovementTestCase
         $this->assertFalse(
             $obj->has('private_property')
         );
+        
+        $this->assertFalse(
+            $obj->has('notdefine_property')
+        );
     }
     
     /**
@@ -100,6 +108,10 @@ class ReflectePropertyTraitTest extends MovementTestCase
         
         $this->assertFalse(
             $obj->isWritable('private_property')
+        );
+        
+        $this->assertFalse(
+            $obj->isWritable('notdefine_property')
         );
     }
     
@@ -124,6 +136,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
         );
         
         //private_proterty
+        //notdefine_property
         
         //__isset
         $this->assertTrue(
@@ -138,6 +151,10 @@ class ReflectePropertyTraitTest extends MovementTestCase
             isset($obj->private_proterty)
         );
         
+        $this->assertFalse(
+            isset($obj->notdefine_property)
+        );
+        
         //__set
         $obj->public_property = 'newPublicProperty';
         $this->assertEquals(
@@ -147,13 +164,20 @@ class ReflectePropertyTraitTest extends MovementTestCase
         
         //protected_proterty
         //private_proterty
+        //notdefine_property
+    }
+    
+    /**
+    *   @test
+    */
+    public function publicメソッドunset_null未定義()
+    {
+//      $this->markTestIncomplete();
         
-        //__unset
+        $obj = new ReflectePropertyTraitTarget();
+        
         unset($obj->public_property);
-        $this->assertEquals(
-            null,
-            $obj->public_property
-        );
+        
         $this->assertFalse(
             isset($obj->public_property)
         );
@@ -161,8 +185,54 @@ class ReflectePropertyTraitTest extends MovementTestCase
             $obj->has('public_property')
         );
         
-        //protected_proterty
-        //private_proterty
+        //get
+        try {
+            $result = $obj->public_property;
+            $this->assertEquals(0,1,'unset後に取得は出来てはならない');
+        } catch (TypeError $e) {
+            $this->assertEquals(1,1);
+        }
+        
+        //set
+        try {
+            $obj->public_property = 'AAA';
+            $this->assertEquals(0,1,'unset後に代入出来てはならない');
+        } catch (InvalidArgumentException $e) {
+            $this->assertEquals(1,1);
+        }
+    }
+    
+    /**
+    *   @test
+    */
+    public function publicメソッドunset_null定義()
+    {
+//      $this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        
+        unset($obj->public_property_null);
+        
+        $this->assertFalse(
+            isset($obj->public_property_null)
+        );
+        $this->assertTrue(
+            $obj->has('public_property_null')
+        );
+        
+        //get
+        $this->assertEquals(
+            null,
+            $obj->public_property_null
+        );
+        
+        //set
+        try {
+            $obj->public_property_null = 'newPublicPropertyNull';
+            $this->assertEquals(0,1,'unset後に代入出来てはならない');
+        } catch (InvalidArgumentException $e) {
+            $this->assertEquals(1,1);
+        }
     }
     
     /**
@@ -253,6 +323,57 @@ class ReflectePropertyTraitTest extends MovementTestCase
     /**
     *   @test
     */
+    public function notdefineプロパティunset例外()
+    {
+//      $this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        try {
+            unset($obj->notdefine_property);
+        } catch (BadMethodCallException $e) {
+            $this->assertEquals(1,1);
+            return;
+        }
+        $this->assertEquals(1,0);
+    }
+    
+    /**
+    *   @test
+    */
+    public function notdefineプロパティset例外()
+    {
+//      $this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        try {
+            $obj->notdefine_property = 1;
+        } catch (InvalidArgumentException $e) {
+            $this->assertEquals(1,1);
+            return;
+        }
+        $this->assertEquals(1,0);
+    }
+    
+    /**
+    *   @test
+    */
+    public function notdefineプロパティget例外()
+    {
+//      $this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        try {
+            $val = $obj->notdefine_property;
+        } catch (InvalidArgumentException $e) {
+            $this->assertEquals(1,1);
+            return;
+        }
+        $this->assertEquals(1,0);
+    }
+    
+    /**
+    *   @test
+    */
     public function toArrayメソッドarray()
     {
       //$this->markTestIncomplete();
@@ -263,6 +384,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
             [
                 'public_property' => 'publicProperty',
                 'protected_property' => 'protectedProperty',
+                'public_property_null' => 'publicPropertyNull',
             ],
             $obj->toArray()
         );
@@ -280,6 +402,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
         $data = [
             'public_property' => 'newPublicProperty',
             'protected_property' => 'newProtectedProperty',
+            'public_property_null' => 'newPublicPropertyNull',
         ];
         
         $obj->fromAggregate($data);
@@ -302,6 +425,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
         $data = [
             'public_property' => 'newPublicProperty',
             'protected_property' => 'newProtectedProperty',
+            'public_property_null' => 'newPublicPropertyNull',
         ];
         $stdClass = new StdClass();
         
@@ -329,6 +453,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
         $data = [
             'public_property' => 'newPublicProperty',
             'protected_property' => 'newProtectedProperty',
+            'public_property_null' => 'newPublicPropertyNull',
         ];
         $arrayObject = new ArrayObject($data);
         
@@ -339,14 +464,6 @@ class ReflectePropertyTraitTest extends MovementTestCase
             $obj->toArray()
         );
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     /**
     *   @test
@@ -361,6 +478,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
             'public_property' => 'newPublicProperty',
             'DUMMY' => 'dummy',
             'protected_property' => 'newProtectedProperty',
+            'public_property_null' => 'newPublicPropertyNull',
         ];
         $arrayObject = new ArrayObject($data);
         
@@ -386,6 +504,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
             'public_property' => 'newPublicProperty',
             'private_property' => 'newPrivateProperty',
             'protected_property' => 'newProtectedProperty',
+            'public_property_null' => 'newPublicPropertyNull',
         ];
         $arrayObject = new ArrayObject($data);
         

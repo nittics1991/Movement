@@ -47,11 +47,16 @@ Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Hasメソッド
  [x] Is writableメソッド
  [x] マジックメソッド
+ [x] Publicメソッドunset null未定義
+ [x] Publicメソッドunset null定義
  [x] Protectedプロパティunset例外
  [x] Protectedプロパティset例外
  [x] Privateプロパティunset例外
  [x] Privateプロパティset例外
  [x] Privateプロパティget例外
+ [x] Notdefineプロパティunset例外
+ [x] Notdefineプロパティset例外
+ [x] Notdefineプロパティget例外
  [x] To arrayメソッドarray
  [x] From aggregateメソッドarray
  [x] From aggregateメソッドobject

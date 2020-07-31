@@ -3,7 +3,8 @@
 /**
 *   ReflectAttributeTrait
 *
-*   @version 200613
+*   @version 200801
+*
 */
 
 declare(strict_types=1);
@@ -109,8 +110,7 @@ trait ReflectePropertyTrait
     **/
     public function __isset(string $name): bool
     {
-        if (
-            !$this->has($name)
+        if (!$this->has($name)
             && !$this->isWritable($name)
         ) {
             return false;
