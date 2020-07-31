@@ -29,7 +29,7 @@ class CastByPropertyTypeTraitTarget extends StdClass
         'array_data',
         'object_data',
         'class_data',
-        'itelable_data',
+        'iterable_data',
         'parent_data',
         'self_data',
     ];
@@ -41,10 +41,10 @@ class CastByPropertyTypeTraitTarget extends StdClass
     protected string $string_data;
     protected array $array_data;
     protected object $object_data;
-    protected iterable $itelable_data;
+    protected ArrayObject $class_data;
+    protected iterable $iterable_data;
     protected parent $parent_data;
     protected self $self_data;
-    protected ArrayObject $class_data;
 }
 
 class CastByPropertyTypeTraitReferer
@@ -119,7 +119,7 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $result;
                 })()
             ],
-           
+            //class
             [
                 'class_data',
                 ['aaa', 'bbb' => 111],
@@ -128,9 +128,34 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $result;
                 })()
             ],
+            //iterable
+            [
+                'iterable_data',
+                ['aaa', 'bbb' => 111],
+                ['aaa', 'bbb' => 111],
+            ],
+            [
+                'iterable_data',
+                new ArrayObject(['aaa', 'bbb' => 111]),
+                (function() {
+                    $result = new ArrayObject(['aaa', 'bbb' => 111]);
+                    return $result;
+                })()
+            ],
+            [
+                'iterable_data',
+                'aaa',
+                (function() {
+                    $result = new ArrayObject(['aaa']);
+                    return $result;
+                })()
+            ],
+            //
             
             
-            //iterable以下は使えない?
+            
+            
+            
             
             
         ];
@@ -160,10 +185,10 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
         
         switch ($property_name) {
             case 'object_data':
+            case 'class_data':
             case 'iterable_data':
             case 'parent_data':
             case 'self_data':
-            case 'class_data':
                 $this->assertEquals($expect, $actual);
                 break;
             default:

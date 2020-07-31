@@ -78,8 +78,7 @@ trait CastByPropertyTypeTrait
                     return $val;
                 }
                 return (object)$val;
-                
-            /*以下不動作?*/
+            //iterable,parent,self不動作?
             case 'iterable':
                 if (is_iterable($val)) {
                     return $val;
@@ -91,6 +90,7 @@ trait CastByPropertyTypeTrait
                     get_parent_class($this) :
                     get_called_class();
                 // no break
+            //クラス
             default:
                 if (is_object($val)) {
                     return $val;
