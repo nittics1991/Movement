@@ -150,14 +150,24 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $result;
                 })()
             ],
-            //
-            
-            
-            
-            
-            
-            
-            
+            //parent
+            [
+                'parent_data',
+                'aaa',
+                (function() {
+                    $result = new StdClass();
+                    return $result;
+                })()
+            ],
+            //self
+            [
+                'self_data',
+                'aaa',
+                (function() {
+                    $result = new CastByPropertyTypeTraitTarget();
+                    return $result;
+                })()
+            ],
         ];
     }
     
