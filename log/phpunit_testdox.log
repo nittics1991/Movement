@@ -42,6 +42,9 @@ Cast By Property Type Trait (Movement\test\accessor\CastByPropertyTypeTrait)
  [x] Cast by property typeメソッド with data set #17
  [x] Cast by property typeメソッド with data set #18
 
+Reflecte Property Trait2 (Movement\test\accessor\ReflectePropertyTrait2)
+ [ ] Getメソッド
+
 Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] Reflecte propertyメソッド
  [x] Hasメソッド
@@ -63,6 +66,7 @@ Reflecte Property Trait (Movement\test\accessor\ReflectePropertyTrait)
  [x] From aggregateメソッド traversable
  [x] From aggregateプロパティ未定義例外
  [x] From aggregate privateプロパティ例外
+ [x] Get propertiesメソッド
 
 Reflection Container (Movement\test\container\ReflectionContainer)
  [x] Reflect class and constructor class parameter

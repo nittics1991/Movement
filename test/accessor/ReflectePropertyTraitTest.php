@@ -516,4 +516,25 @@ class ReflectePropertyTraitTest extends MovementTestCase
         }
         $this->assertEquals(1,0);
     }
+    
+    /**
+    *   @test
+    */
+    public function getPropertiesメソッド()
+    {
+//      $this->markTestIncomplete();
+        
+        $obj = new ReflectePropertyTraitTarget();
+        
+        $expect = [
+            'public_property',
+            'protected_property',
+            'public_property_null',
+        ];
+        
+        $this->assertSame(
+            $expect,
+            $obj->getProperties()
+        );
+    }
 }

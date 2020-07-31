@@ -175,4 +175,17 @@ trait ReflectePropertyTrait
         
         return $result;
     }
+    
+    /**
+    *   getProperties
+    *
+    *   @return array
+    */
+    public function getProperties(): array
+    {
+        if (empty($this->properties)) {
+            $this->reflecteProperty();
+        }
+        return array_keys($this->properties);
+    }
 }
