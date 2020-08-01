@@ -236,8 +236,18 @@ pstan反映する事
         Laravel参照
         DateTime
 
-
-
+20200801
+    accessor.PseudoDataMapperTestTarget
+    MataMapperを想定したclassのテスト
+    DateTimeをcast/formatする機能が欲しい
+    formatは外部configで変更できるようにしたい
+    CastByPropertyTraitを改造？
+        typeと変換処理(callable)を定義
+        現在switchをin_arrayで変換処理を動的に取得
+        追加定義出来るようにmethodを追加(propertyでは)
+    
+    
+    
 
 
 

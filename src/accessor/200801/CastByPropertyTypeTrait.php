@@ -21,62 +21,9 @@ trait CastByPropertyTypeTrait
     /**
     *   casts
     *
-    *   @var string[] ['propertyName1' => , ...]
+    *   @var string[] ['propertyName1', ...]
     */
     //private array $casts = [];
-    
-    /**
-    *   cast_
-    *
-    *   @var callable[] ['type' => callable, ...]
-    */
-    
-    
-    
-    
-    private array $casts = [
-        
-        
-            case '':
-                return $val;
-            case 'bool':
-                return boolval($val);
-            case 'float':
-                return floatval($val);
-            case 'int':
-                return intval($val);
-            case 'string':
-                return strval($val);
-            case 'array':
-                return (array)$val;
-            case 'object':
-                if (is_object($val)) {
-                    return $val;
-                }
-                return (object)$val;
-            //iterable,parent,self不動作?
-            case 'iterable':
-                if (is_iterable($val)) {
-                    return $val;
-                }
-                return new ArrayObject([$val]);
-            case 'parent':
-            case 'self':
-                $type = $type === 'parent' ?
-                    get_parent_class($this) :
-                    get_called_class();
-                // no break
-            //クラス
-            default:
-                if (is_object($val)) {
-                    return $val;
-                }
-                return new $type($val);
-        
-        
-        
-        
-    ];
     
     /**
     *   プロパティで型変換
