@@ -18,7 +18,9 @@ use StdClass;
 class CastByPropertyTypeTraitTarget extends StdClass
 {
     use CastByPropertyTypeTrait;
-    use ReflectePropertyTrait;
+    use ReflectePropertyTrait{
+        toArray as public;
+    }
     
     private $casts = [
         'non_data',
@@ -45,15 +47,13 @@ class CastByPropertyTypeTraitTarget extends StdClass
     protected iterable $iterable_data;
     protected parent $parent_data;
     protected self $self_data;
-}
-
-class CastByPropertyTypeTraitReferer
-{
-    use ReflectePropertyTrait;
     
-    public int $class_int_public;
-    protected int $class_int_protected;
-    private int $class_int_private;
+    public function __construct(array $data = [])
+    {
+        $this->fromAggregate(
+            $this->castAggregateToArray($data)
+        );
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -162,9 +162,14 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
             //self
             [
                 'self_data',
-                'aaa',
+                ['string_data' => 'aaa'],
                 (function() {
                     $result = new CastByPropertyTypeTraitTarget();
+                    $this->setPrivateProperty(
+                        $result,
+                        'string_data',
+                        'aaa'
+                    );
                     return $result;
                 })()
             ],
@@ -226,6 +231,31 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $obj;
                 })(),
             ],
+            [
+                [
+                    'non_data' => 123,
+                    'bool_data' => '',
+                    'int_data' => '456',
+                    'float_data' => '3.1415',
+                    'string_data' => 11,
+                ],
+                (function() {
+                    $obj = new CastByPropertyTypeTraitTarget();
+                    $this->setPrivateProperty($obj, 'non_data',123);
+                    $this->setPrivateProperty($obj, 'bool_data',false);
+                    $this->setPrivateProperty($obj, 'int_data',456);
+                    $this->setPrivateProperty($obj, 'float_data',3.1415);
+                    $this->setPrivateProperty($obj, 'string_data','11');
+                    return $obj;
+                })(),
+            ],
+            
+            
+            
+            
+            
+            
+            
             
         ];
     }
@@ -240,14 +270,13 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
     ) {
       //$this->markTestIncomplete();
 
-        $obj = new CastByPropertyTypeTraitTarget();
+        $obj = new CastByPropertyTypeTraitTarget($data);
+        $this->assertEquals($expect, $obj);
         
-        $actual = $this->callPrivateMethod(
-            $obj,
-            'castAggregateToArray',
-            [$data]
-        );
         
-        $this->assertSame($expect, $actual);
+        var_dump($obj->toArray());
+        
+        
+        //$this->assertEquals($data, $obj->toArray());
     }
 }
