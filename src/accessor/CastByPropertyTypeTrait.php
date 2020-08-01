@@ -25,7 +25,7 @@ trait CastByPropertyTypeTrait
     *
     *   @var string[] ['propertyName1', ...]
     */
-    //private array $casts = [];
+    //protected array $casts = [];
     
     /**
     *   cast_rules
@@ -34,7 +34,7 @@ trait CastByPropertyTypeTrait
     *       '':型未定義
     *       '*':castルールに合致無し
     */
-    private array $cast_rules = [];
+    protected array $cast_rules = [];
     
     /**
     *   cast_rules初期化
@@ -63,22 +63,6 @@ trait CastByPropertyTypeTrait
                 return new $cls($val);
             },
         ];
-    }
-    
-    /**
-    *   プロパティで型変換
-    *
-    *   @param string $type
-    *   @param callable $rule
-    *   @return $this
-    */
-    public function setCastRule(string $type, callable $rule)
-    {
-        if (empty($this->cast_rules)) {
-            $this->initCastRules();
-        }
-        $this->cast_rules[$type] = $rule;
-        return $this;
     }
     
     /**

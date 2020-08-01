@@ -32,12 +32,12 @@ class AccessorTraitTarget
     protected $set_protected_property = 'protectedProperty';
     private $set_private_property = 'privateProperty';
 
-    private array $getters = [
+    protected array $getters = [
         'get_public_property',
         'get_protected_property',
         'get_private_property',
     ];
-    private array $setters = [
+    protected array $setters = [
         'set_public_property',
         'set_protected_property',
         'set_private_property',

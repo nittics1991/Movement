@@ -23,7 +23,7 @@ trait ReflectPropertyTrait
     *
     *   @var ReflectionProperty[] [name=>ReflectionProperty, ...]
     */
-    private array $properties = [];
+    protected array $properties = [];
     
     /*
     *   classでpropertyを定義する

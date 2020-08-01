@@ -24,14 +24,14 @@ trait AccessorTrait
     *
     *   @var string[] ['propertyName1', ...]
     */
-    //private array $getters = [];
+    //protected array $getters = [];
      
     /**
     *   setters
     *
     *   @var string[] ['propertyName1', ...]
     */
-    //private array $setters = [];
+    //protected array $setters = [];
     
     /**
     *   methodNameToPropertyName

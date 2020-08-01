@@ -11,6 +11,8 @@ use Movement\accessor\{
 };
 use ArrayObject;
 use StdClass;
+use DateTimeInterface;
+use DateTime;
 
 /**
 *   CastByPropertyTypeTraitで操作するクラス
@@ -22,7 +24,7 @@ class CastByPropertyTypeTraitTarget extends StdClass
         toArray as public;
     }
     
-    private $casts = [
+    protected $casts = [
         'non_data',
         'bool_data',
         'int_data',
@@ -57,6 +59,31 @@ class CastByPropertyTypeTraitTarget extends StdClass
         $this->fromAggregate(
             $this->castAggregateToArray($data)
         );
+    }
+}
+
+/**
+*   setCastRuleメソッドでルールを追加するクラス
+*/
+class CastByPropertyTypeTraitTarget2 extends
+    CastByPropertyTypeTraitTarget
+{
+    protected DateTimeInterface $datetime_data;
+    
+    /**
+    *   {inherit}
+    *
+    */
+    protected function initCastRules()
+    {
+        parent::initCastRules();
+        
+        $this->casts[] = 'datetime_data';
+        
+        $this->cast_rules['DateTimeInterface'] = function($val, $type) {
+            return new DateTime($val);
+            
+        };
     }
 }
 
@@ -336,6 +363,53 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
       //$this->markTestIncomplete();
 
         $obj = new CastByPropertyTypeTraitTarget($data);
+        $this->assertEquals($expect, $obj);
+    }
+    
+    /**
+    *
+    */
+    public function setCastRuleメソッドdataProvider()
+    {
+        return [
+            [
+                [
+                    'int_data' => 123,
+                    'datetime_data' => '2000-4-30 12:34:56',
+                ],
+                (function() {
+                    $obj = new CastByPropertyTypeTraitTarget2();
+                    $this->setPrivateProperty(
+                        $obj,
+                        'int_data',
+                        123
+                    );
+                    $this->setPrivateProperty(
+                        $obj,
+                        'datetime_data',
+                        new DateTime('2000-4-30 12:34:56')
+                    );
+                    
+                    return $obj;
+                })(),
+            ],
+            
+            
+            
+        ];
+    }
+    
+    /**
+    *   @test
+    *   @dataProvider setCastRuleメソッドdataProvider
+    */
+    public function setCastRuleメソッド(
+        $data,
+        $expect
+    ) {
+      //$this->markTestIncomplete();
+
+        $obj = new CastByPropertyTypeTraitTarget2($data);
         $this->assertEquals($expect, $obj);
     }
 }
