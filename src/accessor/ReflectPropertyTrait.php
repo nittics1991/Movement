@@ -16,7 +16,7 @@ use BadMethodCallException;
 use ReflectionClass;
 use ReflectionProperty;
 
-trait ReflectePropertyTrait
+trait ReflectPropertyTrait
 {
     /**
     *   properties

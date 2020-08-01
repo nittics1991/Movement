@@ -7,7 +7,7 @@ namespace Movement\test\accessor;
 use Movement\test\MovementTestCase;
 use Movement\accessor\{
     CastByPropertyTypeTrait,
-    ReflectePropertyTrait
+    ReflectPropertyTrait
 };
 use ArrayObject;
 use StdClass;
@@ -18,7 +18,7 @@ use StdClass;
 class CastByPropertyTypeTraitTarget extends StdClass
 {
     use CastByPropertyTypeTrait;
-    use ReflectePropertyTrait{
+    use ReflectPropertyTrait{
         toArray as public;
     }
     

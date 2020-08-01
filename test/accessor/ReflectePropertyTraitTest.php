@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Movement\test\accessor;
 
 use Movement\test\MovementTestCase;
-use Movement\accessor\ReflectePropertyTrait;
+use Movement\accessor\ReflectPropertyTrait;
 use BadMethodCallException;
 use InvalidArgumentException;
 use ArrayObject;
@@ -13,11 +13,11 @@ use StdClass;
 use TypeError;
 
 /**
-*   ReflectePropertyTraitで操作するクラス
+*   ReflectPropertyTraitで操作するクラス
 */
-class ReflectePropertyTraitTarget
+class ReflectPropertyTraitTarget
 {
-    use ReflectePropertyTrait{
+    use ReflectPropertyTrait{
         fromAggregate as public;
     }
     
@@ -31,7 +31,7 @@ class ReflectePropertyTraitTarget
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class ReflectePropertyTraitTest extends MovementTestCase
+class ReflectPropertyTraitTest extends MovementTestCase
 {
     /**
     *   @test
@@ -40,7 +40,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $this->callPrivateMethod($obj, 'reflecteProperty', []);
         
@@ -70,7 +70,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $this->assertTrue(
             $obj->has('public_property')
@@ -96,7 +96,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $this->assertTrue(
             $obj->isWritable('public_property')
@@ -122,7 +122,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         //__get
         $this->assertEquals(
@@ -174,7 +174,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         unset($obj->public_property);
         
@@ -209,7 +209,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         unset($obj->public_property_null);
         
@@ -242,7 +242,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             unset($obj->protected_property);
         } catch (BadMethodCallException $e) {
@@ -259,7 +259,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             $obj->protected_property = 1;
         } catch (InvalidArgumentException $e) {
@@ -276,7 +276,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             unset($obj->private_property);
         } catch (BadMethodCallException $e) {
@@ -293,7 +293,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             $obj->private_property = 1;
         } catch (InvalidArgumentException $e) {
@@ -310,7 +310,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             $val = $obj->private_property;
         } catch (InvalidArgumentException $e) {
@@ -327,7 +327,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             unset($obj->notdefine_property);
         } catch (BadMethodCallException $e) {
@@ -344,7 +344,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             $obj->notdefine_property = 1;
         } catch (InvalidArgumentException $e) {
@@ -361,7 +361,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         try {
             $val = $obj->notdefine_property;
         } catch (InvalidArgumentException $e) {
@@ -378,7 +378,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
       //$this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $this->assertSame(
             [
@@ -397,7 +397,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
       //$this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $data = [
             'public_property' => 'newPublicProperty',
@@ -420,7 +420,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
       //$this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $data = [
             'public_property' => 'newPublicProperty',
@@ -448,7 +448,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
       //$this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $data = [
             'public_property' => 'newPublicProperty',
@@ -472,7 +472,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $data = [
             'public_property' => 'newPublicProperty',
@@ -498,7 +498,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $data = [
             'public_property' => 'newPublicProperty',
@@ -524,7 +524,7 @@ class ReflectePropertyTraitTest extends MovementTestCase
     {
 //      $this->markTestIncomplete();
         
-        $obj = new ReflectePropertyTraitTarget();
+        $obj = new ReflectPropertyTraitTarget();
         
         $expect = [
             'public_property',

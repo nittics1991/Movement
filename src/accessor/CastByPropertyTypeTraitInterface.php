@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace Movement\accessor;
 
-use Movement\accessor\ReflectePropertyTraitInterface;
+use Movement\accessor\ReflectPropertyTraitInterface;
 
 interface CastByPropertyTypeTraitInterface extends
-    ReflectePropertyTraitInterface
+    ReflectPropertyTraitInterface
 {
 }

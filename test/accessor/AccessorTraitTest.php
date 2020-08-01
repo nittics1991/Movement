@@ -7,7 +7,7 @@ namespace Movement\test\accessor;
 use Movement\test\MovementTestCase;
 use Movement\accessor\{
     AccessorTrait,
-    ReflectePropertyTrait
+    ReflectPropertyTrait
 };
 use BadMethodCallException;
 
@@ -17,8 +17,8 @@ use BadMethodCallException;
 class AccessorTraitTarget
 {
     use AccessorTrait;
-    //ReflectePropertyTraitの影響は受けないのでprivate propertyもOK
-    use ReflectePropertyTrait;
+    //ReflectPropertyTraitの影響は受けないのでprivate propertyもOK
+    use ReflectPropertyTrait;
 
     public $public_property = 'publicProperty';
     protected $protected_property = 'protectedProperty';
