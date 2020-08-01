@@ -13,6 +13,7 @@ use ArrayObject;
 use StdClass;
 use DateTimeInterface;
 use DateTime;
+use SplStack;
 
 /**
 *   CastByPropertyTypeTraitで操作するクラス
@@ -36,6 +37,7 @@ class CastByPropertyTypeTraitTarget extends StdClass
         'iterable_data',
         'parent_data',
         'self_data',
+        'datetime_data',
     ];
     
     protected $non_data;
@@ -49,6 +51,7 @@ class CastByPropertyTypeTraitTarget extends StdClass
     protected iterable $iterable_data;
     protected parent $parent_data;
     protected self $self_data;
+    protected DateTimeInterface $datetime_data;
     
     public function __construct(array $data = [])
     {
@@ -68,7 +71,7 @@ class CastByPropertyTypeTraitTarget extends StdClass
 class CastByPropertyTypeTraitTarget2 extends
     CastByPropertyTypeTraitTarget
 {
-    protected DateTimeInterface $datetime_data;
+    protected SplStack $stack_data;
     
     /**
     *   {inherit}
@@ -78,11 +81,12 @@ class CastByPropertyTypeTraitTarget2 extends
     {
         parent::initCastRules();
         
-        $this->casts[] = 'datetime_data';
+        $this->casts[] = 'stack_data';
         
-        $this->cast_rules['DateTimeInterface'] = function($val, $type) {
-            return new DateTime($val);
-            
+        $this->cast_rules['SplStack'] = function($val, $type) {
+            $obj = new SplStack();
+            $obj->add(0, $val);
+            return $obj;
         };
     }
 }
@@ -204,6 +208,14 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $result;
                 })()
             ],
+            //DateTimeInterface
+            [
+                'datetime_data',
+                '2000-4-30 12:34:56',
+                (function() {
+                    return new DateTime('2000-4-30 12:34:56');
+                })()
+            ],
         ];
     }
     
@@ -235,6 +247,7 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
             case 'iterable_data':
             case 'parent_data':
             case 'self_data':
+            case 'datetime_data':
                 $this->assertEquals($expect, $actual);
                 break;
             default:
@@ -349,6 +362,20 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $obj;
                 })(),
             ],
+            [
+                [
+                    'datetime_data' => '2000-2-28 00:00:00',
+                ],
+                (function() {
+                    $obj = new CastByPropertyTypeTraitTarget();
+                    $this->setPrivateProperty(
+                        $obj,
+                        'datetime_data',
+                        new DateTime('2000-2-28 00:00:00')
+                    );
+                    return $obj;
+                })(),
+            ],
         ];
     }
     
@@ -375,7 +402,7 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
             [
                 [
                     'int_data' => 123,
-                    'datetime_data' => '2000-4-30 12:34:56',
+                    'stack_data' => 'aaa',
                 ],
                 (function() {
                     $obj = new CastByPropertyTypeTraitTarget2();
@@ -386,8 +413,12 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     );
                     $this->setPrivateProperty(
                         $obj,
-                        'datetime_data',
-                        new DateTime('2000-4-30 12:34:56')
+                        'stack_data',
+                        (function() {
+                            $obj = new SplStack();
+                            $obj->add(0, 'aaa'); 
+                            return $obj;
+                        })(),
                     );
                     
                     return $obj;
@@ -407,7 +438,7 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
         $data,
         $expect
     ) {
-      //$this->markTestIncomplete();
+      $this->markTestIncomplete();
 
         $obj = new CastByPropertyTypeTraitTarget2($data);
         $this->assertEquals($expect, $obj);

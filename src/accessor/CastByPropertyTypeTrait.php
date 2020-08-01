@@ -3,7 +3,7 @@
 /**
 *   CastByPropertyTypeTrait
 *
-*   @version 200614
+*   @version 200801
 */
 
 declare(strict_types=1);
@@ -11,6 +11,8 @@ declare(strict_types=1);
 namespace Movement\accessor;
 
 use ArrayObject;
+use DateTime;
+use DateTimeInterface;
 
 trait CastByPropertyTypeTrait
 {
@@ -61,6 +63,11 @@ trait CastByPropertyTypeTrait
             'self' => function($val, $type) {
                 $cls = get_called_class();
                 return new $cls($val);
+            },
+            'DateTimeInterface' => function($val, $type) {
+                return $val instanceof DateTimeInterface?
+                    $val:
+                    new DateTime($val);
             },
         ];
     }

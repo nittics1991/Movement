@@ -47,11 +47,13 @@ Cast By Property Type Trait (Movement\test\accessor\CastByPropertyTypeTrait)
  [x] Cast by property typeメソッド with data set #22
  [x] Cast by property typeメソッド with data set #23
  [x] Cast by property typeメソッド with data set #24
+ [x] Cast by property typeメソッド with data set #25
  [x] Cast aggregate to arrayメソッド with data set #0
  [x] Cast aggregate to arrayメソッド with data set #1
  [x] Cast aggregate to arrayメソッド with data set #2
  [x] Cast aggregate to arrayメソッド with data set #3
- [x] Set cast ruleメソッド with data set #0
+ [x] Cast aggregate to arrayメソッド with data set #4
+ [ ] Set cast ruleメソッド with data set #0
 
 Reflect Property Trait (Movement\test\accessor\ReflectPropertyTrait)
  [x] Reflecte propertyメソッド
