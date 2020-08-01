@@ -20,63 +20,66 @@ trait CastByPropertyTypeTrait
     
     /**
     *   casts
+    * 
+    *   castするプロパティを列挙する
     *
-    *   @var string[] ['propertyName1' => , ...]
+    *   @var string[] ['propertyName1', ...]
     */
     //private array $casts = [];
     
     /**
-    *   cast_
+    *   cast_rules
     *
-    *   @var callable[] ['type' => callable, ...]
+    *   @var callable[] ['type' => callable($val, $type), ...]
+    *       '':型未定義
+    *       '*':castルールに合致無し
     */
+    private array $cast_rules = [];
     
+    /**
+    *   cast_rules初期化
+    *
+    */
+    protected function initCastRules()
+    {
+        $this->cast_rules = [
+            '' => fn($val, $type) => $val,
+            '*' => fn($val, $type) => is_object($val)? $val:new $type($val),
+            'bool' => fn($val, $type) => (bool)$val,
+            'int' => fn($val, $type) => (int)$val,
+            'float' => fn($val, $type) => (float)$val,
+            'string' => fn($val, $type) => (string)$val,
+            'array' => fn($val, $type) => (array)$val,
+            'object' => fn($val, $type) => is_object($val)? $val:(object)$val,
+            'iterable' => function($val, $type) {
+                return is_iterable($val)? $val : new ArrayObject([$val]);
+            },
+            'parent' => function($val, $type) {
+                $cls = get_parent_class($this);
+                return new $cls($val, $type);
+            },
+            'self' => function($val, $type) {
+                $cls = get_called_class();
+                return new $cls($val);
+            },
+        ];
+    }
     
-    
-    
-    private array $casts = [
-        
-        
-            case '':
-                return $val;
-            case 'bool':
-                return boolval($val);
-            case 'float':
-                return floatval($val);
-            case 'int':
-                return intval($val);
-            case 'string':
-                return strval($val);
-            case 'array':
-                return (array)$val;
-            case 'object':
-                if (is_object($val)) {
-                    return $val;
-                }
-                return (object)$val;
-            //iterable,parent,self不動作?
-            case 'iterable':
-                if (is_iterable($val)) {
-                    return $val;
-                }
-                return new ArrayObject([$val]);
-            case 'parent':
-            case 'self':
-                $type = $type === 'parent' ?
-                    get_parent_class($this) :
-                    get_called_class();
-                // no break
-            //クラス
-            default:
-                if (is_object($val)) {
-                    return $val;
-                }
-                return new $type($val);
-        
-        
-        
-        
-    ];
+    /**
+    *   プロパティで型変換
+    *
+    *   @param string $type
+    *   @param callable $rule
+    *   @return $this
+    */
+    public function setCastRule(string $type, callable $rule)
+    {
+        if (empty($this->cast_rules)) {
+            $this->initCastRules();
+        }
+        $this->cast_rules[$type] = $rule;
+        return $this;
+    }
     
     /**
     *   プロパティで型変換
@@ -91,6 +94,10 @@ trait CastByPropertyTypeTrait
         assert(property_exists($this, 'casts'));
         assert(property_exists($this, 'properties'));
         assert(method_exists($this, 'reflecteProperty'));
+        
+        if (empty($this->cast_rules)) {
+            $this->initCastRules();
+        }
         
         if (!in_array($name, $this->casts)) {
             return $val;
@@ -113,45 +120,13 @@ trait CastByPropertyTypeTrait
             $type = mb_substr($type, 1);
         }
         
-        switch ($type) {
-            case '':
-                return $val;
-            case 'bool':
-                return boolval($val);
-            case 'float':
-                return floatval($val);
-            case 'int':
-                return intval($val);
-            case 'string':
-                return strval($val);
-            case 'array':
-                return (array)$val;
-            case 'object':
-                if (is_object($val)) {
-                    return $val;
-                }
-                return (object)$val;
-            //iterable,parent,self不動作?
-            case 'iterable':
-                if (is_iterable($val)) {
-                    return $val;
-                }
-                return new ArrayObject([$val]);
-            case 'parent':
-            case 'self':
-                $type = $type === 'parent' ?
-                    get_parent_class($this) :
-                    get_called_class();
-                // no break
-            //クラス
-            default:
-                if (is_object($val)) {
-                    return $val;
-                }
-                return new $type($val);
-        }
+        $rule_type = array_key_exists($type, $this->cast_rules)?
+            $type:'*';
+        
+        $cast_function = $this->cast_rules[$rule_type];
+        return call_user_func($cast_function, $val, $type);
     }
-   
+    
     /**
     *   型一括変換
     *

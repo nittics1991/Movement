@@ -34,8 +34,8 @@ class PseudoDataMapperTest extends MovementTestCase
         $dns = 'sqlite::memory:';
         $this->pdo = new PDO(
             $dns,
-            ,
-            ,
+            null,
+            null,
             [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             ]
@@ -73,7 +73,7 @@ class PseudoDataMapperTest extends MovementTestCase
         
         $obj = new PseudoDataMapperTestTarget();
         
-        $obj->
+        //$obj->
         
         
         

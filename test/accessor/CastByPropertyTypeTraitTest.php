@@ -50,6 +50,10 @@ class CastByPropertyTypeTraitTarget extends StdClass
     
     public function __construct(array $data = [])
     {
+        //expect値をsetPrivatePropertyで設定している為、事前実行する
+        //通常は不要
+        $this->initCastRules();
+        
         $this->fromAggregate(
             $this->castAggregateToArray($data)
         );
