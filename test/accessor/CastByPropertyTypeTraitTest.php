@@ -304,9 +304,20 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $obj;
                 })(),
             ],
-            
-            
-            
+            [
+                [
+                    'class_data' => ['aaa', 'bbb' => 111],
+                ],
+                (function() {
+                    $obj = new CastByPropertyTypeTraitTarget();
+                    $this->setPrivateProperty(
+                        $obj,
+                        'class_data',
+                        new ArrayObject(['aaa', 'bbb' => 111])
+                    );
+                    return $obj;
+                })(),
+            ],
         ];
     }
     

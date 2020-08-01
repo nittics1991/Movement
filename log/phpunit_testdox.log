@@ -50,6 +50,7 @@ Cast By Property Type Trait (Movement\test\accessor\CastByPropertyTypeTrait)
  [x] Cast aggregate to arrayメソッド with data set #0
  [x] Cast aggregate to arrayメソッド with data set #1
  [x] Cast aggregate to arrayメソッド with data set #2
+ [x] Cast aggregate to arrayメソッド with data set #3
 
 Reflect Property Trait (Movement\test\accessor\ReflectPropertyTrait)
  [x] Reflecte propertyメソッド
