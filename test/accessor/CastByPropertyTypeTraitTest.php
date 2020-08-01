@@ -249,11 +249,61 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
                     return $obj;
                 })(),
             ],
-            
-            
-            
-            
-            
+            [
+                [
+                    'array_data' => 123,
+                    'object_data' => ['aaa' => 11, 'bbb' => 12],
+                    'iterable_data' => '456',
+                    'parent_data' => ['ccc' => 21, 'ddd' => 22],
+                    'self_data' => ['string_data' => 'aaa'],
+                ],
+                (function() {
+                    $obj = new CastByPropertyTypeTraitTarget();
+                    $this->setPrivateProperty(
+                        $obj,
+                        'array_data',
+                        (array)123
+                    );
+                    $this->setPrivateProperty(
+                        $obj,
+                        'object_data',
+                        (function() {
+                            $obj = new StdClass();
+                            $obj->aaa = 11;
+                            $obj->bbb = 12;
+                            return $obj;
+                        })()
+                    );
+                    $this->setPrivateProperty(
+                        $obj,
+                        'iterable_data',
+                        new ArrayObject(['456'])
+                    );
+                    $this->setPrivateProperty(
+                        $obj,
+                        'parent_data',
+                        (function() {
+                            $obj = new StdClass();
+                            return $obj;
+                        })()
+                    );
+                    $this->setPrivateProperty(
+                        $obj,
+                        'self_data',
+                        (function() {
+                            $result = new CastByPropertyTypeTraitTarget();
+                            $this->setPrivateProperty(
+                                $result,
+                                'string_data',
+                                'aaa'
+                            );
+                            return $result;
+                        })()
+                    );
+                    
+                    return $obj;
+                })(),
+            ],
             
             
             
@@ -272,11 +322,5 @@ class CastByPropertyTypeTraitTest extends MovementTestCase
 
         $obj = new CastByPropertyTypeTraitTarget($data);
         $this->assertEquals($expect, $obj);
-        
-        
-        var_dump($obj->toArray());
-        
-        
-        //$this->assertEquals($data, $obj->toArray());
     }
 }

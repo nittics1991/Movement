@@ -170,7 +170,9 @@ trait ReflectPropertyTrait
         
         $result = [];
         foreach (array_keys($this->properties) as $name) {
-            $result[$name] = $this->$name;
+            if (isset($this->$name)) {
+                $result[$name] = $this->$name;
+            }
         }
         
         return $result;
