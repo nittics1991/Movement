@@ -114,6 +114,11 @@ Service Provider (Movement\test\container\ServiceProvider)
  [x] Boot of service provider
  [x] Mix reflection and provider
 
+Business Date Factory (Movement\test\datetime\BusinessDateFactory)
+ [x] Nowメソッド with data set #0
+ [x] Nowメソッド with data set #1
+ [x] Nowメソッド with data set #2
+
 Private Test Trait (Movement\test\test\PrivateTestTrait)
  [x] 基本的なクラス
  [x] 継承した親
