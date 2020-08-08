@@ -251,7 +251,7 @@ pstan反映する事
         現在attributeをcreate用/format用一緒だが別に分ける
         したがってtraitの必要がない?
         Configは両方あるので、読み込み時に必要分だけ設定
-        
+            ==>createFromFormatで実施?
     
     
 

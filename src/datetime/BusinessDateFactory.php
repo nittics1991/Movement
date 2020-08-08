@@ -76,10 +76,6 @@ class BusinessDateFactory
         array $config
     ) {
         $this->fromConfigArray($config);
-        
-        if (is_string($this->timezone)) {
-            $this->timezone = new DateTimeZone($this->timezone); 
-        }
     }
     
     /**
@@ -98,6 +94,10 @@ class BusinessDateFactory
             if (property_exists($this, $key)) {
                 $this->$key = $val;
             }
+        }
+        
+        if (is_string($this->timezone)) {
+            $this->timezone = new DateTimeZone($this->timezone); 
         }
     }
     
@@ -121,8 +121,19 @@ class BusinessDateFactory
     */
     public function today(): DateTimeInterface
     {
-        return new $this->datetime_fqn(
-            "!{$this->datetime_format}",
+        if ($this->datetime_fqn == DateTime::class) {
+            return call_user_func(
+                'date_create_from_format',
+                "!{$this->date_create_format}",
+                "now",
+                $this->timezone
+            );
+        }
+        
+        return call_user_func(
+            'date_create_immutable_from_format',
+            "!{$this->date_create_format}",
+            "now",
             $this->timezone
         );
     }
@@ -134,9 +145,6 @@ class BusinessDateFactory
     */
     public function thisMohth(): DateTimeInterface
     {
-        return new $this->datetime_fqn(
-            "!{$this->month_format}"
-        );
     }
     
     /**

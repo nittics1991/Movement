@@ -115,8 +115,8 @@ Service Provider (Movement\test\container\ServiceProvider)
  [x] Mix reflection and provider
 
 Business Date Factory (Movement\test\datetime\BusinessDateFactory)
- [x] Nowメソッド with data set #0
- [x] Nowメソッド with data set #1
+ [ ] Todayメソッド with data set #0
+ [ ] Todayメソッド with data set #1
 
 Private Test Trait (Movement\test\test\PrivateTestTrait)
  [x] 基本的なクラス

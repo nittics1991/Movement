@@ -36,25 +36,25 @@ class BusinessDateFactoryTest extends MovementTestCase
         ];
     }
     
-    public function nowメソッドdataProvider()
+    public function todayメソッドdataProvider()
     {
         return[
             [
                 DateTime::class,
-                new DateTime()
+                new DateTime('today')
             ],
             [
                 DateTimeImmutable::class,
-                new DateTimeImmutable()
+                new DateTimeImmutable('today')
             ],
         ];
     }
     
     /**
     *   @test
-    *   @dataProvider nowメソッドdataProvider
+    *   @dataProvider todayメソッドdataProvider
     */
-    public function nowメソッド(
+    public function todayメソッド(
         $fqn,
         $expect
     ) {
@@ -66,15 +66,15 @@ class BusinessDateFactoryTest extends MovementTestCase
 
         $this->assertInstanceOf(
             $fqn,
-            $obj->now()
+            $obj->today()
         );
 
         $this->assertEquals(
             $expect->format(
-                $this->config['create_format']['datetime_create_format']
+                $this->config['create_format']['date_create_format']
             ),
-            $obj->now()->format(
-                $this->config['create_format']['datetime_create_format']
+            $obj->today()->format(
+                $this->config['create_format']['date_create_format']
             )
         );
     }
