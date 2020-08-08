@@ -246,9 +246,14 @@ pstan反映する事
         現在switchをin_arrayで変換処理を動的に取得
         追加定義出来るようにmethodを追加(propertyでは)
     
+20200808
+    datetimeの検討
+        現在attributeをcreate用/format用一緒だが別に分ける
+        したがってtraitの必要がない?
+        Configは両方あるので、読み込み時に必要分だけ設定
+        
     
     
-
 
 
 
