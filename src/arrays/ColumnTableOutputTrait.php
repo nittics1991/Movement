@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace Movement\arrays;
 
+use InvalidArgumentException;
+
 trait ColumnTableOutputTrait
 {
     /**
@@ -53,6 +55,30 @@ trait ColumnTableOutputTrait
     */
     protected function all():array
     {
+        
+        
+        //$this->index_nameは何に使う?
+        
+        
+        
+        $column_names = $this->column_names;
+        unset($column_names[$this->index_name]);
+        $max_row_no = count($this->init_dataset) - 1;
+        
+        return array_map(
+            function ($row_no) use ($this->dataset, $column_names) {
+                
+                return $this->dataset[$name][$max_row_no];
+                
+                
+            },
+            range(0, count($this->init_dataset) - 1, 1)
+        );
+        
+        
+        
+        
+        
     }
     
     /**
@@ -62,13 +88,15 @@ trait ColumnTableOutputTrait
     */
     protected function first():array
     {
+        $column_names = $this->column_names;
+        unset($column_names[$this->index_name]);
         
-        //行列変換？
-        
-        
-        $data = reset($this->dataset);
-        unset($data[$this->index_name]);
-        return $data;
+        return array_map(
+            function ($name) use ($this->dataset) {
+                return $this->dataset[$name][0];
+            },
+            $column_names
+        );
     }
     
     /**
@@ -78,13 +106,17 @@ trait ColumnTableOutputTrait
     */
     protected function last():array
     {
+        $max_row_no = count($this->init_dataset) - 1;
+        $column_names = $this->column_names;
+        unset($column_names[$this->index_name]);
+        $max_row_no = count($this->init_dataset) - 1;
         
-        
-        
-        
-        $data = end($this->dataset);
-        unset($data[$this->index_name]);
-        return $data;
+        return array_map(
+            function ($name) use ($this->dataset, $max_row_no) {
+                return $this->dataset[$name][$max_row_no];
+            },
+            $column_names
+        );
     }
     
     /**
@@ -95,23 +127,30 @@ trait ColumnTableOutputTrait
     */
     protected function nth(int $row_no):array
     {
+        $max_row_no = count($this->init_dataset) - 1;
+        
+        if (abs($row_no) > $max_row_no) {
+            throw new InvalidArgumentException(
+                "invalid row no:{$row_no}"
+            );
+        }
+        
+        $row_no = $row_no >= 0 ? $row_no : $max_row_no - $row_no;
+        
+        $column_names = $this->column_names;
+        unset($column_names[$this->index_name]);
+        $max_row_no = count($this->init_dataset) - 1;
+        
+        return array_map(
+            function ($name) use ($this->dataset, $max_row_no) {
+                return $this->dataset[$name][$max_row_no];
+            },
+            $column_names
+        );
     }
     
-    /**
-    *   get
-    *
-    *   @return mixed[]
-    */
-    protected function get():array
-    {
-    }
     
-    /**
-    *   get
-    *
-    *   @return mixed[]
-    */
-    protected function get():array
-    {
-    }
+    
+    
+    
 }
