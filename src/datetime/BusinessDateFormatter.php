@@ -15,74 +15,22 @@ use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 use DatePeriod;
+use Movement\datetime\BusinessDateAttributeTrait;
 
 class BusinessDateFormatter
 {
-    /**
-    *   datetime_format
-    *
-    *   @var string
-    */
-    protected string $datetime_format = 'Ymd His';
-    
-    /**
-    *   date_format
-    *
-    *   @var string
-    */
-    protected string $datetime_format = 'Ymd';
-    
-    /**
-    *   date_format
-    *
-    *   @var string
-    */
-    protected string $month_format = 'Ym';
-    
-    /**
-    *   fiscal_year_format
-    *
-    *   @var string
-    */
-    protected string $fiscal_year_format = 'F';
+    use BusinessDateAttributeTrait;
     
     /**
     *   __construct
     *
-    *   @param array $format_dataset
+    *   @param array $config
     */
     public function __construct(
-        array $format_dataset = []
+        array $config
     ) {
-        $this->fromArray($format_dataset);
+        $this->fromConfigArray($config);
     }
-    
-    /**
-    *   {inherit}
-    */
-    public function __call(
-        string $name,
-        array $arguments
-    ) {
-        
-        
-        
-        if (mb_ereg_match('', $name) {
-            
-            
-            $method_name = $this->snakeToCamelCase($name)
-            if (method_exists($this, $method_name)) {
-                
-            }
-            
-        }
-      
-        
-        
-        
-    }
-    
-    
     
     
     

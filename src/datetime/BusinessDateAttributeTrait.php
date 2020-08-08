@@ -20,11 +20,11 @@ trait BusinessDateAttributeTrait
     protected string $timezone = '';
     
     /**
-    *   default_datetime_fqn
+    *   datetime_fqn
     *
     *   @var string
     */
-    protected string $default_datetime_fqn = '';
+    protected string $datetime_fqn = '';
     
     /**
     *   datetime_format
@@ -38,10 +38,10 @@ trait BusinessDateAttributeTrait
     *
     *   @var string
     */
-    protected string $datetime_format = '';
+    protected string $date_format = '';
     
     /**
-    *   date_format
+    *   month_format
     *
     *   @var string
     */
@@ -64,12 +64,12 @@ trait BusinessDateAttributeTrait
     ) {
         foreach ($config as $key => $val) {
             if (is_array($val)) {
-                $this->fromConfigArray($val)
+                $this->fromConfigArray($val);
             }
             
-            if (isset($this->$key)
-            
-            
+            if (property_exists($this, $key)) {
+                $this->$key = $val;
+            }
         }
     }
 }

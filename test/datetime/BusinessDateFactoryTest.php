@@ -11,13 +11,25 @@ use DateTimeImmutable;
 
 class BusinessDateFactoryTest extends MovementTestCase
 {
+    protected function setUp(): void
+    {
+        $this->config = [
+            'timezone' => date_default_timezone_get(),
+            'datetime_fqn' => DateTimeImmutable::class,
+            'format' => [
+                'datetime_format' => 'Ymd His',
+                'date_format' => 'Ymd',
+                'month_format' => 'Ym',
+                'fiscal_year_format' => 'YF',
+                'Quarter_format' => 'YQp',
+            ],
+            'start_month' => 4,
+        ];
+    }
+    
     public function nowメソッドdataProvider()
     {
         return[
-            [
-                null,
-                new DateTime()
-            ],
             [
                 DateTime::class,
                 new DateTime()
@@ -38,22 +50,19 @@ class BusinessDateFactoryTest extends MovementTestCase
         $expect
     ) {
       //$this->markTestIncomplete();
-
-        $obj = new BusinessDateFactory($fqn);
+        
+        $this->config['datetime_fqn'] = $fqn;
+        
+        $obj = new BusinessDateFactory($this->config);
 
         $this->assertInstanceOf(
-            $fqn?? DateTimeImmutable::class,
+            $fqn,
             $obj->now()
         );
 
         $this->assertEquals(
-            $expect->format('Ymd His'),
-            $obj->now()->format('Ymd His')
+            $expect->format($this->config['format']['datetime_format']),
+            $obj->now()->format($this->config['format']['datetime_format'])
         );
-        
-        
-        
-        
-        
     }
 }

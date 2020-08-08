@@ -15,32 +15,21 @@ use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 use DatePeriod;
+use Movement\datetime\BusinessDateAttributeTrait;
 
 class BusinessDateFactory
 {
-    //format ruleを外部定義inject
-    //fqlも？
-    //Configから必要事項をinject？
-    
-    
-    
-    /**
-    *   base_datetime_fqn
-    *
-    *   @var string
-    */
-    protected string $base_datetime_fqn;
+    use BusinessDateAttributeTrait;
     
     /**
     *   __construct
     *
-    *   @param ?string $base_datetime_fqn
+    *   @param array $config
     */
     public function __construct(
-        ?string $base_datetime_fqn
+        array $config
     ) {
-        $this->base_datetime_fqn = $base_datetime_fqn??
-             DateTimeImmutable::class;
+        $this->fromConfigArray($config);
     }
     
     /**
@@ -50,7 +39,7 @@ class BusinessDateFactory
     */
     public function now(): DateTimeInterface
     {
-        return new $this->base_datetime_fqn();
+        return new $this->datetime_fqn();
     }
     
     /**
@@ -60,7 +49,9 @@ class BusinessDateFactory
     */
     public function today(): DateTimeInterface
     {
-        return new $this->base_datetime_fqn('!Ymd');
+        return new $this->datetime_fqn(
+            "!{$this->datetime_format}"
+        );
     }
     
     /**
@@ -70,8 +61,23 @@ class BusinessDateFactory
     */
     public function thisMohth(): DateTimeInterface
     {
-        return new $this->base_datetime_fqn('!Ym');
+        return new $this->datetime_fqn(
+            "!{$this->month_format}"
+        );
     }
+    
+    /**
+    *   thisQuarter
+    * 
+    *   @return DateTimeInterface
+    */
+    public function thisQuarter(): DateTimeInterface
+    {
+    }
+    
+    
+    
+    
     
     /**
     *   thisFiscalYear
@@ -80,12 +86,52 @@ class BusinessDateFactory
     */
     public function thisFiscalYear(): DateTimeInterface
     {
-        $this_month = date('m');
+        $interval = $this->today()->diff(
+            $this->datetime_fqn::createFromFormat(
+                "!Ym",
+                date('Y') . $this->start_month
+            )
+        );
+        
+        $year = (int)date('Y') + $interval->y * $interval->invert;
         
         
         
         
-        return new $this->base_datetime_fqn('!Ym');
+        if ($interval->invert > 0) {
+            
+            $ ($interval->m >= 0 && $interval->m <= 6) {
+                
+            }
+        }
+        
+        
+        return $this->createFromFiscalYearFormat($code)
+        
+        
+        
+        
+        
+        202004
+        
+        9
+        10
+        11
+        12
+        1
+        202102  202104 -2 ==> YYYY-1
+        3
+        
+        
+        0 > x >= -6 =S
+        -6 > x =K
+        
+        
+        
+        
+        return new $this->datetime_fqn(
+            "!{$this->datetime_format}"
+        );
     }
     
     
