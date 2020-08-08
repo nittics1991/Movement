@@ -15,11 +15,57 @@ use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 use DatePeriod;
-use Movement\datetime\BusinessDateAttributeTrait;
 
 class BusinessDateFactory
 {
-    use BusinessDateAttributeTrait;
+    /**
+    *   timezone
+    *
+    *   @var DateTimeZone|string
+    */
+    protected $timezone = '';
+    
+    /**
+    *   datetime_fqn
+    *
+    *   @var string
+    */
+    protected string $datetime_fqn = '';
+    
+    /**
+    *   datetime_create_format
+    *
+    *   @var string
+    */
+    protected string $datetime_create_format = '';
+    
+    /**
+    *   date_create_format
+    *
+    *   @var string
+    */
+    protected string $date_create_format = '';
+    
+    /**
+    *   month_create_format
+    *
+    *   @var string
+    */
+    protected string $month_create_format = '';
+    
+    /**
+    *   fiscal_year_create_format
+    *
+    *   @var string
+    */
+    protected string $fiscal_year_create_format = '';
+    
+    /**
+    *   start_month
+    *
+    *   @var int
+    */
+    protected int $start_month = 4;
     
     /**
     *   __construct
@@ -30,6 +76,29 @@ class BusinessDateFactory
         array $config
     ) {
         $this->fromConfigArray($config);
+        
+        if (is_string($this->timezone)) {
+            $this->timezone = new DateTimeZone($this->timezone); 
+        }
+    }
+    
+    /**
+    *   fromConfigArray
+    *
+    *   @param array $format_dataset
+    */
+    protected function fromConfigArray(
+        array $config = []
+    ) {
+        foreach ($config as $key => $val) {
+            if (is_array($val)) {
+                $this->fromConfigArray($val);
+            }
+            
+            if (property_exists($this, $key)) {
+                $this->$key = $val;
+            }
+        }
     }
     
     /**
@@ -39,7 +108,10 @@ class BusinessDateFactory
     */
     public function now(): DateTimeInterface
     {
-        return new $this->datetime_fqn();
+        return new $this->datetime_fqn(
+            "now",
+            $this->timezone
+        );
     }
     
     /**
@@ -50,7 +122,8 @@ class BusinessDateFactory
     public function today(): DateTimeInterface
     {
         return new $this->datetime_fqn(
-            "!{$this->datetime_format}"
+            "!{$this->datetime_format}",
+            $this->timezone
         );
     }
     
@@ -84,6 +157,8 @@ class BusinessDateFactory
     * 
     *   @return DateTimeInterface
     */
+
+/*
     public function thisFiscalYear(): DateTimeInterface
     {
         $interval = $this->today()->diff(
@@ -134,7 +209,7 @@ class BusinessDateFactory
         );
     }
     
-    
+ */   
     
     
     
