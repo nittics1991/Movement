@@ -86,20 +86,53 @@ trait ArraTableCommandTrait
     */
     public function selectBy(string ...$column_names)
     {
-        $result = [];
-        
-        if ($this->direction == static::COLUMNS) {
-            
-            
-            
-        }
-        
+        return $this->isRowsdirection()?
+            $this->selectByRows($column_names):
+            $this->selectByColumns($column_names);
+    }
+    
+    /**
+    *   selectByRows
+    *
+    *   @param string[] $column_names
+    *   @return static
+    */
+    protected function selectByRows(array $column_names)
+    {
+        $dataset = $this->getDataset();
+        $selected = [];
         
         foreach($column_names as $name) {
-            
+            if (!$this->hasColumnName($name)) {
+                throw new RuntimeException(
+                    "not has column:{$name}"
+                );
+            }
+            $selected[] = array_column($dataset, $name);
         }
+        return $this->setDataset($selected);
+    }
+    
+    /**
+    *   selectByColumns
+    *
+    *   @param string[] $column_names
+    *   @return static
+    */
+    protected function selectByColumns(array $column_names)
+    {
+        $dataset = $this->getDataset();
+        $selected = [];
         
-        
+        foreach($column_names as $name) {
+            if (!array_key_exists($name, $dataset)) {
+                throw new RuntimeException(
+                    "not has column:{$name}"
+                );
+            }
+            $selected[] = $dataset[$name];
+        }
+        return $this->setDataset($selected);
     }
     
     
