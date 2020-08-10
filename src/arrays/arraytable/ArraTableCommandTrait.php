@@ -74,6 +74,29 @@ trait ArraTableCommandTrait
         $this->column_names = $columns;
     }
     
+    /**
+    *   {inherit}
+    *
+    *   @param string ...$column_names
+    *   @return static
+    */
+    public function selectBy(string ...$column_names)
+    {
+        $result = [];
+        
+        if ($this->direction == static::COLUMNS) {
+            
+            
+            
+        }
+        
+        
+        foreach($column_names as $name) {
+            
+        }
+        
+        
+    }
     
     
     

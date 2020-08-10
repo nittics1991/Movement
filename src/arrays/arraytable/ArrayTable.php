@@ -23,6 +23,12 @@ class ArrayTable implements ArrayTableInterface
     use ArraTableInformationTrait;
     use ArraTableOutputTrait;
     
+    //作るか?
+    //getDataset,setDataset,getColumnNames,setColumnNames
+    //isColumnsDirection,isRowsDirection ==>const不要?
+    //hasColumn ==> informationTrait
+    
+    
     /**
     *   direction
     *
@@ -89,6 +95,9 @@ class ArrayTable implements ArrayTableInterface
     */
     protected function toRows()
     {
+        //isColumnsDirection 作るか
+        
+        
         if ($this->direction == static::COLUMNS) {
             $this->transeverse();
         }
