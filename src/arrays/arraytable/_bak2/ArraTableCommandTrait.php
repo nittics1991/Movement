@@ -11,13 +11,9 @@ declare(strict_types=1);
 namespace Movement\arrays\arraytable;
 
 use RuntimeException;
-//use Movement\arrays\arraytable\ArrayTableCommonTrait;
 
 trait ArraTableCommandTrait
 {
-    //実際に構築するclassでuse?
-    //use ArrayTableCommonTrait;
-    
     /**
     *   {inherit}
     *
@@ -45,7 +41,7 @@ trait ArraTableCommandTrait
     ) {
         $this->toColumns();
         
-        $columns = $column_names + $this->getColumnNames();
+        $columns = $column_names + $this->column_names;
         
         $arguments = call_user_func_array(
             'array_merge',
@@ -74,8 +70,8 @@ trait ArraTableCommandTrait
             );
         }
         
-        $this->setDataset($sorted);
-        $this->setColumnNames($columns);
+        $this->dataset = $sorted;
+        $this->column_names = $columns;
     }
     
     /**
