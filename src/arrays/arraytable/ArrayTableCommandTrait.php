@@ -1,7 +1,7 @@
 <?php
 
 /**
-*   ArraTableCommandTrait
+*   ArrayTableCommandTrait
 *
 *   @version 200810
 */
@@ -13,7 +13,7 @@ namespace Movement\arrays\arraytable;
 use RuntimeException;
 //use Movement\arrays\arraytable\ArrayTableCommonTrait;
 
-trait ArraTableCommandTrait
+trait ArrayTableCommandTrait
 {
     //実際に構築するclassでuse?
     //use ArrayTableCommonTrait;
@@ -38,7 +38,7 @@ trait ArraTableCommandTrait
     *   {inherit}
     *
     */
-    protected function orderBy(
+    public function orderBy(
         array $column_names,
         array $sort_orders,
         array $sort_flags
@@ -133,6 +133,33 @@ trait ArraTableCommandTrait
             $selected[] = $dataset[$name];
         }
         return $this->setDataset($selected);
+    }
+    
+    /**
+    *   {inherit}
+    *
+    */
+    public function addColumn(
+        string $column_name,
+        callable $expression
+    ) {
+        $this->toRows();
+        $column = [];
+        $added = [];
+        
+        foreach ($this->getDataset() as $row) {
+            $column[$column_name] = call_user_func_array(
+                $expression,
+                $row
+            );
+            $added[] = $row + $column;
+        }
+        
+        $this->setDataset($added);
+        
+        return $this->setColumnName(
+            $this->getColumnName + [$column_name]
+        );
     }
     
     

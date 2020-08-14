@@ -11,14 +11,14 @@ declare(strict_types=1);
 namespace Movement\arrays\arraytable;
 
 use Movement\arrays\arraytable{
-    ArraTableCommandInterface,
-    ArraTableInformationInterface,
-    ArraTableOutputInterface
+    ArrayTableCommandInterface,
+    ArrayTableInformationInterface,
+    ArrayTableOutputInterface
 };
 
 interface ArrayTableInterface extends
-    ArraTableCommandInterface,
-    ArraTableInformationInterface,
-    ArraTableOutputInterface
+    ArrayTableCommandInterface,
+    ArrayTableInformationInterface,
+    ArrayTableOutputInterface
 {
 }

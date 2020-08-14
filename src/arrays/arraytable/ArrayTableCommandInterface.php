@@ -1,7 +1,7 @@
 <?php
 
 /**
-*   ArraTableCommandInterface
+*   ArrayTableCommandInterface
 *
 *   @version 200810
 */
@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Movement\arrays\arraytable;
 
-interface ArraTableCommandInterface
+interface ArrayTableCommandInterface
 {
     /**
     *   where
@@ -47,10 +47,14 @@ interface ArraTableCommandInterface
     /**
     *   addColumn
     *
+    *   @param string $column_name,
     *   @param callable $expression
     *   @return static
     */
-    public function addColumn(callable $expression);
+    public function addColumn(
+        string $column_name,
+        callable $expression
+    );
     
     /**
     *   join

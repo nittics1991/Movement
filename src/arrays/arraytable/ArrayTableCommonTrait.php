@@ -32,6 +32,7 @@ class ArrayTableCommonTrait
     *   @var string[]
     */
     protected array $column_names = [];
+    
     /**
     *   hasColumnName
     *
@@ -120,7 +121,7 @@ class ArrayTableCommonTrait
     *   @param array[]
     *   @return static
     */
-    protected function getDataset(array $dataset)
+    protected function setDataset(array $dataset)
     {
         $this->dataset = $dataset
         return $this;
@@ -135,9 +136,9 @@ class ArrayTableCommonTrait
     protected function transverse(
         array $dataset
     ) :void {
-        $this->column_names = array_keys($dataset);
+        $column_names = array_keys($dataset);
         
-        foreach($this->column_names as $name) {
+        foreach($column_names as $name) {
             $this->dataset[$name] = array_columns(
                 $dataset,
                 $name

@@ -1,7 +1,7 @@
 <?php
 
 /**
-*   ArraTableInformationInterface
+*   ArrayTableInformationInterface
 *
 *   @version 200810
 */
@@ -13,7 +13,7 @@ namespace Movement\arrays\arraytable;
 use Countable;
 use IteratorAggregate;
 
-interface ArraTableInformationInterface extends
+interface ArrayTableInformationInterface extends
     Countable,
     IteratorAggregate
 {
