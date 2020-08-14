@@ -26,8 +26,8 @@ interface ArrayTableCommandInterface
     *   orderBy
     *
     *   @param string[] $column_names
-    *   @param int[] $sort_orders [column_name => SORT_ORDER, ...]
-    *   @param int[] $sort_flags [column_name => SORT_FLAG, ...]
+    *   @param int[] $sort_orders
+    *   @param int[] $sort_flags
     *   @return static
     */
     public function orderBy(

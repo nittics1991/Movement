@@ -18,10 +18,6 @@ trait ArrayTableCommandTrait
     //実際に構築するclassでuse?
     //use ArrayTableCommonTrait;
     
-    //datasetへの保存はsetDatasetでも良い
-    //dataset取得はpropertyかiteratorがgetDatasetより小メモリ
-    
-    
     /**
     *   {inherit}
     *
@@ -44,30 +40,20 @@ trait ArrayTableCommandTrait
     */
     public function orderBy(
         array $column_names,
-        array $sort_orders = [],
-        array $sort_flags = [],
+        array $sort_orders,
+        array $sort_flags
     ) {
         $this->toColumns();
         
-        $this->column_names = $column_names + $this->column_names;
-        
-        $orders = [];
-        foreach ($column_names as $name) {
-            $orders[] = $sort_orders[$name]?? SORT_ASC;
-        }
-        
-        $flags = [];
-        foreach ($column_names as $name) {
-            $flags[] = $sort_flags[$name]?? SORT_REGULAR;
-        }
+        $columns = $column_names + $this->getColumnNames();
         
         $arguments = call_user_func_array(
             'array_merge',
             array_map(
                 fn ($name, $order, $flag) => [$name, $order, $flag],
-                $this->column_names,
-                $orders,
-                $flags
+                $columns,
+                $sort_orders,
+                $sort_flags
             )
         );
         
@@ -87,8 +73,9 @@ trait ArrayTableCommandTrait
                 "failed to build arguments"
             );
         }
-        $this->dataset = $sorted;
-        return $this;
+        
+        $this->setDataset($sorted);
+        $this->setColumnNames($columns);
     }
     
     /**
@@ -112,6 +99,7 @@ trait ArrayTableCommandTrait
     */
     protected function selectByRows(array $column_names)
     {
+        $dataset = $this->getDataset();
         $selected = [];
         
         foreach($column_names as $name) {
@@ -120,10 +108,9 @@ trait ArrayTableCommandTrait
                     "not has column:{$name}"
                 );
             }
-            $selected[] = array_column($this->dataset, $name);
+            $selected[] = array_column($dataset, $name);
         }
-        $this->dataset = $selected;
-        return $this;
+        return $this->setDataset($selected);
     }
     
     /**
@@ -134,18 +121,18 @@ trait ArrayTableCommandTrait
     */
     protected function selectByColumns(array $column_names)
     {
+        $dataset = $this->getDataset();
         $selected = [];
         
         foreach($column_names as $name) {
-            if (!array_key_exists($name, $this->dataset)) {
+            if (!array_key_exists($name, $dataset)) {
                 throw new RuntimeException(
                     "not has column:{$name}"
                 );
             }
-            $selected[] = $this->dataset[$name];
+            $selected[] = $dataset[$name];
         }
-        $this->dataset = $selected;
-        return $this;
+        return $this->setDataset($selected);
     }
     
     /**
@@ -157,42 +144,26 @@ trait ArrayTableCommandTrait
         callable $expression
     ) {
         $this->toRows();
+        $column = [];
+        $added = [];
         
-        foreach ($this->dataset as &$row) {
-            $row[$column_name] = call_user_func_array(
+        foreach ($this->getDataset() as $row) {
+            $column[$column_name] = call_user_func_array(
                 $expression,
                 $row
             );
+            $added[] = $row + $column;
         }
-        return $this;
+        
+        $this->setDataset($added);
+        
+        return $this->setColumnName(
+            $this->getColumnName + [$column_name]
+        );
     }
     
-    /**
-    *   {inherit}
-    *
-    */
-    public function join(
-        $joined_table,
-        array $column_map,
-        array $alias
-    ) {
-        $joind_table->orderBy(
-            array_keys($column_map)
-        )->all();
-        
-        
-        $this->orderBy(
-            array_keys($column_map)
-        );
-        
-        //どうやって結合する?
-        
-        foreach ($this->dataset as $aaa)
-        
-        
-        
-        
-    }
+    
+    
     
     
     
