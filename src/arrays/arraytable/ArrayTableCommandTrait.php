@@ -177,11 +177,6 @@ trait ArrayTableCommandTrait
         array $alias
     ) {
         
-        //generatorを使いたい
-        //無名function ?
-        
-        
-        
         $targets = $joind_table->orderBy(
             array_keys($column_map)
         )->toColumnsArray();
@@ -190,21 +185,23 @@ trait ArrayTableCommandTrait
             array_keys($column_map)
         );
         
-        
-        
-        
-        
         $joined = [];
         $previous_keys = [];
         $matched_position = 0;
         $matched_length = 0;
         
-        foreach ($this->dataset as $columns_array) {
+        
+        //direction = columnsでは無理?
+        
+        foreach ($this->dataset as $source_columns) {
             foreach ($column_map as $soruce_column => $target_column) {
+                $row = $matched_position + $matched_length;
                 
+                if ($target[$target_column][$row] ===
+                    $
                 
-            }
             
+            }
         }
         
         
@@ -219,26 +216,6 @@ trait ArrayTableCommandTrait
     */
     protected function aaa($joined_table)
     {
-        
-        
-        foreach ($targets as $columns_array) {
-            
-            
-        }
-    }
-    
-    
-    /**
-    *   joinedTargetGenerator
-    *
-    *   @param string[] $column_names
-    *   @return static
-    */
-    protected function joinedTargetGenerator(
-        $targets,
-        
-    {
-        
         
         
         foreach ($targets as $columns_array) {
