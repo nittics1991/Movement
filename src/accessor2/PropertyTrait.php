@@ -48,4 +48,39 @@ trait PropertyTrait
     {
         return in_array($name, $this->properties);
     }
+    
+    /**
+    *   acceptedByDefinedProperty
+    *
+    *   @param string $name
+    *   @return void
+    *       __setに追加する
+    */
+    protected function acceptedByDefinedProperty(string $name, $value)
+    {
+        if ($this->has($name)) {
+            $this->$name = $value;
+        }
+        throw new InvalidArgumentException(
+            "property is not defined:{$name}"
+        );
+    }
+    
+    /**
+    *   refuzedAnUnset
+    *
+    *   @param string $name
+    *   @return void
+    *       __unsetに追加する
+    */
+    protected function refuzedAnUnset(string $name)
+    {
+        throw new InvalidArgumentException(
+            "refuse an unset property:{$name}"
+        );
+    }
+    
+    
+    
+    
 }

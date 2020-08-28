@@ -24,7 +24,7 @@ trait ImmutablePropertyTrait
     */
     protected function getImmutableData(string $name)
     {
-        if (in_array($name, $this->properties) {
+        if ($this->has($name)) {
             return $this->$name;
         }
         throw new InvalidArgumentException(
